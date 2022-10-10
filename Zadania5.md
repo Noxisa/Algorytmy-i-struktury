@@ -3,7 +3,9 @@
 
 class Node {
 public:
-    int dane;
+
+   int dane;
+    
 return 0;
 }
 
@@ -15,9 +17,9 @@ return 0;
 #dwykierunkowej
 
 struct Node {
-    int dane;
- 
-   
+    
+   int dane;
+    
    struct Node* next;
  
    struct Node* prev;
