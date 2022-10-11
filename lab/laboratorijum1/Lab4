@@ -1,8 +1,8 @@
 /*
 Tomas Chmelevski
 * -----------------
-Laboratorium
-Obliczyc funkcja y = ax^2 znaczenia, gdy a - stale, x jest wybierany z tablicy X(n), wyniki funckji zapisywac Y(n)
+Laboratorium 1 Obliczyc funkcja y = ax^2 znaczenia, gdy a - stale, x jest wybierany z tablicy X(n), 
+wyniki funckji zapisywac Y(n)
 * -----------------
 2022-10-11
 */
@@ -11,12 +11,12 @@ Obliczyc funkcja y = ax^2 znaczenia, gdy a - stale, x jest wybierany z tablicy X
 #include <stdio.h>
 
 void main(void){
-  int n;
-  printf("Podaj dlugosc tablicy: ");
+  double a, x[n], y[n];
+  int i;
+  
+  printf("Podaj tablicy: ");
   scanf("%d", &n);  
   
-  double a, x[n], Y[n];
-
   printf("Podaj a: ");
   scanf("%lf", &a); 
   for(int i = 0; i < n; i++){
@@ -25,7 +25,7 @@ void main(void){
   }
 
   for(int i = 0; i < n; i++){
-    Y[i] = a * x[i] * x[i];
-    printf("%.1lf = %.1lf * %.1lf ^ 2 \n", Y[i], a, x[i]);
+    y[i] = a * x[i] * x[i];
+    printf("%.1lf = %.1lf * %.1lf ^ 2 \n", y[i], a, x[i]);
   }
 }
