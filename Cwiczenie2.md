@@ -77,7 +77,7 @@ int a, b, iloczyn, reszta;
     return 0;
   }
 ```
-#Zadanie 3
+#Zadanie 4
 a=10; b=25; c=28;
 int sum;
 float sred;
@@ -108,9 +108,51 @@ printf("sred");
 return 0;   
   }
 ```
+#Zadanie 3 
 
+int NWD(int a, int b)
+{
+    while(a!=b)
+       if(a>b)
+           a = a - b; 
+       else
+           b = b - a; 
+    return a; 
+}
 
+```
+/*
+Tomas Chmelevski.Student
+* -----------------
+ Cwiczenie2. Srednia 
+* -----------------
+2022-10-18
+*/
+#include <stdio.h>
+#include<math.h>
 
+int NWD(int a, int b)
+{
+    while(a!=b)
+       if(a>b)
+           a = a - b; 
+       else
+           b = b - a; 
+    return a; 
+}
+
+int main()
+{
+    int a, b;
+    
+    printf("Podaj dwie liczby: ");
+    scanf("%d %d",a, b);
+   
+  
+}
+```
+
+#Zadania 5
 
 
 
