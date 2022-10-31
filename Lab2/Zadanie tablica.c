@@ -1,45 +1,24 @@
 #include <stdio.h>
 #include <time.h>
+#include <math.h>
+#include <stdlib.h>
 
+#define arr_size 100
 
 // Tomas Chmelevski. Student
     // Tablica
     // 2022-10-24
 
-#include <stdio.h>
-#include <time.h>
+
 
 int find(int item, int *arr);
 
 void insert(int item, int pos, int *arr);
 
 
-void remove1(int pos, int *arr)
-{
-  int i;
-  int size = sizeof(arr)/sizeof(arr[0]);
-  
-    if(pos < 0 || pos > size)
-    {
-        printf("Nieprawidłowa pozycja! Proszę wpisać pozycję między 1 to %d", size);
-    }
-    else
-    {
-        for(i=pos-1; i<size-1; i++)
-        {
-            arr[i] = arr[i + 1];
-        }
-        size--;
-        printf("\nElementow  po usunientych jest: ");
-        for(i=0; i<size; i++)
-        {
-            printf("%d\t", arr[i]);
-        }
-    }
-}
+void remove1(int pos, int *arr);
 
-
-int size(int *arr);
+int size();
 
 int findMax(int *arr);
 
@@ -48,48 +27,59 @@ int findMin(int *arr);
 void printTable(int *arr);
 
 void main(void) {
-  int arr[100] = {3,5,7,9};
+  int arr[arr_size] ;
   // realizacja
 
-  int pozycja = find(5, arr);
-  printf("Pozycja: %d\n", pozycja);
-  int max = findMax(arr);
-  printf("Max: %d\n", max);
-  int min = findMin(arr);
-  printf("Min: %d\n", min);
-  printTable(arr);
-  int okey = 2;
-  remove1(okey, arr);
+  srand(time(NULL));
+    for(int i = 0; i < size(); i++){
+        arr[i] = rand() % 100;
+        printf("%d", arr[i]);
+    }
   
   return;
 }
 
 // Funkcii
+int size() {
+    return arr_size;
+ }
+
 
 int find(int item, int *arr){
-  for(int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++){
+    printf("%d", size());
+    if(size(arr) > 0){
+  for(int i = 0; i < size(arr); i++){
+    printf("%d\n", arr[i]);
     if(item == arr[i]){
-      return i;
+      return 1;
+    }
     }
   }
-  return -1;
+  return 0;
 }
 
 void insert(int item, int pos, int *arr){
-  arr[pos] = item;
+  int tmp_arr[size() + 1];
+    int t=0;
+    for (int i = 0; i < size(); i++) {
+    if (i != pos) {
+      tmp_arr[i] = arr[t];
+      t++;
+    } else {
+
+      tmp_arr[i] = item;
+      
+    }
+  }
+  *arr = *tmp_arr; 
 }
 
 void remove2(float pos, float *arr);
 
-int size(int *arr){
-  int i = (sizeof(arr)/sizeof(arr[0]));
-  printf("\n%d",i);
-  return i;
-}
-
+  
 int findMax(int *arr){
   int max = arr[0];
-  for(int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++){
+  for(int i = 0; i < size(arr); i++){
     if(max < arr[i]){
       max = arr[i];
     }
@@ -99,7 +89,7 @@ int findMax(int *arr){
 
 int findMin(int *arr){
   int min = arr[0];
-  for(int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++){
+  for(int i = 0; i < size(); i++){
     if(min > arr[i]){
       min = arr[i];
     }
@@ -108,14 +98,8 @@ int findMin(int *arr){
 }
 
 void printTable(int *arr){
-  for(int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++){
-    printf(" %.d ", arr[i]);
+  for(int i = 0; i < size(); i++){
+    printf(" %d \n ", arr[i]);
   }
+
 }
-
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-
