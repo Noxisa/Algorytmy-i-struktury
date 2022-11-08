@@ -25,7 +25,7 @@
       int array[20] = { 31, 27, 3, 54, 67, 31 };
         int elements = 6; 
         double(arr[elements]); 
-int pos = deleteElement(array, size nowyelementwyk);
+int pos = deleteElement(array, size, nowyelementwyk);
 {
         if (pos == - 1) 
  
