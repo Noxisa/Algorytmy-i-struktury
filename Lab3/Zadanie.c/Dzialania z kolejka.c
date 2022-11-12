@@ -44,7 +44,7 @@ void insert(float It){
 }
 void remo(){
   float It;
-  struct node *pointer;
+  struct node *end;
 
   if(begin == NULL){
     
@@ -52,15 +52,14 @@ void remo(){
   else
   {
     It = begin -> value;
-    pointer = begin;
+    end = begin;
     begin = begin -> next;
-    free(pointer);
+    free(end);
 
     printf("Usuwanie liczba jest %.f\n",It);
   }
 }
 void insertElement(){
-   int i;
   struct Item *pointer;
   
   pointer = begin;
