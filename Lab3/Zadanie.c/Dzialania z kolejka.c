@@ -1,64 +1,78 @@
- #include <stdio.h>
+#include <stdio.h>
   #include <math.h>
-  #include <string.h>
+  #include <stdlib.h>
 // Tomas Chmelevski . Student
     // kolejka
     // 2022-11-08
-# define size 
+
     struct Item {
         float value;
         struct Item *next;
-    }Item;
-    int insert(int item, int Item, int end);
-    int remove1(int pos, int Item, int begin);
-    int insertElement(int arr[], int elements, int nowyelement, int size);
-    int deleteElement(int array[], int size, int nowyelementwyk); 
+    };
+  struct Item *begin;
+    void insert( float It);
+    void remo();
+    void insertElement();
 
 
-    int main(void) {
-    	{ 
-      int begin;
-      int end;
-        int  nowyelementwyk;
-       int  nowyelement = 32; 
-  
-      int array[20] = { 31, 27, 3, 54, 67, 31 };
-        int elements = 6; 
-        double(arr[elements]); 
-int pos = deleteElement(array, size, nowyelementwyk);
-{
-        if (pos == - 1) 
- 
-printf("Element nie znalezony"); 
+    void main(void) {
+      float It;
+    
+      for (int i = 1; i<=7; i++){
 
-} 
- 
-    {
-if (elements >= size); 
-arr[elements] = nowyelement;   
-}  
-        // realizacja
-        
-         Item;  begin; end; // Koniec i poczantek
+        printf("Podaj liczby %d:", i);
+        scanf("%f", &It);
+      insert(It);
+        }
+      remo();
+      insertElement();
+      } 
 
- 
-int size = sizeof(array) / sizeof(array[0]);
- 
-printf("n Przed włożeniem: "); 
-for (i = 0; i < elements; i++) 
-printf("%d  ", array[i]); 
-elements = insertElement(array, elements, nowyelement, size); 
-printf("n Po włożeniu: "); 
-for (i = 0; i < elements; i++) 
-printf("%d  ",array[i]); 
-return 0; 
+void insert(float It){
+  struct Item *pointer = (struct Item *)malloc(sizeof(struct Item));
+ if (pointer == NULL){
+   
+ }
+ else
+ {
+   if (begin == NULL){
+     pointer -> value = It;
+     pointer -> next = NULL;
+     begin = pointer;
+   }
+ }
 }
-    // Funkcii
-  
- 
-printf("n Wykasowany: "); 
-for (i = 0; i < size; i++) 
-size = deleteElement(array, size, nowyelementwyk); 
+void remo(){
+  float It;
+  struct node *pointer;
 
-return 0; 
+  if(begin == NULL){
+    
+  }
+  else
+  {
+    It = begin -> value;
+    pointer = begin;
+    begin = begin -> next;
+    free(pointer);
+
+    printf("Usuwanie liczba jest %.f\n",It);
+  }
+}
+void insertElement(){
+   int i;
+  struct Item *pointer;
+  
+  pointer = begin;
+  
+  if (pointer == NULL) {
+  }
+  else
+  {
+    while (pointer != NULL) {
+      
+      printf("%f\n", pointer->value);
+      pointer = pointer->next;
+    }
+  }
 }
