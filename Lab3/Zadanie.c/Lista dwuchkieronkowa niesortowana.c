@@ -97,7 +97,7 @@ void next(struct Item *item, struct Item *head){
 
     item ->value = value;
   
-    item ->next = (*head);
+    item ->next = &(*head);
   
     struct Item *head = *temp;
 
