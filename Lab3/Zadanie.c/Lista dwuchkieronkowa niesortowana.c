@@ -1,131 +1,210 @@
- #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <time.h>
-
-#define tab_size 100
-
+#include <stdio.h>
 // Tomas Chmelevski. Student
   // Lista dwuchkieronkowa niesortowana
     // 2022-11-08
 
-    struct Item {
-        float value;
-        struct Item *next;
-        struct Item *prev;
-    }It;
+struct Item {
+  float value;
+  struct Item *next;
+  struct Item *prev;
+};
 
-    float find(float value,  It *head);
+float findMax(struct Item *head);
+float findMin(struct Item *head);
+void insert(struct Item **head, float value);
+void printList(struct Item *item);
+void removeItem(struct Item *item, struct Item **head);
+int size(struct Item *head);
+int isEmpty(struct Item *head);
+int find(float value, struct Item *head);
+float retrieve(struct Item *item);
+struct Item locate(float value, struct Item *head);
+void next(struct Item *item, struct Item *head);
+void previous(struct Item *item, struct Item *head);
 
-    It locate(float value, It *head); 
-// pointer
-{
-struct Item *pointer = (struct Item *)malloc(sizeof(struct Item));
+//void makeNull(struct Item *head);
+
+ void next(struct Item *item, struct Item *head);
+
+
+
+int main(void) {
+  struct Item *head = NULL;
+
+  printList(head);
+
+  printf("\n1 JEŚLI PUSTY, 0 JEŚLI NIE: %d \n\n", isEmpty(head));
+
+  insert(&head, 5.111);
+  insert(&head, 5.222);
+
+  printf("\nAktualny rozmiar listy to: %d \n\n", size(head));
+
+  insert(&head, 5.333);
+  insert(&head, 5.444);
+
+  printList(head);
+
+  printf("\nAktualny rozmiar listy to: %d \n\n", size(head));
+
+  removeItem(head, &head);
+
+  printList(head);
+
+  printf("\nAktualny rozmiar listy to: %d \n\n", size(head));
+  printf("\nWartość elementu Max to: %f \n\n", findMax(head));
+  printf("\nWartość elementu Min to: %f \n\n", findMin(head));
+
+  printf("\n1 JEŚLI PUSTY, 0 JEŚLI NIE: %d \n\n", isEmpty(head));
+
+  printf("\n1 JEŚLI PUSTY, 0 JEŚLI NIE: %d \n\n", find(5.333, head));
+  printf("\n1 JEŚLI PUSTY, 0 JEŚLI NIE: %d \n\n", find(5.555, head));
+
+  printf("\n %f \n", retrieve(head->next->next));
   
-  if (pointer == NULL) {
-    
-   
-  } 
-  else
-  {
-    if (temp == NULL) {
-      
-      pointer->value = item;
-      pointer->next = NULL;
-      temp = pointer;
-    } 
-    else
-    {
-      pointer->value = item;
-      pointer->next = temp;
-      temp = pointer;
-    }
-  }
+  printList(head);
+  return 0;
 }
 
-    float retrieve(It *item); 
-// wartosc
+// Funkcii
 
-    void insert(It *item, float value, It *head);
+void insert(struct Item **head, float value) {
 
-    void remov(It *item, It *head);
+  struct Item *item = (struct Item *)malloc(sizeof(struct Item));
 
-    int size(int *head);
+  item->value = value;
 
-    It findMax(It *head);
+  item->next = NULL;
 
-    It findMin(It *head);
+  struct Item *temp = *head;
 
-    int printList(It *head);
-
-    int isEmpty(It *head);
-
-    void next(It *item, It *head);
-
-    void previous(It *item, It *head);
-
-    void makeNull(It *head);
-
-    
-
-    int main(void) {
-
-      
-It  *head;
-head = (It *)malloc(sizeof(It));
-head = NULL;
-
-      srand(time(NULL));
-
-      for(int i = 0; i < 5; i++)
-        {
-          
-          next(&head,rand()%100);
-            previous(&head,rand()%100);
-  insert(&head,rand()%100,rand()%size(head));
-          
-        }
-        // realizacja
-
-      return 0;
-    }
-
-    // Funkcii
-void next(struct Item *item, struct Item *head){ 
-  
-    struct Item *temp = (struct Item *)malloc(sizeof(struct Item));
-
-    item ->value = value;
-  
-    item ->next = &(*head);
-  
-    struct Item *head = *temp;
-
-  
+  if (*head == NULL) {
+    item->prev = NULL;
+    *head = item;
+    return;
   }
-It findMax (It **head){
-  It * current;
-  current = *head;
-  int max = current -> value;
 
-  while (current !=NULL){
-    if (current -> value > max){
-      max = current -> value;
+  while (temp->next != NULL)
+    temp = temp->next;
+
+  temp->next = item;
+
+  item->prev = temp;
+}
+
+void removeItem(struct Item *item, struct Item **head) {
+
+  if (*head == NULL || item == NULL)
+    return;
+
+  if (*head == item)
+    *head = item->next;
+
+  if (item->next != NULL)
+    item->next->prev = item->prev;
+
+  if (item->prev != NULL)
+    item->prev->next = item->next;
+
+  free(item);
+}
+
+int size(struct Item *head) {
+  int size = 0;
+  struct Item *last;
+
+  while (head != NULL) {
+    last = head;
+    head = head->next;
+    size++;
+  }
+  return size;
+}
+
+void printList(struct Item *item) {
+  struct Item *last;
+
+  while (item != NULL) {
+    printf("%f->", item->value);
+    last = item;
+    item = item->next;
+  }
+  if (item == NULL)
+    printf("NULL\n");
+}
+
+float findMax(struct Item *head) {
+  struct Item *current;
+  current = head;
+  float max = current->value;
+
+  while (current != NULL) {
+    if (current->value > max) {
+      max = current->value;
     }
-    currnet = current -> next;
+    current = current->next;
   }
   return max;
 }
 
-int findMin(It **head){
-  It * current;
-  current = *head;
-  int min = current -> value;
-  while (current != NULL){
-    if (curent -> value < max){
-      min = current ->value;
+float findMin(struct Item *head) {
+  struct Item *current;
+  current = head;
+  float min = current->value;
+  while (current != NULL) {
+    if (current->value < min) {
+      min = current->value;
     }
-    current = current ->next;
+    current = current->next;
   }
   return min;
 }
+
+int isEmpty(struct Item *head) {
+  if (head == NULL)
+    return 1;
+  if (head->next == NULL && head->prev == NULL)
+    return 1;
+  else
+    return 0;
+}
+
+int find(float value, struct Item *head) {
+  struct Item *current;
+  current = head;
+  while (current != NULL) {
+    if (current->value == value) {
+      return 1;
+    }
+    current = current->next;
+  }
+  return 0;
+}
+
+float retrieve(struct Item *item) { return item->value; }
+
+struct Item locate(float value, struct Item *head){
+  struct Item *current;
+  current = head;
+  while (current->value != value) {
+    current = current->next;
+  }
+  return *current;  
+}
+
+void next(struct Item *item, struct Item *head){
+  if (item->next != NULL)
+    head = item->next;
+}
+
+void previous(struct Item *item, struct Item *head){
+   if (item->prev != NULL)
+    head = item->prev;
+}
+
+        // realizacja
+
+     
+
+    // Funkcii
+
