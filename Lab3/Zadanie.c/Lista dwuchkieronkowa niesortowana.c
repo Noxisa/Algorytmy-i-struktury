@@ -91,6 +91,18 @@ head = NULL;
     }
 
     // Funkcii
+void next(struct Item *item, struct Item *head){ 
+  
+    struct Item *temp = (struct Item *)malloc(sizeof(struct Item));
+
+    item ->value = value;
+  
+    item ->next = (*head);
+  
+    struct Item *head = *temp;
+
+  
+  }
 It findMax (It **head){
   It * current;
   current = *head;
