@@ -19,6 +19,29 @@
 
     It locate(float value, It *head); 
 // pointer
+{
+struct Item *pointer = (struct Item *)malloc(sizeof(struct Item));
+  
+  if (pointer == NULL) {
+    
+   
+  } 
+  else
+  {
+    if (temp == NULL) {
+      
+      pointer->value = item;
+      pointer->next = NULL;
+      temp = pointer;
+    } 
+    else
+    {
+      pointer->value = item;
+      pointer->next = temp;
+      temp = pointer;
+    }
+  }
+}
 
     float retrieve(It *item); 
 // wartosc
