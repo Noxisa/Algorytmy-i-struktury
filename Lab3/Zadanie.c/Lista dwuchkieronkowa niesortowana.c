@@ -68,3 +68,29 @@ head = NULL;
     }
 
     // Funkcii
+It findMax (It **head){
+  It * current;
+  current = *head;
+  int max = current -> value;
+
+  while (current !=NULL){
+    if (current -> value > max){
+      max = current -> value;
+    }
+    currnet = current -> next;
+  }
+  return max;
+}
+
+int findMin(It **head){
+  It * current;
+  current = *head;
+  int min = current -> value;
+  while (current != NULL){
+    if (curent -> value < max){
+      min = current ->value;
+    }
+    current = current ->next;
+  }
+  return min;
+}
