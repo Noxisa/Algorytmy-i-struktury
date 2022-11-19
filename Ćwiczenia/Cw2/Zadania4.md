@@ -32,4 +32,3 @@ Stąd wychodzi że prawa strona jest równa lewa, i może stego zrozumieć że a
 poprawny za pomoca założenia matematycznej
 
 
-``
