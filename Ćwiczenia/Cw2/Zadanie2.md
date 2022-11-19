@@ -16,10 +16,9 @@ int iloczyn_i_reszta(liczba)
 
     return lista;
 }
-``
+
 
 ![Screenshot (97)](https://user-images.githubusercontent.com/115026224/199216369-13cadd75-ff23-4c67-ab78-24f2388fb5f1.png)
 
 
 
-``
