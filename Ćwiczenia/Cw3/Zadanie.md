@@ -1,4 +1,5 @@
 #Big-O i Big-Omega 
+
 #Zadanie
 
 Czy jest 2n + 1∊ 0(2n)? Wiezmiemy 2n+1 = 0*2n. Wtedy mamy zauważyć ze przy 2n - 20n = -1. Tak samo możemy twierdzić ze n = 2 -20 nie = 0 ale to słabsze twierdzenie niż n = - 1/2-20 0 nie= 1
