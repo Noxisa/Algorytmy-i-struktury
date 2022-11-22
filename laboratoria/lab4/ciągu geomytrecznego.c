@@ -5,11 +5,10 @@
 #Zadanie 4
 
 Pseudokod
- {
-   a1, n, q;
-  if(n==0 && q == 0)
-  for(int i = 0; i<n-1; i++){
-    tab[i] = pow(q,i)*a1;
-    }
-  return 0;
-}
+ Geom(k,n,o)
+ if(n > 1){
+  q = k/o
+  return  Geom(o,o*q,n - 1)
+ else{
+ return k
+ }
