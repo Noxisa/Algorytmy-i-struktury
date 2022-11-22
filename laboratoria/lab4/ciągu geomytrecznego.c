@@ -2,7 +2,7 @@
 // Napisz funkcję rekurencyjną do obliczenia -tej liczby ciągu geomytrecznego
 // 2022-11-22
 
-#Zadanie 1
+#Zadanie 3
 
 Pseudokod
 #include <stdio.h>
