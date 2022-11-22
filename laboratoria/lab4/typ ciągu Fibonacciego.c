@@ -2,6 +2,7 @@
 // Napisz funkcję rekurencyjną do obliczenia n-tej liczby ciągu Fibonacciego
 // 2022-11-22
 #Zadanie 1
+
 Pseudokod
 
 #include <stdio.h>
