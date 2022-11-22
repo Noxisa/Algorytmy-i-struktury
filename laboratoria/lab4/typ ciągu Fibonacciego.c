@@ -3,7 +3,6 @@
 // 2022-11-22
 #Zadanie 1
 Pseudokod
-```
 #include <stdio.h>
 int fib(int n)
 {
@@ -19,4 +18,4 @@ int main(void) {
   printf("Wyraz ciągu ma wartość",fib(n));
   return 0;
 }
-```
+
