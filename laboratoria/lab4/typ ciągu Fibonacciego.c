@@ -1,7 +1,7 @@
 // Tomas Chmelevski. Student
 // Napisz funkcję rekurencyjną do obliczenia n-tej liczby ciągu Fibonacciego
 // 2022-11-22
-#Zadanie 1
+#Zadanie 2
 
 Pseudokod
 
