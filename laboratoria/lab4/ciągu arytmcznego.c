@@ -4,17 +4,13 @@
 Zadanie 3
 
 Pseudokod
-#include <stdio.h>
-#include <stdlib.h>
 
-int main(void) {
-  int ciag[255];
-  int i, suma = 0;
-  printf("Wpisz ciag liczbowy:");
-  scanf("%d", &ciag);
-  for(i= 0; ciag[i]!= 0; i++){
-    suma+=ciag[i];
-  }
-  
-  return 0;
-}
+ {
+   Aryt(t, o, n){
+   if(n > 1)
+   return Aryt(t + o, o, n-1){
+   }
+ else{
+   return t;
+   }
+   }
