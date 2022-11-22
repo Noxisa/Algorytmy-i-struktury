@@ -8,18 +8,12 @@ Pseudokod
 
 
 int main(void) {
-  int n =3;
-  int* tab[n+1];
-   tab[0]=1;
-
   for(int i = 0; i < n; i++){
-    for(int j=i+1; j > 0; j--){
-      tab[j] = tab[j-1];
-    }
+    for(int j=i+1; j > 0; j--)
+    
   }
 
   for(int i=0; i<n+1; i++){
-    printf("%d",tab[i]);
   }
   return 0;
 }
