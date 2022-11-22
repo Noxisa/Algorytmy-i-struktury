@@ -1,5 +1,5 @@
 // Tomas Chmelevski. Student
-// Napisz funkcję rekurencyjną do obliczenia -tej liczby ciągu geomytrecznego
+// Napisz funkcję rekurencyjną do obliczenia n-tej liczby ciągu geomytrecznego
 // 2022-11-22
 
 #Zadanie 3
