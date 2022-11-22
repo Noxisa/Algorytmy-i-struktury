@@ -3,6 +3,7 @@
 // 2022-11-22
 #Zadanie 1
 Pseudokod
+
 #include <stdio.h>
 int fib(int n)
 {
