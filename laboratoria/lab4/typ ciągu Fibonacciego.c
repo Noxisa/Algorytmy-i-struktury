@@ -5,6 +5,7 @@
 Pseudokod
 
 #include <stdio.h>
+
 int fib(int n)
 {
   if(n<3)
@@ -14,8 +15,7 @@ int fib(int n)
 int main(void) {
   int n;
   printf("Podaj nr wyrzu ciągu:");
-  scanf("%d",&n);
-
+  
   printf("Wyraz ciągu ma wartość",fib(n));
   return 0;
 }
