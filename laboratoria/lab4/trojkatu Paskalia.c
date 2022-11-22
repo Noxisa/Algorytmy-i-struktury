@@ -4,16 +4,17 @@
 #Zadanie 5
 
 Pseudokod
-#include <stdio.h>
 
 
-int main(void) {
-  for(int i = 0; i < n; i++){
-    for(int j=i+1; j > 0; j--)
-    
-  }
 
-  for(int i=0; i<n+1; i++){
-  }
-  return 0;
+pas(q,k){
+if(k == 0)
+return 0
+else if (q == 1 && k == 1)
+return 1
+else if(k > q)
+return 0 
+else
+return (pas(q - 1, k -1)+pas(q -1, k))
 }
+ 
