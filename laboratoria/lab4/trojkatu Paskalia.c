@@ -4,9 +4,6 @@
 #Zadanie 5
 
 Pseudokod
-
-
-
 pas(q,k){
 if(k == 0)
 return 0
