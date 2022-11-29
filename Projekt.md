@@ -38,10 +38,10 @@ większej liczby odejmiemy mniejszą, to mniejsza liczba i otrzymana różnica b
 dzielnik jak pierwotne liczby. Gdy w wyniku kolejnego odejmowania otrzymamy parę takich samych liczb, to oznacza,
 że znaleźliśmy NWD.
 Popatrz, jak przebiega znajdowanie NWD dwóch liczb a = 42 i b = 24 według tego algorytmu.
-````
 ![Screenshot 2022-11-29 112732](https://user-images.githubusercontent.com/115026224/204491197-d580ad5c-ed4e-4d98-a2e5-6b03ea332e2b.png)
 
-````
+![Screenshot 2022-11-29 112732](https://user-images.githubusercontent.com/115026224/204491931-59d5658e-a4c2-4075-b255-dfa4f1e3920d.png)
+
 Oto algorytm Euklidesa zapisany w postaci planu działań.
 
 1. Wybieramy dwie liczby naturalne.
