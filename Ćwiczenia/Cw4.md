@@ -18,11 +18,12 @@ Obliczamy: 3Tn + 2n²/2 = 2, c = 2  nie  jest spelniony
 Rezultat: n(2n + 3T)/2
 ```
 T(n) = 3T(n/2) + n³?
+```
 Przykład:
 Wyznaczamy: a,b,c: a = 3, b = 2, c = 3
 Obliczamy: 3Tn + 2n³/2 = 3, c = 3 jest spelniony  
 Rezultat: n(2n + 3T)/3
-
+```
 T(n) = 4T(n/3) + n?
 ```
 Przykład:
