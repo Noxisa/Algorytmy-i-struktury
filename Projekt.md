@@ -27,8 +27,10 @@ Algorytmem poznanym przez ciebie na lekcjach matematyki jest sprawdzanie podziel
 przez kolejne liczby. Najpierw sprawdzamy podzielność przez 2, potem – przez 3 i tak dalej, aż do mniejszej z dwóch
 liczb. Największym wspólnym dzielnikiem dwóch liczb jest iloczyn ich wszystkich wspólnych dzielników pierwszych.
 Przyjrzyj się temu sposobowi na przykładzie szukania NWD liczb: a = 42 i b = 24.
+````
+![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
-
+````
 NWD liczb a i b wynosi więc 2 · 3 · 1 = 6.
 Lepszym i szybszym rozwiązaniem problemu szukania NWD dwóch liczb całkowitych jest algorytm Euklidesa. To
 jeden z najstarszych algorytmów, opisany przez Euklidesa ok. 300 roku p.n.e. Opiera się na spostrzeżeniu: jeśli od
@@ -36,8 +38,10 @@ większej liczby odejmiemy mniejszą, to mniejsza liczba i otrzymana różnica b
 dzielnik jak pierwotne liczby. Gdy w wyniku kolejnego odejmowania otrzymamy parę takich samych liczb, to oznacza,
 że znaleźliśmy NWD.
 Popatrz, jak przebiega znajdowanie NWD dwóch liczb a = 42 i b = 24 według tego algorytmu.
+````
+![Screenshot 2022-11-29 112732](https://user-images.githubusercontent.com/115026224/204491197-d580ad5c-ed4e-4d98-a2e5-6b03ea332e2b.png)
 
-
+````
 Oto algorytm Euklidesa zapisany w postaci planu działań.
 
 1. Wybieramy dwie liczby naturalne.
