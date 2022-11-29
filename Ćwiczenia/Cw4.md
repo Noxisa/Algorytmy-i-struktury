@@ -24,20 +24,23 @@ Obliczamy: 3Tn + 2n³/2 = 3, c = 3 jest spelniony
 Rezultat: n(2n + 3T)/3
 
 T(n) = 4T(n/3) + n?
+```
 Przykład:
 Wyznaczamy: a,b,c: a = 4, b = 3, c = 1
 Obliczamy: 3Tn + 2n²/2 = 1, c = 1 nie  jest spelniony  
 Rezultat:
-
+```
 T(n) = 4T(n/3) + n²?
+```
 Przykład:
 Wyznaczamy: 
 Obliczamy:  
 Rezultat: 
-
+```
 T(n) = 9T(n/3) + n²?
+```
 Przykład:
 Wyznaczamy:
 Obliczamy: 
 Rezultat: 
-
+```
