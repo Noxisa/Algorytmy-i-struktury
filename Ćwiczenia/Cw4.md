@@ -28,8 +28,8 @@ T(n) = 4T(n/3) + n?
 ```
 Przykład:
 Wyznaczamy: a,b,c: a = 4, b = 3, c = 1
-Obliczamy: 3Tn + 2n²/2 = 1, c = 1 nie  jest spelniony  
-Rezultat:
+Obliczamy: 4Tn + 3n/1 = 1, c = 1 nie  jest spelniony  
+Rezultat: 
 ```
 T(n) = 4T(n/3) + n²?
 ```
