@@ -27,6 +27,7 @@ Algorytmem poznanym przez ciebie na lekcjach matematyki jest sprawdzanie podziel
 przez kolejne liczby. Najpierw sprawdzamy podzielność przez 2, potem – przez 3 i tak dalej, aż do mniejszej z dwóch
 liczb. Największym wspólnym dzielnikiem dwóch liczb jest iloczyn ich wszystkich wspólnych dzielników pierwszych.
 Przyjrzyj się temu sposobowi na przykładzie szukania
+
 NWD liczb: a = 42 i b = 24.
 
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
