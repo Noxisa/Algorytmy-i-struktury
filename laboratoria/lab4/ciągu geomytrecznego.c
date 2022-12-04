@@ -22,8 +22,8 @@ Pseudokod
   }
   float Geom(float k, float n, float o){
    if(n > 1){
-    float q = k/o;
-    return Geom(k, o * q, n-1);
+    float q = o/k;
+    return Geom(o, o * q, n-1);
    }else
    {
 return k;
