@@ -7,7 +7,7 @@
 Pseudokod
  Geom(k,n,o)
  if(n > 1){
-  q = k/o
+  q = o/k
   return  Geom(o,o*q,n - 1)
  else{
  return k
