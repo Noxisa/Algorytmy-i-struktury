@@ -13,8 +13,7 @@ liczba(n,a);
   return liczba(n, a+1);
 
 
-Code
-````
+Kod
 int liczba(int n, int a);
   
   void main(void){
@@ -28,4 +27,3 @@ int liczba(int n, int a);
      return liczba(n, a+1);
   return;
   }
-````
