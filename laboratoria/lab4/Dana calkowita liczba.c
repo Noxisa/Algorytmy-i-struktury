@@ -14,6 +14,7 @@ liczba(n,a);
 
 
 Kod
+
 int liczba(int n, int a);
   
   void main(void){
