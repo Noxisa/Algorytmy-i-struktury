@@ -12,3 +12,23 @@ Pseudokod
  else{
  return k
  }
+
+  Kod
+  float Geom(float k, float n, float o);
+  
+  void main(void){
+
+   printf("Geomytrecznego = %.f\n",Geom(8,2,14));
+   
+  }
+  
+  float Geom(float k, float n, float o){
+   if(n > 1){
+    float q = k/o;
+    return Geom(k, o * q, n-1);
+   }else
+   {
+return k;
+   }
+   return;
+  }
