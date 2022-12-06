@@ -1,7 +1,7 @@
 /*
 Tomas Chmelevski. Student
 * -----------------
-*Binarne poszukiwanie. Implemenetacja iteracja
+*Binarne poszukiwanie. Implemenetacja iteracja. Implementacja rekurencja
 * -----------------
 2022-12-06
 */
