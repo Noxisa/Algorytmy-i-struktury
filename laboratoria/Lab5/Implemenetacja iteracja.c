@@ -5,44 +5,52 @@ Tomas Chmelevski. Student
 * -----------------
 2022-12-06
 */
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+
+int main() {
+
+  float binarySearch(int A[], int key, int length, int value) {
+    int lowIndex = 0, highIndex = length;
+    if (highIndex < lowIndex)
+      return -1;
+    while (lowIndex < highIndex) {
+     int  midIndex =floor((highIndex - lowIndex) / 2);
+      if (A[midIndex] > value)
+        return midIndex;
 
 
-void main(void){
-
-float binarySearch(array,key,length,value){
-  lowIndex = 0, highIndex = length;
-  if(highIndex < lowIndex)
-    return -1;
-  while (lowIndex < highIndex){
-  midIndex = Math.floor((highIndex - lowIndex )/2)
-    if(A[midIndex]> value)
-    return midIndex;
-      
-      float binarySearch(A,value,lowIndex,midIndex-1){
-    else if(A[midIndex] < value){
-      return binarySearch(A, value, midIndex+1, highIndex)
+  float binarySearchRecursion(int start, int end, int index){
+    if(start > end){
+      index = 0;
     }
-    }
-    
-    return midIndex;
-}
   }
-  
-float binarySearch(A[0.. N-1],key){
-  lowIndex = 0;
-  highIndex = N-1;
-  while (lowIndex <= highIndex){
-    midIndex = lowIndex +((highIndex - lowIndex)/2)
-      if(A[midIndex] == key){
-      highIndex = midIndex - 1;
-      
-      }else if(key > array[midIndex]){
       else{
-      highIndex = midIndex;
+      float binarySearchRexursion(int end,int midIndex + 1, int Index ) {
+        else if (key > A[midIndex]) {
+        float binarySearchRecursion(int A, int start, int midIndex - 1, int Index);
+        }
+      }
+
+      return midIndex;
+    }
+  }
+
+  float BinarySearch(int A[], int key, int n) {
+    int lowIndex = 0;
+    int highIndex = n - 1;
+    while (lowIndex <= highIndex) {
+     int midIndex = lowIndex + ((highIndex - lowIndex) / 2);
+      if (A[midIndex] == key) {
+       highIndex = midIndex - 1;
+
+      } else if (key > A[midIndex]) {
+            }
+        else {
+          highIndex = midIndex;
+        }
       }
     }
+    return -1;
   }
-return -1;
