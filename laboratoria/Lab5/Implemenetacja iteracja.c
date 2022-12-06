@@ -9,24 +9,29 @@ Tomas Chmelevski. Student
 #include <stdlib.h>
 #include <math.h>
 
-binarySearch(A[0<=n-1],array,key,length,value){
+
+void main(void){
+
+float binarySearch(array,key,length,value){
   lowIndex = 0, highIndex = length;
   if(highIndex < lowIndex)
     return -1;
   while (lowIndex < highIndex){
   midIndex = Math.floor((highIndex - lowIndex )/2)
     if(A[midIndex]> value)
-    return binarySearch(A,value,lowIndex,midIndex-1){
+    return midIndex;
+      
+      float binarySearch(A,value,lowIndex,midIndex-1){
     else if(A[midIndex] < value){
       return binarySearch(A, value, midIndex+1, highIndex)
     }
     }
     
-    return mid;
+    return midIndex;
 }
   }
-void main(void){
-binarySearch(A[0,,n-1],key){
+  
+float binarySearch(A[0.. N-1],key){
   lowIndex = 0;
   highIndex = N-1;
   while (lowIndex <= highIndex){
@@ -41,5 +46,3 @@ binarySearch(A[0,,n-1],key){
     }
   }
 return -1;
-}
-} 
