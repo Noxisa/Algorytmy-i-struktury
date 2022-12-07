@@ -67,8 +67,7 @@ if (fptr != NULL) {
 
 	while ( fscanf(fptr, "%d", &number ) == 1 ) {
 		arr[i] = number;
-		printf("We just read %d\n", arr[i]);
-		i++;
+		
 	}
   while (i < n) {
 		int j = 1 + rand() % 138573;
