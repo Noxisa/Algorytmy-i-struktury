@@ -181,12 +181,12 @@ int kmp_recherche(char *P, char *S)
 
 Wydajność algorytmu wyszukiwania
 
-Zakładając wcześniejsze istnienie tablicy, faza „przeszukiwania” algorytmu Knutha-Morrisa-Pratta ma złożoność O, gdzie oznacza długość . Jeśli wykluczymy dodatkowe stałe przetwarzanie indukowane przez wejście i wyjście funkcji, całe przetwarzanie odbywa się w pętli głównej. Aby obliczyć limit liczby iteracji, konieczna jest pierwsza obserwacja dotycząca natury . Z definicji jest skonstruowany w taki sposób, że jeśli częściowe dopasowanie, które zaczyna się kończyć niepowodzeniem podczas porównywania i, następne potencjalne dopasowanie nie rozpoczyna się przed . W szczególności następne potencjalne dopasowanie musi znajdować się na pozycji większej niż, aby . T (l)jaSTS [m]S [m+w]Liczba Pi]S [m + (iT [i])]mT [i] <i
+Zakładając wcześniejsze istnienie tablicy, faza „przeszukiwania” algorytmu Knutha-Morrisa-Pratta ma złożoność O, gdzie oznacza długość . Jeśli wykluczymy dodatkowe stałe przetwarzanie indukowane przez wejście i wyjście funkcji, całe przetwarzanie odbywa się w pętli głównej. Aby obliczyć limit liczby iteracji, konieczna jest pierwsza obserwacja dotycząca natury . Z definicji jest skonstruowany w taki sposób, że jeśli częściowe dopasowanie, które zaczyna się kończyć niepowodzeniem podczas porównywania i, następne potencjalne dopasowanie nie rozpoczyna się przed . W szczególności następne potencjalne dopasowanie musi znajdować się na pozycji większej niż, aby . T (l)lSTS [m]S[m+i]P[i]S [m +(i-T[i])]mT [i] <i
 
-Na podstawie tego faktu pokazujemy, że pętla jest wykonywana najczęściej . W każdej iteracji wykonuje jedną z dwóch gałęzi instrukcji if . ja
+Na podstawie tego faktu pokazujemy, że pętla jest wykonywana najczęściej . W każdej iteracji wykonuje jedną z dwóch gałęzi instrukcji if . l
 
 Pierwsza gałąź niezmiennie rośnie i nie zmienia się, więc indeks aktualnie sprawdzanego znaku w ciągu jest zwiększany.imm + iS
-Druga gałąź dodaje do . Jak widzieliśmy, zawsze jest pozytywne. W ten sposób zwiększa się pozycja początku bieżącego potencjalnego meczu.to [i]mto [i]m
+Druga gałąź dodaje do . Jak widzieliśmy, zawsze jest pozytywne. W ten sposób zwiększa się pozycja początku bieżącego potencjalnego meczu.i-T[i]mi-T[i]m
 Pętla kończy się if, co oznacza, że biorąc pod uwagę konwencję C określającą, że znak NUL oznacza koniec łańcucha, to . W konsekwencji, każda gałąź instrukcji if może być przemierzona w większości przypadków, ponieważ odpowiednio wzrastają lub, a więc if, then i ponieważ wzrost w każdej iteracji wynosi co najmniej jedną jednostkę, z konieczności zostało to sprawdzone w przeszłości. S [m + i] = '\  0'm + ja = llm + imm <= m + im = lm + i => lm + i = l
 
 W ten sposób pętla jest wykonywana w większości przypadków, ustanawiając w ten sposób złożoność algorytmiczną w . 2l0(l)
