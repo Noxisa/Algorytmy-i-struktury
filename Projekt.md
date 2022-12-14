@@ -68,4 +68,55 @@ NWD(a, b)
   return b
 }
 ```
+Kod NWD
+```
+#include <stdio.h>
 
+int NWD(int a,int  b, int r)
+{
+ int  dzielnik = 0;
+  int liczba2;
+  while ( liczba2 != 0)
+        {
+        r = b;
+        b = a % b;
+        a = b;
+        }
+  return b;
+}
+int main(void) {
+  int a,b,r;
+  int liczba2;
+  printf("a = ");
+  scanf("%d ", &a);
+   printf("b = ");
+  scanf("%d", &b);
+  if(a>b){
+  do{
+    r = a%b;
+    a = b;
+    b = r;
+    
+  }
+    while(b);
+  printf("NWD = %d", a);
+    }
+  else{
+      do{
+        r = a;
+        a = a % b;
+        a = b;
+        }
+        
+        while(a);
+    printf("NWD = %d", b);
+    }
+  while ( liczba2 != 0)
+        {
+        r = b;
+        b = b % a;
+        b = a;
+        }
+  return 0;
+}
+```
