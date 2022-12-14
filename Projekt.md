@@ -54,4 +54,18 @@ Oto algorytm Euklidesa zapisany w postaci planu działań.
 - odjąć od niej mniejszą i zastąpić większą przez otrzymaną różnicę;
 - wrócić do sprawdzenia warunku w punkcie 2. (pętla).
 
+Pseudokod NWD
+```
+NWD(a, b)
+{
+  dzielnik = 0
+  while (liczba2 != 0)
+        {
+        r = b
+        b = a % b
+        a = b
+        }
+  return b
+}
+```
 
