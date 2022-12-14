@@ -141,6 +141,25 @@ Opis ten implementuje algorytm zastosowany w poprzednim przykładzie. Za każdym
 
 Przykładowy kod algorytmu wyszukiwania
 Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych ciągów znaków. Aby przezwyciężyć wewnętrzne ograniczenia tabel w C, indeksy są przesunięte o jedną jednostkę, to znaczy, że w kodzie są równoważne z powyższym opisem. T [i]T [i + 1]
+PseudoKod Wyszukiwania 
+```
+algorytm kmp_search:
+   
+       tablica  S 
+       tablica  W 
+       liczba całkowita m = 0
+       liczba całkowita i = 0 
+       tabela   m + i 
+       if (W[i] = S[m + i]){
+           niech i = i + 1
+           
+           return m
+           niech m = m + i – T[i]
+           if(i > 0; i = T[i])
+  }
+   return  S
+```
+Kod Wyszukiwania 
 ```
 int kmp_recherche(char *P, char *S)
 {
