@@ -3,8 +3,9 @@
 //2022-12-13
 */
 prior - funkcja porównanie zawartości dwóch elementów w tablicy
+Sortowanie BubbleSort Pseudokod
 ```
-function bubbleSort(array, size) {
+ bubbleSort(array, size) {
    for (i= 0; i < size - 1; i++) {
 		for (j = size - 1; j > i; j--) {
 			if (prior(array[j], array[j-1])) {
@@ -13,31 +14,59 @@ function bubbleSort(array, size) {
 }
 }
 }
-```
-swap - funkcja na zamienia zawartości dwóch elementów w tablicy
-```
-function swap(array, index, index2) {
+
+
+ swap(array, index, index2) {
   temp = array[index1];
   array[index1] = array[index2];
   array[index2] = temp;
 }
 
-```
-Sortowanie bąbelkowe
-```
-function bubbleSort(array, size) {
-   for (i= 0; i < size - 1; i++) {
-		for (j = size - 1; j > i; j--) {
-			if (prior(array[j], array[j-1])) {
-				swap(array, j, j-1);
+````
+Kod  bubbleSort
+````
+#include <stdio.h>
+
+int bubbleSort(int array,int  size);
+
+int main()
+{
+  int array[100], size, i, j, swap;
+
+  printf("Wprowadź liczbę elementów\n");
+  scanf("%d", &size);
+
+  printf("Wprowadź %d liczb całkowitych\n", size);
+
+  for (i = 0; i < size; i++)
+    scanf("%d", &array[i]);
+
+  for (i = 0 ; i < size- 1; i++)
+  {
+   for (j = size - 1; j > i; j--)
+    {
+      if (array[j] > array[j-1])
+      {
+        swap       = array[j];
+        array[j]   = array[j-1];
+        array[j-1] = swap;
+      }
+    }
+  }
+
+  printf("Lista posortowana rosnąco:\n");
+
+  for (i = 0; i < size; i++)
+     printf("%d\n", array[i]);
+
+  return 0;
 }
-}
-}
-}
-```
+````
+
+
 Sortowanie przez wstawianie
 ```
-function insertionSort(array, size) {
+insertionSort(array, size) {
    for (i= 0; i < n - 1; i++) {
 		for (j = i; j > 0 && prior(array[j], array[j-1]); j--) {
 			swap(array, j, j-1);
@@ -45,10 +74,53 @@ function insertionSort(array, size) {
 }
 }
 ```
+Kod wstawianie
+````
+include <math.h>
+#include <stdio.h>
+ 
+
+void insertionSort(int arr[], int n)
+{
+    int i, key, j;
+    for (i = 1; i < n; i++) {
+        key = arr[i];
+        j = i - 1;
+ 
+       
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+ 
+
+void printArray(int arr[], int n)
+{
+    int i;
+    for (i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+ 
+
+int main()
+{
+    int arr[] = { 12, 11, 13, 5, 6 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+ 
+    insertionSort(arr, n);
+    printArray(arr, n);
+ 
+    return 0;
+}
+````
 Sortowanie przez wymiana
 
 ```
-function selectionSort(array, size) {
+ selectionSort(array, size) {
    for (i= 0; i < n - 1; i++) {
 		lowIndex = i;
 		for (j = n-1; j > i; j--) {
@@ -61,9 +133,46 @@ function selectionSort(array, size) {
 }
 
 ```
-Sortowanie scalaniem:
+Kod wymian
+````
+#include <math.h>
+#include <stdio.h>
+ 
+	void selectionSort( int arr[], int size );
+
+int main(void)
+{
+    int array[5], i, j, lowIndex,n,swap;
+    printf("Enter the number of elements : ");
+    scanf("%d",&n);
+    printf("Enter %d numbers : ",n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d",&array[i]);
+    }
+    for(i = 0; i < (n -1); i++)
+    {
+        for (j=(i + 1); j < n; j++)
+        {
+            if(array[i] > array[j])
+            {
+                lowIndex = j;
+                array[i] = array[j];
+                array[j] = swap;
+            }
+        }
+    }
+    printf("Sorted array is : ");
+    for (i = 0; i < n; i++)
+    {
+        printf(" %d ",array[i]);
+    }
+    return 0;
+}
+````
+Sortowanie scalaniem
 ```
-function mergeSort(array, tempArray, left, right) {
+ mergeSort(array, tempArray, left, right) {
    if (left == right) return;
    mid = (left + right) / 2;
    mergeSort(array, temp, left, mid);
@@ -86,9 +195,50 @@ function mergeSort(array, tempArray, left, right) {
 }
 
 ```
+Kod scalaniem
+````
+#include <math.h>
+#include <stdio.h>
+
+
+
+void scal(int array[], int left, int tempArray, int right,int  mid) 
+{
+	if( left = right);
+  return;
+ 
+ int MergeSort(int array,int temp[],int  left,int  mid);
+  int mergeSort(int array,int  temp[],int  mid+1,int  right);
+  mid =( left + right ) /2;
+   temp[i] = array[i];  
+  
+  i1 = left; i2 = mid + 1;
+   for (curr = left; curr <= right; curr++) {
+     if (i1 == mid + 1) {
+		array[curr] = temp[i2++];
+     } else if (i2 > right) {
+      	array[curr] = temp[i1++];
+     } else if (prior(temp[i1], temp[i2])) {
+     	array[curr] = temp[i1++];
+     } else {
+       array[curr] = temp[i2++];
+     }
+   }
+}
+
+int main()
+{
+    int arr[] = {64, 25, 12, 22, 11};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    selectionSort(arr, n);
+    printf("Sorted array: \n");
+    printArray(arr, n);
+    return 0;
+}
+````
 Pseudokod (optymyzowany):
 ```
-function mergeSortOpt(array, tempArray, left, right) {
+ mergeSortOpt(array, tempArray, left, right) {
    if (left - right <= THRESHOLD) {
      insertionSort(&array[left], right-left+1);
    }
@@ -110,9 +260,49 @@ function mergeSortOpt(array, tempArray, left, right) {
    }
 }
 ```
+Kod (optymyzowany)
+````
+#include <math.h>
+#include <stdio.h>
+
+
+
+void scal(int array[], int left, int tempArray, int right,int  mid) 
+{
+	if( left - right <= THRESHOLD);
+  return;
+ 
+ int mergeSortOpt((int array,int temp[],int  left,int  mid);
+  int mergeSort(int array,int  temp[],int  mid+1,int  right);
+  int = i, k, j,
+  mid =( left + right ) /2;
+   temp[i] = array[i];  
+    }
+   for (j= 1; j <= right - mid; j++) {
+     temp[right - j + 1] = array[j + mid];
+   }
+   for (i= left, j= right, k= left; k <= right; k++) {
+     if (prior(temp[i], temp[j])) {
+		array[k] = temp[i++];
+     } else {
+      	array[k] = temp[j--];
+     }   
+   }
+}
+
+int main()
+{
+    int arr[] = {64, 25, 12, 22, 11};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    selectionSort(arr, n);
+    printf("Sorted array: \n");
+    printArray(arr, n);
+    return 0;
+}
+````
 Pseudokod (merge oraz mergeSort):
 ```
-function merge(array, size1, array2, size2) {
+ merge(array, size1, array2, size2) {
    i= 0, k = 0, j = 0;
    result[size1 + size2] // memory allocation
 
@@ -129,9 +319,54 @@ if(array[i] < array2[j]) {
    return result;
 }
 ```
+Kod (merge oraz mergeSort)
+````
+#include <stdio.h>
+
+void merge(int arr[], int size1, int arr2[], int size2, int result[])
+{ 
+   
+   int i = 0;  
+  int   j = 0;  
+   int  k = 0; 
+    while (i < size1 &&  j < size2) 
+    { 
+        if (arr[i] < arr2[j]) 
+        { 
+             result[k++] = arr[i++];
+        } 
+        else
+        { 
+            result[k++] = arr2[j++]; 
+        } 
+        k++; 
+    } 
+  
+    
+   while(i < size1) result[k++] = arr[i++];
+   
+  while(j < size2) result[k++] = arr[j++]; 
+   
+} 
+  
+
+int main() 
+{ 
+    int arr[] = {70, 50, 30, 10, 20, 40,60}; 
+    int arr_size = sizeof(arr)/sizeof(arr[0]); 
+  
+    printf("Podana tablica to \n"); 
+   int  printArray(int arr,int  arr_size); 
+
+  
+    printf("\nPosortowana tablica to \n"); 
+   int  printArray(int arr,int  arr_size); 
+    return 0; 
+} 
+````
 Pseudokod (merge oraz mergeSort):
 ```
-function subArray(array, start, end) {
+ subArray(array, start, end) {
     size = end - start;
 	result[size];
     i = 0;
@@ -155,7 +390,7 @@ Sortowanie szybkie
 
 Pseudokod (partition i findPivot):
 ```
-function partition(array, left, right, pivot) {
+ partition(array, left, right, pivot) {
    while (left <= right) {
       while (prior(pivot, array[left])) {
          left++;
@@ -171,14 +406,13 @@ function partition(array, left, right, pivot) {
    }
    return left;
 }
-```
 function findPivot(array, i, j) {
 	return ((i + j ) / 2);
 }
-
+````
 Pseudokod (quickSort):
 ```
-function quickSort(array, left, right) {
+quickSort(array, left, right) {
    if (right <= left) {
 		return;
    }
@@ -195,7 +429,7 @@ function quickSort(array, left, right) {
 
 Sortowanie przez zliczanie
 ```
-function countingSort(array, size, max) {
+ countingSort(array, size, max) {
    result = []; count = []
    for (i = 0; i < max; i++) {
      count[i] = 0; 
@@ -220,7 +454,7 @@ function countingSort(array, size, max) {
 Sortowanie pozycyjne
 
 ```
-function radixSort(array, max) {
+ radixSort(array, max) {
 	for (j = 1; j < max; j++) {
 		count[10] = {0}
 
