@@ -1,6 +1,9 @@
-// Tomas Chmelevski.Student
-// Sortowanie 
-//2022-12-13
+/*
+Tomas Chmelevski. Student
+* -----------------
+* Sortowanie.
+* -----------------
+2022-12-13
 */
 prior - funkcja porównanie zawartości dwóch elementów w tablicy
 Sortowanie BubbleSort Pseudokod
