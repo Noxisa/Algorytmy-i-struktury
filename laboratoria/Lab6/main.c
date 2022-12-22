@@ -12,8 +12,9 @@ Tomas Chmelevski. Student
 #include "Sortowanie bobelkowa.c"
 #include "Sortowanie swap.c"
 #include "Sortowanie scalenie.c"
-#include "Sortowanie bobelkowa.c"
-#include "Sortowanie bobelkowa.c"
+#include "Sortowanie prior.c"
+#include "Sortowanie wstawianie.c"
+#include "Sortowanie wymian.c"
 
 
 
