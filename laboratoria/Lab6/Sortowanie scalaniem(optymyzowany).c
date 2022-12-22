@@ -7,7 +7,7 @@ Tomas Chmelevski. Student
 */
 
 Kod swap
-````
+
 #include <stdio.h>
 
 int swap(int *array, int index1, int index2) {
@@ -15,4 +15,4 @@ int swap(int *array, int index1, int index2) {
   array[index1] = array[index2];
   array[index2] = temp;
 }
-````
+
