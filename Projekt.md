@@ -11,8 +11,7 @@ Zawartość
 ALGORYTM EUKLIDESA
 Algorytm Knutha-Morrisa-Pratta 
 Wyszukiwania wzorca
-Algorytm dołączania 
-nowego elementu do końca listy jednokierunkowej
+Algorytm dołączania nowego elementu do końca listy jednokierunkowej
 
 Literatura
 Algorytmy i struktury danych, L. Banachowski, K. Diks, W. Rytter,Euklides z Aleksandrii, Knutha-Morrisa-Pratta
@@ -146,56 +145,48 @@ PseudoKod Wyszukiwania
 ```
 algorytm kmp_search:
    
-       tablica  S 
-       tablica  W 
-       liczba całkowita m = 0
-       liczba całkowita i = 0 
-       tabela   m + i 
-       if (W[i] = S[m + i]){
-           niech i = i + 1
-           
-           return m
-           niech m = m + i – T[i]
-           if(i > 0; i = T[i])
-  }
-   return  S
+      public int sum(int[] numbers) {
+    int sum = 0;
+    for (int number : numbers) {
+        sum += number;
+    }
+    return sum;
+}
 ```
 Kod Wyszukiwania 
 ```
-int kmp_recherche(char *P, char *S)
-{
-    extern int T[];
-    int m = 0;
-    int i = 0;
+public static int[] sort(int[] numbers) {
+    if (numbers.length <= 1) {
+        return numbers;
+    }
+    int[] first = new int[numbers.length / 2];
+    int[] second = new int[numbers.length - first.length];
+    for (int i = 0; i < first.length; i++) {
+        first[i] = numbers[i];
+    }
+    for (int i = 0; i < second.length; i++) {
+        second[i] = numbers[first.length + i];
+    }
+    return merge(sort(first), sort(second));
+}
 
-    
-    while (S[m + i] != '\0' && P[i] != '\0')
-    {
-        if (S[m + i] == P[i])
-        {
-                              
-            ++i;              
+private static int[] merge(int[] first, int[] second) {
+    int[] merged = new int[first.length + second.length];
+    for (int indexFirst = 0, indexSecond = 0, indexMerged = 0; indexMerged < merged.length; indexMerged++) {
+        if (indexFirst >= first.length) {
+            merged[indexMerged] = second[indexSecond++];
         }
-        else
-        {
-            // sinon
-            m += i - T[i];    
-
-            if (i > 0)
-                i = T[i];    
-                                 
+        else if (indexSecond >= second.length) {
+            merged[indexMerged] = first[indexFirst++];
+        }
+        else if (first[indexFirst] <= second[indexSecond]) {
+            merged[indexMerged] = first[indexFirst++];
+        }
+        else {
+            merged[indexMerged] = second[indexSecond++];
         }
     }
-
-    if (P[i] == '\0')
-    {
-        
-        return m;
-    }
-    else
-    {                    
-        return m + i;    
-    }
+    return merged;
 }
 ```
 
@@ -210,3 +201,23 @@ Druga gałąź dodaje do . Jak widzieliśmy, zawsze jest pozytywne. W ten sposó
 Pętla kończy się if, co oznacza, że biorąc pod uwagę konwencję C określającą, że znak NUL oznacza koniec łańcucha, to . W konsekwencji, każda gałąź instrukcji if może być przemierzona w większości przypadków, ponieważ odpowiednio wzrastają lub, a więc if, then i ponieważ wzrost w każdej iteracji wynosi co najmniej jedną jednostkę, z konieczności zostało to sprawdzone w przeszłości. S [m + i] = '\  0'm + ja = llm + imm <= m + im = lm + i => lm + i = l
 
 W ten sposób pętla jest wykonywana w większości przypadków, ustanawiając w ten sposób złożoność algorytmiczną w . 2l0(l)
+
+
+Algorytm dołączania nowego elementu do końca listy jednokierunkowej
+
+Sortowanie przez wstawianie- algorytm rozpoczyna się od porównania dwóch pierwszych elementów sortowanej tablicy tab, którymi są tab[0] i tab[1] , jeśli nie są one ustawione we właściwej kolejności, to następuje zamiana miejsc. Następnie jest rozważany trzeci element tab[2], jeśli jest mniejszy niż tab[0] i tab[1] to te dwa elementy są przesuwane o jedna pozycję w prawo tab [0] umieszczamy na pozycji ,1, tab[1] na poz. 2, a tab[2] na poz. 0. Jeśli element tab[2] jest mniejszy niż tab[1] ale większy niż tab[0] to tab[1] wędruje na pozycję 2, jego miejsce zajmuje tab[2]. Jeśli tab[2] jest większy od tab[0] i tab[1] to pozostaje na swojej pozycji.
+
+![Screenshot 2022-12-30 150627](https://user-images.githubusercontent.com/115026224/210073296-061e3a24-2648-4148-98df-7837dc49a05a.png)
+
+
+Lista jednokierunkowa- jest oszczędną pamięciowo strukturą danych pozwalającą grupować dowolną- ograniczoną tylko ilością dostępnej pamięci- liczbę elementów.: liczb, znaków, rekordów. Do budowy listy jednokierunkowej używane są dwa typy komórek pamięci. Pierwszy typ jest zwykłym rekordem natury informacyjnej zawierającym dwa wskaźniki do początku i do końca listy. Drugi typ komórek jest również rekordem lecz ma już on charakter roboczy. Zawiera bowiem pole wartości i wskaźnik na następny element listy. Pola głowa ogon i następny są wskaźnikami, natomiast wartość może być czymkolwiek: liczbą, znakiem, rekordem.
+Jeżeli lista jest pusta to struktura informacyjna zawiera dwa wskaźniki null. Null nie równa się zero jest to pewien adres, na który żadna zmienna nie wskazuje. Pierwszy element listy jest złożony z jego własnej wartości oraz ze wskaźnika na drugi el. listy. Drugi zawiera własne pole informacyjne i wskaźnik na trzeci element listy. Miejsce zakończenia listy zaznaczamy przez wartość null.
+
+
+Dołączanie elementów do listy jednokierunkowej- podczas dokładania nowego elementu możliwe są dwa podejścia: 1). Albo będziemy traktować listę jak „worek” do gromadzenia danych nieuporządkowanych albo 2). Nowe elementy dokładane będą w liście we właściwym porządku. Działanie funkcji dorzuć: w przypadku listy pustej oba pola struktury informacyjnej są inicjowane wskaźnikiem na nowo powstały element. W przeciwnym wypadku nowy element zostaje podpięty do końca stając się ogonem listy. Możliwe jest dokładanie nowego rekordu przez pierwszy element listy stawałby się on wówczas automatycznie głową listy i musiałby zostać zapamiętany przez program.
+Bardziej złożona jest funkcja dołączająca nowy element w takie miejsce aby całość lity była posortowana
+Nowy element może zostać wstawiony na początek, koniec, lub w środku listy. Trzeba znaleźć miejsce wstawienia tzn. zapamiętać dwa wskaźniki: element, przed którym mama wstawić nową komórkę i element, za którym mama to zrobić. Do zapamiętania tych informacji wybieramy dwie zmienne np. przed i po. Następnie, gdy dowiemy się gdzie jesteśmy możemy dokonać wstawienia nowego elementu do listy. Sposób zależy od miejsca wstawienia i od tego czy lista przypadkiem nie jest jeszcze pusta. Skomplikowanie funkcji, która dokłada element do listy wynika z połączenia w niej rozszukiwania miejsca wstawienia z samym dołączeniem elementu. Można te czynności rozbić na dwie osobne funkcje. Istnieją trzy przypadki „współrzędnych” współrzędnych nowego elementu a). przed=NULLb). Po=NULL c). przed po=NULL. W zależności od ich wystąpienia zmieni się sposób dołączenia elementu do listy.
+Do usuwania ostatniego elementu z listy używamy operatora dekrementacji. Funkcja, która się za nim ukrywa jest relatywnie prosta: jeśli na liście jest tylko jeden element to modyfikacji ulega zarówno pole głowa jaki ogon struktury informacyjnej oba te pola po uprzednim usunięciu jedynego elementu listy zostano zainicjowane wartością NULL. Trudniejszy jest przypadek gdy lista zawiera więcej niż jeden element. Należy wówczas odszukać przedostatni jej element aby móc odpowiednio zmodyfikować wskaźnik ogon struktury informacyjnej. Znajomość przedostatniego elementu listy umożliwia nam łatwe usunięcie ostatniego elementu listy.
+Stos- jest liniową strukturą danych dostępnych do zapisywania i odczytywania tylko jednego końca (tzw. wierzchołka) Nowe elementy są dokładane na wierzch stosu i zdejmowane z wierzchu. Ostatni element położony na stosie będzie pierwszym z niego zdjętym. Stos jest nazywany strukturą LIFO (last In first out)
+Operacja na stosie- initialize- powoduje opróżnienie stosu, empty- sprawdzenie czy stos jest pusty , full- czy stos jest zapełniony, push- umieszczenie elementu na stosie, pop- zdjęcie najwyższego elementu ze stosu. Ciąg operacji pusch i pop:
+
