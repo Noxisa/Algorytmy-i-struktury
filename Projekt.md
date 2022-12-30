@@ -216,8 +216,77 @@ Jeżeli lista jest pusta to struktura informacyjna zawiera dwa wskaźniki null. 
 
 Dołączanie elementów do listy jednokierunkowej- podczas dokładania nowego elementu możliwe są dwa podejścia: 1). Albo będziemy traktować listę jak „worek” do gromadzenia danych nieuporządkowanych albo 2). Nowe elementy dokładane będą w liście we właściwym porządku. Działanie funkcji dorzuć: w przypadku listy pustej oba pola struktury informacyjnej są inicjowane wskaźnikiem na nowo powstały element. W przeciwnym wypadku nowy element zostaje podpięty do końca stając się ogonem listy. Możliwe jest dokładanie nowego rekordu przez pierwszy element listy stawałby się on wówczas automatycznie głową listy i musiałby zostać zapamiętany przez program.
 Bardziej złożona jest funkcja dołączająca nowy element w takie miejsce aby całość lity była posortowana
-Nowy element może zostać wstawiony na początek, koniec, lub w środku listy. Trzeba znaleźć miejsce wstawienia tzn. zapamiętać dwa wskaźniki: element, przed którym mama wstawić nową komórkę i element, za którym mama to zrobić. Do zapamiętania tych informacji wybieramy dwie zmienne np. przed i po. Następnie, gdy dowiemy się gdzie jesteśmy możemy dokonać wstawienia nowego elementu do listy. Sposób zależy od miejsca wstawienia i od tego czy lista przypadkiem nie jest jeszcze pusta. Skomplikowanie funkcji, która dokłada element do listy wynika z połączenia w niej rozszukiwania miejsca wstawienia z samym dołączeniem elementu. Można te czynności rozbić na dwie osobne funkcje. Istnieją trzy przypadki „współrzędnych” współrzędnych nowego elementu a). przed=NULLb). Po=NULL c). przed po=NULL. W zależności od ich wystąpienia zmieni się sposób dołączenia elementu do listy.
+Nowy element może zostać wstawiony na początek, koniec, lub w środku listy. Trzeba znaleźć miejsce wstawienia tzn. zapamiętać dwa wskaźniki: element, przed którym mama wstawić nową komórkę i element, za którym mama to zrobić. Do zapamiętania tych informacji wybieramy dwie zmienne np. przed i po. Następnie, gdy dowiemy się gdzie jesteśmy możemy dokonać wstawienia nowego elementu do listy. Sposób zależy od miejsca wstawienia i od tego czy lista przypadkiem nie jest jeszcze pusta. Skomplikowanie funkcji, która dokłada element do listy wynika z połączenia w niej rozszukiwania miejsca wstawienia z samym dołączeniem elementu. Można te czynności rozbić na dwie osobne funkcje. Istnieją trzy przypadki „współrzędnych” współrzędnych nowego elementu a). przed=NULL b). Po=NULL c). przed po=NULL. W zależności od ich wystąpienia zmieni się sposób dołączenia elementu do listy.
 Do usuwania ostatniego elementu z listy używamy operatora dekrementacji. Funkcja, która się za nim ukrywa jest relatywnie prosta: jeśli na liście jest tylko jeden element to modyfikacji ulega zarówno pole głowa jaki ogon struktury informacyjnej oba te pola po uprzednim usunięciu jedynego elementu listy zostano zainicjowane wartością NULL. Trudniejszy jest przypadek gdy lista zawiera więcej niż jeden element. Należy wówczas odszukać przedostatni jej element aby móc odpowiednio zmodyfikować wskaźnik ogon struktury informacyjnej. Znajomość przedostatniego elementu listy umożliwia nam łatwe usunięcie ostatniego elementu listy.
 Stos- jest liniową strukturą danych dostępnych do zapisywania i odczytywania tylko jednego końca (tzw. wierzchołka) Nowe elementy są dokładane na wierzch stosu i zdejmowane z wierzchu. Ostatni element położony na stosie będzie pierwszym z niego zdjętym. Stos jest nazywany strukturą LIFO (last In first out)
 Operacja na stosie- initialize- powoduje opróżnienie stosu, empty- sprawdzenie czy stos jest pusty , full- czy stos jest zapełniony, push- umieszczenie elementu na stosie, pop- zdjęcie najwyższego elementu ze stosu. Ciąg operacji pusch i pop:
 
+Pseudokod list jedenkierunkowy
+````
+node_t * head = NULL;
+head = (node_t *) malloc(sizeof(node_t));
+if (head == NULL) {
+    return 1;
+}
+
+head->val = 1;
+head->next = NULL;
+````
+
+
+Kod list jedenkierunkowy 
+````
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int val;
+    struct node * next;
+} node_t;
+
+void print_list(node_t * head) {
+    node_t * current = head;
+
+    while (current != NULL) {
+        printf("%d\n", current->val);
+        current = current->next;
+    }
+}
+
+int pop(node_t ** head) {
+    int retval = -1;
+    node_t * next_node = NULL;
+
+    if (*head == NULL) {
+        return -1;
+    }
+
+    next_node = (*head)->next;
+    retval = (*head)->val;
+    free(*head);
+    *head = next_node;
+
+    return retval;
+}
+
+int remove_by_value(node_t ** head, int val) {
+    /* TODO: fill in your code here */
+}
+
+int main() {
+
+    node_t * test_list = (node_t *) malloc(sizeof(node_t));
+    test_list->val = 1;
+    test_list->next = (node_t *) malloc(sizeof(node_t));
+    test_list->next->val = 2;
+    test_list->next->next = (node_t *) malloc(sizeof(node_t));
+    test_list->next->next->val = 3;
+    test_list->next->next->next = (node_t *) malloc(sizeof(node_t));
+    test_list->next->next->next->val = 4;
+    test_list->next->next->next->next = NULL;
+
+    remove_by_value(&test_list, 3);
+
+    print_list(test_list);
+}
+````
