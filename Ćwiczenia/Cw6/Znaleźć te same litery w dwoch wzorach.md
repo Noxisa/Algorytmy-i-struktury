@@ -7,7 +7,6 @@ Tomas Chmelevski. Student
 */
 
 Pseudokod
-
 ````
 
  {
