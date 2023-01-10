@@ -1,7 +1,7 @@
 /*
 Tomas Chmelevski. Student
 * -----------------
-* Wyprowadzić wszystkie nie powtarzające się słowa.
+* Sprawdzic czy słowo jest anagram
 * -----------------
 2022-01-10
 */
