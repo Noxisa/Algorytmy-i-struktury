@@ -5,6 +5,8 @@ Tomas Chmelevski. Student
 * -----------------
 2022-01-10
 */
+
+Pseudokod
 ````
 max_dlugosc_slowa(text[], textSize[])
 brute_force_remove(text[], pattern, textSize[], patternSize)
