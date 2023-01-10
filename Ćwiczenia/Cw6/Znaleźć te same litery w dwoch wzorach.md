@@ -11,7 +11,7 @@ Pseudokod
 ````
 
  {
-     str[1000], ch;
+     str[1000], j;
    count = 0;
 
    
@@ -19,7 +19,7 @@ Pseudokod
 
 
     for (int i = 0; str[i] != '\0'; ++i) {
-        if (ch == str[i])
+        if (j == str[i])
             ++count;
     }
 
