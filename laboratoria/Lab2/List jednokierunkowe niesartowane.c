@@ -197,19 +197,8 @@ void remove1(It**head, int position) {
         }
     }
 
- int size1(It *head){
-        int counter=0;
-        if(head==NULL) return counter;
-        else
-        {
-            It *current=head;
-                do {
-                counter++;
-                current = current->next;
-                }while (current != NULL);
-        }
-        return counter;
-    }
+ 
+    
 
     void next1(It **head,float value){
         It *current;
