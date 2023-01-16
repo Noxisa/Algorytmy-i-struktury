@@ -143,47 +143,70 @@ Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych cią
 
 PseudoKod Wyszukiwania 
 ```
-algorytm kmp_search:
-   
-      public int sum(int[] numbers) {
-    int sum = 0;
-    for (int number : numbers) {
-        sum += number;
+public static sort( liczby) {
+    if (liczby długość <= 1) {
+        return liczby;
     }
-    return sum;
+   
+    for ( i = 0; i < pierwszy długość; i++) {
+        pierwszy[i] = liczby[i];
+    }
+    for ( i = 0; i < druga długość; i++) {
+         druga[i] = liczby[pierwszy długość + i];
+    }
+    return merge(sort(pierwszy), sort(druga));
+}
+
+private static  merge( pierwszy,  druga) {
+    
+    for ( index pierwszy = 0, index druga = 0, indexMerged = 0; indexMerged < merged długość; indexMerged++) {
+        if (index pierwszy >= pierwszy  długość) {
+            merged[indexMerged] = druga[index druga++];
+        }
+        else if (index druga >= druga  długość) {
+            merged[indexMerged] = pierwszy[index pierwszy++];
+        }
+        else if (first[index pierwszy] <=  druga[index druga]) {
+            merged[indexMerged] = pierwszy[index pierwszy++];
+        }
+        else {
+            merged[indexMerged] = druga[index druga++];
+        }
+    }
+    return merged;
 }
 ```
 Kod Wyszukiwania 
 ```
-public static int[] sort(int[] numbers) {
-    if (numbers.length <= 1) {
-        return numbers;
+public static int[] sort(int[] liczby) {
+    if (liczby długość <= 1) {
+        return liczby;
     }
-    int[] first = new int[numbers.length / 2];
-    int[] second = new int[numbers.length - first.length];
-    for (int i = 0; i < first.length; i++) {
-        first[i] = numbers[i];
+    int[] pierwszy = new int[liczby długość / 2];
+    int[] second = new int[liczby długość - pierwszy długość];
+    for (int i = 0; i < pierwszy długość; i++) {
+       pierwszy [i] = liczby[i];
     }
-    for (int i = 0; i < second.length; i++) {
-        second[i] = numbers[first.length + i];
+    for (int i = 0; i < druga długość; i++) {
+      druga[i] = liczby[pierwszy długość + i];
     }
-    return merge(sort(first), sort(second));
+    return merge(sort(pierwszy ), sort(druga));
 }
 
-private static int[] merge(int[] first, int[] second) {
-    int[] merged = new int[first.length + second.length];
-    for (int indexFirst = 0, indexSecond = 0, indexMerged = 0; indexMerged < merged.length; indexMerged++) {
-        if (indexFirst >= first.length) {
-            merged[indexMerged] = second[indexSecond++];
+private static int[] merge(int[] pierwszy, int[] druga) {
+    int[] merged = new int[pierwszy długość + druga długość];
+    for (int index pierwszy = 0, index druga = 0, indexMerged = 0; indexMerged < merged długość; indexMerged++) {
+        if (index pierwszy >= pierwszy długość) {
+            merged[indexMerged] = druga[index druga++];
         }
-        else if (indexSecond >= second.length) {
-            merged[indexMerged] = first[indexFirst++];
+        else if (index druga >= druga długość) {
+            merged[indexMerged] = pierwszy[index pierwszy++];
         }
-        else if (first[indexFirst] <= second[indexSecond]) {
-            merged[indexMerged] = first[indexFirst++];
+        else if (pierwszy[index pierwszy] <= druga[inde druga]) {
+            merged[indexMerged] = pierwszy[index pierwszy++];
         }
         else {
-            merged[indexMerged] = second[indexSecond++];
+            merged[indexMerged] = druga[index druga++];
         }
     }
     return merged;
@@ -223,14 +246,53 @@ Operacja na stosie- initialize- powoduje opróżnienie stosu, empty- sprawdzenie
 
 Pseudokod list jedenkierunkowy
 ````
-node_t * head = NULL;
-head = (node_t *) malloc(sizeof(node_t));
-if (head == NULL) {
-    return 1;
+typedef struct node {
+    struct node * next;
+} node_t;
+
+void print_list(node_t * head) {
+    node_t * current = head;
+
+    while (current != NULL) {
+       
+    }
+}
+ pop(node_t ** head) {
+    retval = -1;
+    node_t * next_node = NULL;
+
+    if (*head == NULL) {
+        return -1;
+    }
+
+    next_node = (*head)->next;
+    retval = (*head)->val;
+    free(*head);
+    *head = next_node;
+
+    return retval;
 }
 
-head->val = 1;
-head->next = NULL;
+ remove_by_value(node_t ** head, int val) {
+
+}
+
+ {
+
+    node_t * test_list = (node_t *) malloc(sizeof(node_t));
+    test_list->val = 1;
+    test_list->next = (node_t *) malloc(sizeof(node_t));
+    test_list->next->val = 2;
+    test_list->next->next = (node_t *) malloc(sizeof(node_t));
+    test_list->next->next->val = 3;
+    test_list->next->next->next = (node_t *) malloc(sizeof(node_t));
+    test_list->next->next->next->val = 4;
+    test_list->next->next->next->next = NULL;
+
+    remove_by_value(&test_list, 3);
+
+  
+}
 ````
 
 
@@ -270,7 +332,7 @@ int pop(node_t ** head) {
 }
 
 int remove_by_value(node_t ** head, int val) {
-    /* TODO: fill in your code here */
+    
 }
 
 int main() {
