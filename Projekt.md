@@ -348,7 +348,9 @@ int main() {
     test_list->next->next->next->next = NULL;
 
     remove_by_value(&test_list, 3);
-
-    print_list(test_list);
+```
+  print_list(test_list);
+![Zrzut ekranu 2023-01-17 171828](https://user-images.githubusercontent.com/115026224/212936311-400253a2-124d-4afb-8d7c-ca7fe56c392c.png)
+```
 }
 ````
