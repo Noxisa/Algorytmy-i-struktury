@@ -351,5 +351,4 @@ int main() {
 
 }
 ````
-
 ![Zrzut ekranu 2023-01-17 171828](https://user-images.githubusercontent.com/115026224/212936643-f9beba20-2938-4428-9254-69b9557dec7e.png)
