@@ -9,12 +9,12 @@ Tomas Chmelevski. Student
 #include <stdio.h>
 #include <errno.h>
 
-#include "Sortowanie bobelkowa.c"
-#include "Sortowanie swap.c"
-#include "Sortowanie scalenie.c"
-#include "Sortowanie prior.c"
-#include "Sortowanie wstawianie.c"
-#include "Sortowanie wymian.c"
+#include "Sortowanie bobelkowa.h"
+#include "Sortowanie swap.h"
+#include "Sortowanie scalenie.h"
+#include "Sortowanie prior.h"
+#include "Sortowanie wstawianie.h"
+#include "Sortowanie wymian.h"
 
 
 
