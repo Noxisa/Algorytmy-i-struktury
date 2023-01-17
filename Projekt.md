@@ -349,8 +349,8 @@ int main() {
 
     remove_by_value(&test_list, 3);
 ```
-  print_list(test_list);
-![Zrzut ekranu 2023-01-17 171828](https://user-images.githubusercontent.com/115026224/212936311-400253a2-124d-4afb-8d7c-ca7fe56c392c.png)
+  ![Zrzut ekranu 2023-01-17 171828](https://user-images.githubusercontent.com/115026224/212936488-ffab5241-64e6-4a06-af36-804c8069194e.png)
+
 ```
 }
 ````
