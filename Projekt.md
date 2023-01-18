@@ -1,7 +1,7 @@
 Algorytmy i struktury danych
 
 Opis
- Algorytm Euklidesa. Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca. Algorytm dołączania nowego elementu do końca listy jednokierunkowej
+ Algorytm Euklidesa.Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.Algorytm dołączania nowego elementu do końca listy jednokierunkowej
 
 
 Autor
@@ -25,7 +25,7 @@ przez kolejne liczby.Najpierw sprawdzamy podzielność przez 2,potem – przez 3
 liczb.Największym wspólnym dzielnikiem dwóch liczb jest iloczyn ich wszystkich wspólnych dzielników pierwszych.
 Przyjrzyj się temu sposobowi na przykładzie szukania.**
 
-**NWD liczb: a = 42 i b = 24.**
+**NWD liczb:a = 42 i b = 24.**
 
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
@@ -35,8 +35,7 @@ Lepszym i szybszym rozwiązaniem problemu szukania NWD dwóch liczb całkowitych
 jeden z najstarszych algorytmów,opisany przez Euklidesa ok.300 roku p.n.e.Opiera się na spostrzeżeniu:jeśli od
 większej liczby odejmiemy mniejszą,to mniejsza liczba i otrzymana różnica będą miały taki sam największy wspólny
 dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę takich samych liczb,to oznacza,
-że znaleźliśmy NWD.
-Popatrz,jak przebiega znajdowanie NWD dwóch liczb a =42 i b =24 według tego algorytmu.**
+że znaleźliśmy NWD.Popatrz,jak przebiega znajdowanie NWD dwóch liczb a =42 i b =24 według tego algorytmu.**
 
 ![Screenshot 2022-11-29 112732](https://user-images.githubusercontent.com/115026224/204491197-d580ad5c-ed4e-4d98-a2e5-6b03ea332e2b.png)
 
@@ -137,7 +136,7 @@ Kontynuować kroku n°2.
 Opis ten implementuje algorytm zastosowany w poprzednim przykładzie.Za każdym razem,gdy sprawdzenie się nie powiedzie,tabela jest sprawdzana w celu znalezienia początku następnego potencjalnego wystąpienia,a liczniki są odpowiednio aktualizowane.Dlatego sprawdzanie znaków nigdy nie jest wykonywane wstecz.W szczególności każdy znak jest sprawdzany tylko raz (chociaż mógłby zostać odrzucony kilka razy w wyniku nieudanego dopasowania.Zobacz poniżej analizę skuteczności algorytmu.**
 
 Przykładowy kod algorytmu wyszukiwania
-**Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych ciągów znaków.Aby przezwyciężyć wewnętrzne ograniczenia tabel w C,indeksy są przesunięte o jedną jednostkę,to znaczy,że w kodzie są równoważne z powyższym opisem. T [i]T [i + 1].**
+**Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych ciągów znaków.Aby przezwyciężyć wewnętrzne ograniczenia tabel w C,indeksy są przesunięte o jedną jednostkę,to znaczy,że w kodzie są równoważne z powyższym opisem.T[i]T[i + 1].**
 
 PseudoKod Wyszukiwania 
 ```
@@ -213,20 +212,20 @@ private static int[] merge(int[] pierwszy, int[] druga) {
 
 Wydajność algorytmu wyszukiwania
 
-**Zakładając wcześniejsze istnienie tablicy,faza „przeszukiwania” algorytmu Knutha-Morrisa-Pratta ma złożoność O,gdzie oznacza długość .Jeśli wykluczymy dodatkowe stałe przetwarzanie indukowane przez wejście i wyjście funkcji,całe przetwarzanie odbywa się w pętli głównej.Aby obliczyć limit liczby iteracji, konieczna jest pierwsza obserwacja dotycząca natury . Z definicji jest skonstruowany w taki sposób, że jeśli częściowe dopasowanie, które zaczyna się kończyć niepowodzeniem podczas porównywania i,następne potencjalne dopasowanie nie rozpoczyna się przed.W szczególności następne potencjalne dopasowanie musi znajdować się na pozycji większej niż,aby.T (l)lSTS [m]S[m+i]P[i]S [m +(i-T[i])]mT [i] <i**
+**Zakładając wcześniejsze istnienie tablicy,faza„przeszukiwania”algorytmu Knutha-Morrisa-Pratta ma złożoność O,gdzie oznacza długość .Jeśli wykluczymy dodatkowe stałe przetwarzanie indukowane przez wejście i wyjście funkcji,całe przetwarzanie odbywa się w pętli głównej.Aby obliczyć limit liczby iteracji, konieczna jest pierwsza obserwacja dotycząca natury.Z definicji jest skonstruowany w taki sposób, że jeśli częściowe dopasowanie, które zaczyna się kończyć niepowodzeniem podczas porównywania i,następne potencjalne dopasowanie nie rozpoczyna się przed.W szczególności następne potencjalne dopasowanie musi znajdować się na pozycji większej niż,aby.T(l)lSTS[m]S[m+i]P[i]S[m +(i-T[i])]mT[i]<i**
 
 **Na podstawie tego faktu pokazujemy,że pętla jest wykonywana najczęściej.W każdej iteracji wykonuje jedną z dwóch gałęzi instrukcji if.l**
 
 **Pierwsza gałąź niezmiennie rośnie i nie zmienia się,więc indeks aktualnie sprawdzanego znaku w ciągu jest zwiększany.imm+iS
 Druga gałąź dodaje do.Jak widzieliśmy, zawsze jest pozytywne.W ten sposób zwiększa się pozycja początku bieżącego potencjalnego meczu.i-T[i]mi-T[i]m
-Pętla kończy się if,co oznacza, że biorąc pod uwagę konwencję C określającą,że znak NUL oznacza koniec łańcucha, to.W konsekwencji, każda gałąź instrukcji if może być przemierzona w większości przypadków,ponieważ odpowiednio wzrastają lub,a więc if,then i ponieważ wzrost w każdej iteracji wynosi co najmniej jedną jednostkę,z konieczności zostało to sprawdzone w przeszłości.S [m + i] ='\ 0'm+ja=llm+imm<=m+im=lm+i=>lm+i=l**
+Pętla kończy się if,co oznacza, że biorąc pod uwagę konwencję C określającą,że znak NUL oznacza koniec łańcucha, to.W konsekwencji, każda gałąź instrukcji if może być przemierzona w większości przypadków,ponieważ odpowiednio wzrastają lub,a więc if,then i ponieważ wzrost w każdej iteracji wynosi co najmniej jedną jednostkę,z konieczności zostało to sprawdzone w przeszłości.S[m + i] ='\ 0'm+ja=llm+imm<=m+im=lm+i=>lm+i=l**
 
 **W ten sposób pętla jest wykonywana w większości przypadków,ustanawiając w ten sposób złożoność algorytmiczną w.2l0(l)**
 
 
 Algorytm dołączania nowego elementu do końca listy jednokierunkowej
 
-**Sortowanie przez wstawianie-algorytm rozpoczyna się od porównania dwóch pierwszych elementów sortowanej tablicy tab, którymi są tab[0] i tab[1] ,jeśli nie są one ustawione we właściwej kolejności,to następuje zamiana miejsc.Następnie jest rozważany trzeci element tab[2],jeśli jest mniejszy niż tab[0] i tab[1] to te dwa elementy są przesuwane o jedna pozycję w prawo tab [0] umieszczamy na pozycji,1,tab[1] na poz.2,a tab[2] na poz.0.Jeśli element tab[2] jest mniejszy niż tab[1] ale większy niż tab[0] to tab[1] wędruje na pozycję 2,jego miejsce zajmuje tab[2].Jeśli tab[2] jest większy od tab[0] i tab[1] to pozostaje na swojej pozycji.**
+**Sortowanie przez wstawianie-algorytm rozpoczyna się od porównania dwóch pierwszych elementów sortowanej tablicy tab, którymi są tab[0] i tab[1] ,jeśli nie są one ustawione we właściwej kolejności,to następuje zamiana miejsc.Następnie jest rozważany trzeci element tab[2],jeśli jest mniejszy niż tab[0] i tab[1] to te dwa elementy są przesuwane o jedna pozycję w prawo tab[0]umieszczamy na pozycji,1,tab[1] na poz.2,a tab[2]na poz.0.Jeśli element tab[2] jest mniejszy niż tab[1]ale większy niż tab[0]to tab[1]wędruje na pozycję 2,jego miejsce zajmuje tab[2].Jeśli tab[2]jest większy od tab[0]i tab[1]to pozostaje na swojej pozycji.**
 
 ![Screenshot 2022-12-30 150627](https://user-images.githubusercontent.com/115026224/210073296-061e3a24-2648-4148-98df-7837dc49a05a.png)
 
