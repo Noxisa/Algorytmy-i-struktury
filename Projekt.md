@@ -25,31 +25,31 @@ przez kolejne liczby. Najpierw sprawdzamy podzielność przez 2, potem – przez
 liczb. Największym wspólnym dzielnikiem dwóch liczb jest iloczyn ich wszystkich wspólnych dzielników pierwszych.
 Przyjrzyj się temu sposobowi na przykładzie szukania**
 
-NWD liczb: a = 42 i b = 24.
+**NWD liczb: a = 42 i b = 24.**
 
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
 
-NWD liczb a i b wynosi więc 2 · 3 · 1 = 6.
+**NWD liczb a i b wynosi więc 2 · 3 · 1 = 6.
 Lepszym i szybszym rozwiązaniem problemu szukania NWD dwóch liczb całkowitych jest algorytm Euklidesa. To
 jeden z najstarszych algorytmów, opisany przez Euklidesa ok. 300 roku p.n.e. Opiera się na spostrzeżeniu: jeśli od
 większej liczby odejmiemy mniejszą, to mniejsza liczba i otrzymana różnica będą miały taki sam największy wspólny
 dzielnik jak pierwotne liczby. Gdy w wyniku kolejnego odejmowania otrzymamy parę takich samych liczb, to oznacza,
 że znaleźliśmy NWD.
-Popatrz, jak przebiega znajdowanie NWD dwóch liczb a = 42 i b = 24 według tego algorytmu.
+Popatrz, jak przebiega znajdowanie NWD dwóch liczb a = 42 i b = 24 według tego algorytmu.**
 
 ![Screenshot 2022-11-29 112732](https://user-images.githubusercontent.com/115026224/204491197-d580ad5c-ed4e-4d98-a2e5-6b03ea332e2b.png)
 
 
 
-Oto algorytm Euklidesa zapisany w postaci planu działań.
+**Oto algorytm Euklidesa zapisany w postaci planu działań.
 
 1. Wybieramy dwie liczby naturalne.
 2. Jeśli liczby są równe, to NWD jest np. pierwszą z nich i to oznacza koniec działań.
 3. Jeśli liczby nie są sobie równe, to trzeba:
 - zbadać, która jest większa;
 - odjąć od niej mniejszą i zastąpić większą przez otrzymaną różnicę;
-- wrócić do sprawdzenia warunku w punkcie 2. (pętla).
+- wrócić do sprawdzenia warunku w punkcie 2. (pętla).**
 
 Pseudokod NWD
 ```
@@ -121,7 +121,7 @@ int main(void) {
 
 Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 
-Algorytm Knutha-Morrisa-Pratta (lub w krótszym sposób algorytm KMP ) jest podciąg (znak) algorytm wyszukiwania, co pozwala na znalezienie wystąpienia ciągu znaków w tekście o liniowej złożoności w najgorszym przypadku. Jego specyfika polega na wstępnym przetwarzaniu ciągu, który dostarcza informacji wystarczających do określenia, gdzie kontynuować wyszukiwanie w przypadku niezgodności. W ten sposób algorytm nie sprawdza ponownie znaków, które były widziane wcześniej, a zatem ogranicza liczbę koniecznych porównań. PSO (| P | + | S |)
+**Algorytm Knutha-Morrisa-Pratta (lub w krótszym sposób algorytm KMP ) jest podciąg (znak) algorytm wyszukiwania, co pozwala na znalezienie wystąpienia ciągu znaków w tekście o liniowej złożoności w najgorszym przypadku. Jego specyfika polega na wstępnym przetwarzaniu ciągu, który dostarcza informacji wystarczających do określenia, gdzie kontynuować wyszukiwanie w przypadku niezgodności. W ten sposób algorytm nie sprawdza ponownie znaków, które były widziane wcześniej, a zatem ogranicza liczbę koniecznych porównań. PSO (| P | + | S |)
 
 Algorytm został zaprojektowany w 1970 roku przez Knutha i Pratta  (in) oraz w innym kontekście przez Morrisa  (in) i wspólnie opublikowany w 1977 roku . Niezależnie Matiyasevich uzyskał już w 1969 r. podobny algorytm, zakodowany przez dwuwymiarową maszynę Turinga, badając problem rozpoznawania występowania strun.
 
@@ -137,7 +137,7 @@ Kontynuować kroku n °  2.
 Opis ten implementuje algorytm zastosowany w poprzednim przykładzie. Za każdym razem, gdy sprawdzenie się nie powiedzie, tabela jest sprawdzana w celu znalezienia początku następnego potencjalnego wystąpienia, a liczniki są odpowiednio aktualizowane. Dlatego sprawdzanie znaków nigdy nie jest wykonywane wstecz. W szczególności każdy znak jest sprawdzany tylko raz (chociaż mógłby zostać odrzucony kilka razy w wyniku nieudanego dopasowania. Zobacz poniżej analizę skuteczności algorytmu.
 
 Przykładowy kod algorytmu wyszukiwania
-Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych ciągów znaków. Aby przezwyciężyć wewnętrzne ograniczenia tabel w C, indeksy są przesunięte o jedną jednostkę, to znaczy, że w kodzie są równoważne z powyższym opisem. T [i]T [i + 1]
+Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych ciągów znaków. Aby przezwyciężyć wewnętrzne ograniczenia tabel w C, indeksy są przesunięte o jedną jednostkę, to znaczy, że w kodzie są równoważne z powyższym opisem. T [i]T [i + 1].**
 
 PseudoKod Wyszukiwania 
 ```
@@ -213,7 +213,7 @@ private static int[] merge(int[] pierwszy, int[] druga) {
 
 Wydajność algorytmu wyszukiwania
 
-Zakładając wcześniejsze istnienie tablicy, faza „przeszukiwania” algorytmu Knutha-Morrisa-Pratta ma złożoność O, gdzie oznacza długość . Jeśli wykluczymy dodatkowe stałe przetwarzanie indukowane przez wejście i wyjście funkcji, całe przetwarzanie odbywa się w pętli głównej. Aby obliczyć limit liczby iteracji, konieczna jest pierwsza obserwacja dotycząca natury . Z definicji jest skonstruowany w taki sposób, że jeśli częściowe dopasowanie, które zaczyna się kończyć niepowodzeniem podczas porównywania i, następne potencjalne dopasowanie nie rozpoczyna się przed . W szczególności następne potencjalne dopasowanie musi znajdować się na pozycji większej niż, aby . T (l)lSTS [m]S[m+i]P[i]S [m +(i-T[i])]mT [i] <i
+**Zakładając wcześniejsze istnienie tablicy, faza „przeszukiwania” algorytmu Knutha-Morrisa-Pratta ma złożoność O, gdzie oznacza długość . Jeśli wykluczymy dodatkowe stałe przetwarzanie indukowane przez wejście i wyjście funkcji, całe przetwarzanie odbywa się w pętli głównej. Aby obliczyć limit liczby iteracji, konieczna jest pierwsza obserwacja dotycząca natury . Z definicji jest skonstruowany w taki sposób, że jeśli częściowe dopasowanie, które zaczyna się kończyć niepowodzeniem podczas porównywania i, następne potencjalne dopasowanie nie rozpoczyna się przed . W szczególności następne potencjalne dopasowanie musi znajdować się na pozycji większej niż, aby . T (l)lSTS [m]S[m+i]P[i]S [m +(i-T[i])]mT [i] <i
 
 Na podstawie tego faktu pokazujemy, że pętla jest wykonywana najczęściej . W każdej iteracji wykonuje jedną z dwóch gałęzi instrukcji if . l
 
@@ -226,12 +226,12 @@ W ten sposób pętla jest wykonywana w większości przypadków, ustanawiając w
 
 Algorytm dołączania nowego elementu do końca listy jednokierunkowej
 
-Sortowanie przez wstawianie- algorytm rozpoczyna się od porównania dwóch pierwszych elementów sortowanej tablicy tab, którymi są tab[0] i tab[1] , jeśli nie są one ustawione we właściwej kolejności, to następuje zamiana miejsc. Następnie jest rozważany trzeci element tab[2], jeśli jest mniejszy niż tab[0] i tab[1] to te dwa elementy są przesuwane o jedna pozycję w prawo tab [0] umieszczamy na pozycji ,1, tab[1] na poz. 2, a tab[2] na poz. 0. Jeśli element tab[2] jest mniejszy niż tab[1] ale większy niż tab[0] to tab[1] wędruje na pozycję 2, jego miejsce zajmuje tab[2]. Jeśli tab[2] jest większy od tab[0] i tab[1] to pozostaje na swojej pozycji.
+Sortowanie przez wstawianie- algorytm rozpoczyna się od porównania dwóch pierwszych elementów sortowanej tablicy tab, którymi są tab[0] i tab[1] , jeśli nie są one ustawione we właściwej kolejności, to następuje zamiana miejsc. Następnie jest rozważany trzeci element tab[2], jeśli jest mniejszy niż tab[0] i tab[1] to te dwa elementy są przesuwane o jedna pozycję w prawo tab [0] umieszczamy na pozycji ,1, tab[1] na poz. 2, a tab[2] na poz. 0. Jeśli element tab[2] jest mniejszy niż tab[1] ale większy niż tab[0] to tab[1] wędruje na pozycję 2, jego miejsce zajmuje tab[2]. Jeśli tab[2] jest większy od tab[0] i tab[1] to pozostaje na swojej pozycji.**
 
 ![Screenshot 2022-12-30 150627](https://user-images.githubusercontent.com/115026224/210073296-061e3a24-2648-4148-98df-7837dc49a05a.png)
 
 
-Lista jednokierunkowa- jest oszczędną pamięciowo strukturą danych pozwalającą grupować dowolną- ograniczoną tylko ilością dostępnej pamięci- liczbę elementów.: liczb, znaków, rekordów. Do budowy listy jednokierunkowej używane są dwa typy komórek pamięci. Pierwszy typ jest zwykłym rekordem natury informacyjnej zawierającym dwa wskaźniki do początku i do końca listy. Drugi typ komórek jest również rekordem lecz ma już on charakter roboczy. Zawiera bowiem pole wartości i wskaźnik na następny element listy. Pola głowa ogon i następny są wskaźnikami, natomiast wartość może być czymkolwiek: liczbą, znakiem, rekordem.
+**Lista jednokierunkowa- jest oszczędną pamięciowo strukturą danych pozwalającą grupować dowolną- ograniczoną tylko ilością dostępnej pamięci- liczbę elementów.: liczb, znaków, rekordów. Do budowy listy jednokierunkowej używane są dwa typy komórek pamięci. Pierwszy typ jest zwykłym rekordem natury informacyjnej zawierającym dwa wskaźniki do początku i do końca listy. Drugi typ komórek jest również rekordem lecz ma już on charakter roboczy. Zawiera bowiem pole wartości i wskaźnik na następny element listy. Pola głowa ogon i następny są wskaźnikami, natomiast wartość może być czymkolwiek: liczbą, znakiem, rekordem.
 Jeżeli lista jest pusta to struktura informacyjna zawiera dwa wskaźniki null. Null nie równa się zero jest to pewien adres, na który żadna zmienna nie wskazuje. Pierwszy element listy jest złożony z jego własnej wartości oraz ze wskaźnika na drugi el. listy. Drugi zawiera własne pole informacyjne i wskaźnik na trzeci element listy. Miejsce zakończenia listy zaznaczamy przez wartość null.
 
 
@@ -240,7 +240,7 @@ Bardziej złożona jest funkcja dołączająca nowy element w takie miejsce aby 
 Nowy element może zostać wstawiony na początek, koniec, lub w środku listy. Trzeba znaleźć miejsce wstawienia tzn. zapamiętać dwa wskaźniki: element, przed którym mama wstawić nową komórkę i element, za którym mama to zrobić. Do zapamiętania tych informacji wybieramy dwie zmienne np. przed i po. Następnie, gdy dowiemy się gdzie jesteśmy możemy dokonać wstawienia nowego elementu do listy. Sposób zależy od miejsca wstawienia i od tego czy lista przypadkiem nie jest jeszcze pusta. Skomplikowanie funkcji, która dokłada element do listy wynika z połączenia w niej rozszukiwania miejsca wstawienia z samym dołączeniem elementu. Można te czynności rozbić na dwie osobne funkcje. Istnieją trzy przypadki „współrzędnych” współrzędnych nowego elementu a). przed=NULL b). Po=NULL c). przed po=NULL. W zależności od ich wystąpienia zmieni się sposób dołączenia elementu do listy.
 Do usuwania ostatniego elementu z listy używamy operatora dekrementacji. Funkcja, która się za nim ukrywa jest relatywnie prosta: jeśli na liście jest tylko jeden element to modyfikacji ulega zarówno pole głowa jaki ogon struktury informacyjnej oba te pola po uprzednim usunięciu jedynego elementu listy zostano zainicjowane wartością NULL. Trudniejszy jest przypadek gdy lista zawiera więcej niż jeden element. Należy wówczas odszukać przedostatni jej element aby móc odpowiednio zmodyfikować wskaźnik ogon struktury informacyjnej. Znajomość przedostatniego elementu listy umożliwia nam łatwe usunięcie ostatniego elementu listy.
 Stos- jest liniową strukturą danych dostępnych do zapisywania i odczytywania tylko jednego końca (tzw. wierzchołka) Nowe elementy są dokładane na wierzch stosu i zdejmowane z wierzchu. Ostatni element położony na stosie będzie pierwszym z niego zdjętym. Stos jest nazywany strukturą LIFO (last In first out)
-Operacja na stosie- initialize- powoduje opróżnienie stosu, empty- sprawdzenie czy stos jest pusty , full- czy stos jest zapełniony, push- umieszczenie elementu na stosie, pop- zdjęcie najwyższego elementu ze stosu. Ciąg operacji pusch i pop:
+Operacja na stosie- initialize- powoduje opróżnienie stosu, empty- sprawdzenie czy stos jest pusty , full- czy stos jest zapełniony, push- umieszczenie elementu na stosie, pop- zdjęcie najwyższego elementu ze stosu. Ciąg operacji pusch i pop:**
 
 Pseudokod list jedenkierunkowy
 ````
