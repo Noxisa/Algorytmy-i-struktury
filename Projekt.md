@@ -16,14 +16,14 @@ Algorytm dołączania nowego elementu do końca listy jednokierunkowej
 
 ALGORYTM EUKLIDESA
 
-Algorytm opisuje sposób rozwiązania problemu krok po kroku. Opis ten powinien być dokładny i nie pozostawiać
+**Algorytm opisuje sposób rozwiązania problemu krok po kroku. Opis ten powinien być dokładny i nie pozostawiać
 wątpliwości, co, jak i w jakiej kolejności trzeba zrobić. Z algorytmami masz często do czynienia na lekcjach matematyki.
 Jednym z przykładów algorytmu jest sposób znajdowania największego wspólnego dzielnika dwóch liczb całkowitych
 (NWD). NWD jest potrzebny np. przy skracaniu ułamków.
 Algorytmem poznanym przez ciebie na lekcjach matematyki jest sprawdzanie podzielności dwóch liczb całkowitych
 przez kolejne liczby. Najpierw sprawdzamy podzielność przez 2, potem – przez 3 i tak dalej, aż do mniejszej z dwóch
 liczb. Największym wspólnym dzielnikiem dwóch liczb jest iloczyn ich wszystkich wspólnych dzielników pierwszych.
-Przyjrzyj się temu sposobowi na przykładzie szukania
+Przyjrzyj się temu sposobowi na przykładzie szukania**
 
 NWD liczb: a = 42 i b = 24.
 
@@ -127,9 +127,9 @@ Algorytm został zaprojektowany w 1970 roku przez Knutha i Pratta  (in) oraz w i
 
 Algorytm wyszukiwania
 
-#Zakłada istnienie tabeli podającej „częściowe dopasowania” (opisane poniżej), wskazującą, gdzie szukać potencjalnego początku następnego zdarzenia, w przypadku gdy weryfikacja obecnego potencjalnego wystąpienia się nie powiedzie. Na razie tę tablicę, oznaczoną przez, można traktować jako czarną skrzynkę z następującą właściwością: jeśli mamy częściowe dopasowanie do, ale nie powiedzie się podczas porównywania i, wtedy następne potencjalne wystąpienie zaczyna się od position . W szczególności istnieje i jest zdefiniowana w . Biorąc pod uwagę tę tabelę, algorytm jest stosunkowo prosty: TS [m]S [m+i-1]S [m+w]Liczba Pi]m + iT [i-1]T [-1]-1
+Zakłada istnienie tabeli podającej „częściowe dopasowania” (opisane poniżej), wskazującą, gdzie szukać potencjalnego początku następnego zdarzenia, w przypadku gdy weryfikacja obecnego potencjalnego wystąpienia się nie powiedzie. Na razie tę tablicę, oznaczoną przez, można traktować jako czarną skrzynkę z następującą właściwością: jeśli mamy częściowe dopasowanie do, ale nie powiedzie się podczas porównywania i, wtedy następne potencjalne wystąpienie zaczyna się od position . W szczególności istnieje i jest zdefiniowana w . Biorąc pod uwagę tę tabelę, algorytm jest stosunkowo prosty: TS [m]S [m+i-1]S [m+w]Liczba Pi]m + iT [i-1]T [-1]-1
 
-#Napraw . Załóżmy, że ma długość znaków oraz, znaków;ja = m = 0PnieSja
+Napraw . Załóżmy, że ma długość znaków oraz, znaków;ja = m = 0PnieSja
 Jeśli, a następnie zakończ przetwarzanie, nie znaleziono dopasowania. W przeciwnym razie porównaj i  ; m + ja = lLiczba Pi]S [m+w]
 Jeśli są równe, napraw . Jeśli, dopasowanie jest zakończone. Zakończenie przetwarzania i zwrot jako pozycja rozpoczęcia korespondencji;ja = ja + 1ja = nm
 Jeśli są różne, napraw . Napraw, a jeśli napraw  ;e = T [i-1]m = m + ieja> 0ja = e
