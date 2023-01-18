@@ -25,17 +25,17 @@ przez kolejne liczby.Najpierw sprawdzamy podzielność przez 2,potem – przez 3
 liczb.Największym wspólnym dzielnikiem dwóch liczb jest iloczyn ich wszystkich wspólnych dzielników pierwszych.
 Przyjrzyj się temu sposobowi na przykładzie szukania.**
 
-**NWD liczb:a = 42 i b = 24.**
+**NWD liczb:a=42 i b=24.**
 
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
 
-**NWD liczb a i b wynosi więc 2·3·1 =6.
+**NWD liczb a i b wynosi więc 2·3·1=6.
 Lepszym i szybszym rozwiązaniem problemu szukania NWD dwóch liczb całkowitych jest algorytm Euklidesa.To
 jeden z najstarszych algorytmów,opisany przez Euklidesa ok.300 roku p.n.e.Opiera się na spostrzeżeniu:jeśli od
 większej liczby odejmiemy mniejszą,to mniejsza liczba i otrzymana różnica będą miały taki sam największy wspólny
 dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę takich samych liczb,to oznacza,
-że znaleźliśmy NWD.Popatrz,jak przebiega znajdowanie NWD dwóch liczb a =42 i b =24 według tego algorytmu.**
+że znaleźliśmy NWD.Popatrz,jak przebiega znajdowanie NWD dwóch liczb a=42 i b=24 według tego algorytmu.**
 
 ![Screenshot 2022-11-29 112732](https://user-images.githubusercontent.com/115026224/204491197-d580ad5c-ed4e-4d98-a2e5-6b03ea332e2b.png)
 
@@ -44,23 +44,16 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 **Oto algorytm Euklidesa zapisany w postaci planu działań.**
 
 1. Wybieramy dwie liczby naturalne.
-2. Jeśli liczby są równe, to NWD jest np.pierwszą z nich i to oznacza koniec działań.
+2. Jeśli liczby są równe,to NWD jest np.pierwszą z nich i to oznacza koniec działań.
 3. Jeśli liczby nie są sobie równe,to trzeba:
-- zbadać, która jest większa;
+- zbadać,która jest większa;
 - odjąć od niej mniejszą i zastąpić większą przez otrzymaną różnicę;
-- wrócić do sprawdzenia warunku w punkcie 2.(pętla).
+- wrócić do sprawdzenia warunku w punkcie 2(pętla).
 
 Pseudokod NWD
 ```
-NWD(a, b)
-{
-  dzielnik = 0
-  while (liczba2 != 0)
-        {
-        r = b
-        b = a % b
-        a = b
-        }
+NWD(a, b) {
+  dzielnik = 0 while (liczba2 != 0) { r = b b = a % b a = b }
   return b
 }
 ```
@@ -68,51 +61,46 @@ Kod NWD
 ```
 #include <stdio.h>
 
-int NWD(int a,int  b, int r)
-{
- int  dzielnik = 0;
+int NWD(int a, int b, int r) {
+  int dzielnik = 0;
   int liczba2;
-  while ( liczba2 != 0)
-        {
-        r = b;
-        b = a % b;
-        a = b;
-        }
+  while (liczba2 != 0) {
+    r = b;
+    b = a % b;
+    a = b;
+  }
   return b;
 }
 int main(void) {
-  int a,b,r;
+  int a, b, r;
   int liczba2;
   printf("a = ");
   scanf("%d ", &a);
-   printf("b = ");
+  printf("b = ");
   scanf("%d", &b);
-  if(a>b){
-  do{
-    r = a%b;
-    a = b;
-    b = r;
-    
-  }
-    while(b);
-  printf("NWD = %d", a);
+  if (a > b) {
+    do {
+      r = a % b;
+      a = b;
+      b = r;
+
+    } while (b);
+    printf("NWD = %d", a);
+  } else {
+    do {
+      r = a;
+      a = a % b;
+      a = b;
     }
-  else{
-      do{
-        r = a;
-        a = a % b;
-        a = b;
-        }
-        
-        while(a);
+
+    while (a);
     printf("NWD = %d", b);
-    }
-  while ( liczba2 != 0)
-        {
-        r = b;
-        b = b % a;
-        b = a;
-        }
+  }
+  while (liczba2 != 0) {
+    r = b;
+    b = b % a;
+    b = a;
+  }
   return 0;
 }
 ```
@@ -124,7 +112,7 @@ Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 
 **Algorytm został zaprojektowany w 1970 roku przez Knutha i Pratta  (in) oraz w innym kontekście przez Morrisa  (in) i wspólnie opublikowany w 1977 roku. Niezależnie Matiyasevich uzyskał już w 1969 r.podobny algorytm, zakodowany przez dwuwymiarową maszynę Turinga,badając problem rozpoznawania występowania strun.**
 
-Algorytm wyszukiwania
+
 
 **Zakłada istnienie tabeli podającej„częściowe dopasowania”(opisane poniżej),wskazującą,gdzie szukać potencjalnego początku następnego zdarzenia,w przypadku gdy weryfikacja obecnego potencjalnego wystąpienia się nie powiedzie.Na razie tę tablicę,oznaczoną przez,można traktować jako czarną skrzynkę z następującą właściwością:jeśli mamy częściowe dopasowanie do,ale nie powiedzie się podczas porównywania i,wtedy następne potencjalne wystąpienie zaczyna się od position .W szczególności istnieje i jest zdefiniowana w.Biorąc pod uwagę tę tabelę,algorytm jest stosunkowo prosty:TS [m]S [m+i-1]S [m+w]Liczba Pi]m + iT [i-1]T [-1]-1.**
 
@@ -140,73 +128,73 @@ Przykładowy kod algorytmu wyszukiwania
 
 PseudoKod Wyszukiwania 
 ```
-public static sort( liczby) {
-    if (liczby długość <= 1) {
-        return liczby;
-    }
-   
-    for ( i = 0; i < pierwszy długość; i++) {
-        pierwszy[i] = liczby[i];
-    }
-    for ( i = 0; i < druga długość; i++) {
-         druga[i] = liczby[pierwszy długość + i];
-    }
-    return merge(sort(pierwszy), sort(druga));
+public
+static sort(liczby) {
+  if (liczby długość <= 1) {
+    return liczby;
+  }
+
+  for (i = 0; i < pierwszy długość; i++) {
+    pierwszy[i] = liczby[i];
+  }
+  for (i = 0; i < druga długość; i++) {
+    druga[i] = liczby[pierwszy długość + i];
+  }
+  return merge(sort(pierwszy), sort(druga));
 }
 
-private static  merge( pierwszy,  druga) {
-    
-    for ( index pierwszy = 0, index druga = 0, indexMerged = 0; indexMerged < merged długość; indexMerged++) {
-        if (index pierwszy >= pierwszy  długość) {
-            merged[indexMerged] = druga[index druga++];
-        }
-        else if (index druga >= druga  długość) {
-            merged[indexMerged] = pierwszy[index pierwszy++];
-        }
-        else if (first[index pierwszy] <=  druga[index druga]) {
-            merged[indexMerged] = pierwszy[index pierwszy++];
-        }
-        else {
-            merged[indexMerged] = druga[index druga++];
-        }
+private
+static merge(pierwszy, druga) {
+
+  for (index pierwszy = 0, index druga = 0, indexMerged = 0;
+       indexMerged < merged długość; indexMerged++) {
+    if (index pierwszy >= pierwszy długość) {
+      merged[indexMerged] = druga[index druga++];
+    } else if (index druga >= druga długość) {
+      merged[indexMerged] = pierwszy[index pierwszy++];
+    } else if (first[index pierwszy] <= druga[index druga]) {
+      merged[indexMerged] = pierwszy[index pierwszy++];
+    } else {
+      merged[indexMerged] = druga[index druga++];
     }
-    return merged;
+  }
+  return merged;
 }
 ```
 Kod Wyszukiwania 
 ```
-public static int[] sort(int[] liczby) {
-    if (liczby długość <= 1) {
-        return liczby;
-    }
-    int[] pierwszy = new int[liczby długość / 2];
-    int[] second = new int[liczby długość - pierwszy długość];
-    for (int i = 0; i < pierwszy długość; i++) {
-       pierwszy [i] = liczby[i];
-    }
-    for (int i = 0; i < druga długość; i++) {
-      druga[i] = liczby[pierwszy długość + i];
-    }
-    return merge(sort(pierwszy ), sort(druga));
+public
+static int[] sort(int[] liczby) {
+  if (liczby długość <= 1) {
+    return liczby;
+  }
+  int[] pierwszy = new int[liczby długość / 2];
+  int[] second = new int[liczby długość - pierwszy długość];
+  for (int i = 0; i < pierwszy długość; i++) {
+    pierwszy[i] = liczby[i];
+  }
+  for (int i = 0; i < druga długość; i++) {
+    druga[i] = liczby[pierwszy długość + i];
+  }
+  return merge(sort(pierwszy), sort(druga));
 }
 
-private static int[] merge(int[] pierwszy, int[] druga) {
-    int[] merged = new int[pierwszy długość + druga długość];
-    for (int index pierwszy = 0, index druga = 0, indexMerged = 0; indexMerged < merged długość; indexMerged++) {
-        if (index pierwszy >= pierwszy długość) {
-            merged[indexMerged] = druga[index druga++];
-        }
-        else if (index druga >= druga długość) {
-            merged[indexMerged] = pierwszy[index pierwszy++];
-        }
-        else if (pierwszy[index pierwszy] <= druga[inde druga]) {
-            merged[indexMerged] = pierwszy[index pierwszy++];
-        }
-        else {
-            merged[indexMerged] = druga[index druga++];
-        }
+private
+static int[] merge(int[] pierwszy, int[] druga) {
+  int[] merged = new int[pierwszy długość + druga długość];
+  for (int index pierwszy = 0, index druga = 0, indexMerged = 0;
+       indexMerged < merged długość; indexMerged++) {
+    if (index pierwszy >= pierwszy długość) {
+      merged[indexMerged] = druga[index druga++];
+    } else if (index druga >= druga długość) {
+      merged[indexMerged] = pierwszy[index pierwszy++];
+    } else if (pierwszy[index pierwszy] <= druga[inde druga]) {
+      merged[indexMerged] = pierwszy[index pierwszy++];
+    } else {
+      merged[indexMerged] = druga[index druga++];
     }
-    return merged;
+  }
+  return merged;
 }
 ```
 
@@ -244,51 +232,48 @@ Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy
 Pseudokod list jedenkierunkowy
 ````
 typedef struct node {
-    struct node * next;
+  struct node *next;
 } node_t;
 
-void print_list(node_t * head) {
-    node_t * current = head;
+void print_list(node_t *head) {
+  node_t *current = head;
 
-    while (current != NULL) {
-       
-    }
+  while (current != NULL) {
+  }
 }
- pop(node_t ** head) {
-    retval = -1;
-    node_t * next_node = NULL;
+pop(node_t **head) {
+  retval = -1;
+  node_t *next_node = NULL;
 
-    if (*head == NULL) {
-        return -1;
-    }
+  if (*head == NULL) {
+    return -1;
+  }
 
-    next_node = (*head)->next;
-    retval = (*head)->val;
-    free(*head);
-    *head = next_node;
+  next_node = (*head)->next;
+  retval = (*head)->val;
+  free(*head);
+  *head = next_node;
 
-    return retval;
-}
-
- remove_by_value(node_t ** head, int val) {
-
+  return retval;
 }
 
- {
+remove_by_value(node_t **head, int val){
 
-    node_t * test_list = (node_t *) malloc(sizeof(node_t));
-    test_list->val = 1;
-    test_list->next = (node_t *) malloc(sizeof(node_t));
-    test_list->next->val = 2;
-    test_list->next->next = (node_t *) malloc(sizeof(node_t));
-    test_list->next->next->val = 3;
-    test_list->next->next->next = (node_t *) malloc(sizeof(node_t));
-    test_list->next->next->next->val = 4;
-    test_list->next->next->next->next = NULL;
+}
 
-    remove_by_value(&test_list, 3);
+{
 
-  
+  node_t *test_list = (node_t *)malloc(sizeof(node_t));
+  test_list->val = 1;
+  test_list->next = (node_t *)malloc(sizeof(node_t));
+  test_list->next->val = 2;
+  test_list->next->next = (node_t *)malloc(sizeof(node_t));
+  test_list->next->next->val = 3;
+  test_list->next->next->next = (node_t *)malloc(sizeof(node_t));
+  test_list->next->next->next->val = 4;
+  test_list->next->next->next->next = NULL;
+
+  remove_by_value(&test_list, 3);
 }
 ````
 
@@ -299,53 +284,50 @@ Kod list jedenkierunkowy
 #include <stdlib.h>
 
 typedef struct node {
-    int val;
-    struct node * next;
+  int val;
+  struct node *next;
 } node_t;
 
-void print_list(node_t * head) {
-    node_t * current = head;
+void print_list(node_t *head) {
+  node_t *current = head;
 
-    while (current != NULL) {
-        printf("%d\n", current->val);
-        current = current->next;
-    }
+  while (current != NULL) {
+    printf("%d\n", current->val);
+    current = current->next;
+  }
 }
 
-int pop(node_t ** head) {
-    int retval = -1;
-    node_t * next_node = NULL;
+int pop(node_t **head) {
+  int retval = -1;
+  node_t *next_node = NULL;
 
-    if (*head == NULL) {
-        return -1;
-    }
+  if (*head == NULL) {
+    return -1;
+  }
 
-    next_node = (*head)->next;
-    retval = (*head)->val;
-    free(*head);
-    *head = next_node;
+  next_node = (*head)->next;
+  retval = (*head)->val;
+  free(*head);
+  *head = next_node;
 
-    return retval;
+  return retval;
 }
 
-int remove_by_value(node_t ** head, int val) {
-    
-}
+int remove_by_value(node_t **head, int val) {}
 
 int main() {
 
-    node_t * test_list = (node_t *) malloc(sizeof(node_t));
-    test_list->val = 1;
-    test_list->next = (node_t *) malloc(sizeof(node_t));
-    test_list->next->val = 2;
-    test_list->next->next = (node_t *) malloc(sizeof(node_t));
-    test_list->next->next->val = 3;
-    test_list->next->next->next = (node_t *) malloc(sizeof(node_t));
-    test_list->next->next->next->val = 4;
-    test_list->next->next->next->next = NULL;
+  node_t *test_list = (node_t *)malloc(sizeof(node_t));
+  test_list->val = 1;
+  test_list->next = (node_t *)malloc(sizeof(node_t));
+  test_list->next->val = 2;
+  test_list->next->next = (node_t *)malloc(sizeof(node_t));
+  test_list->next->next->val = 3;
+  test_list->next->next->next = (node_t *)malloc(sizeof(node_t));
+  test_list->next->next->next->val = 4;
+  test_list->next->next->next->next = NULL;
 
-    remove_by_value(&test_list, 3);
-
+  remove_by_value(&test_list, 3);
 }
 ````
 ![Zrzut ekranu 2023-01-17 171828](https://user-images.githubusercontent.com/115026224/212936643-f9beba20-2938-4428-9254-69b9557dec7e.png)
