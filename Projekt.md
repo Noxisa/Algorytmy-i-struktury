@@ -52,57 +52,43 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 
 Pseudokod NWD
 ```
-NWD(a, b) {
-  dzielnik = 0 while (liczba2 != 0) { r = b b = a % b a = b }
-  return b
+
+nwd(a, b) {
+  
+  while (b) {
+    c = a % b;
+    a = b;
+    b = c;
+  }
+  return a;
 }
+
 ```
 Kod NWD
 ```
 #include <stdio.h>
 
-int NWD(int a, int b, int r) {
-  int dzielnik = 0;
-  int liczba2;
-  while (liczba2 != 0) {
-    r = b;
-    b = a % b;
+int nwd(int a, int b) {
+  int c;
+  while (b) {
+    c = a % b;
     a = b;
+    b = c;
   }
-  return b;
+  return a;
 }
+
 int main(void) {
-  int a, b, r;
-  int liczba2;
-  printf("a = ");
-  scanf("%d ", &a);
-  printf("b = ");
-  scanf("%d", &b);
-  if (a > b) {
-    do {
-      r = a % b;
-      a = b;
-      b = r;
+  int a, b;
 
-    } while (b);
-    printf("NWD = %d", a);
-  } else {
-    do {
-      r = a;
-      a = a % b;
-      a = b;
-    }
+  printf("podaj liczby: ");
+  scanf("%d %d", &a, &b);
 
-    while (a);
-    printf("NWD = %d", b);
-  }
-  while (liczba2 != 0) {
-    r = b;
-    b = b % a;
-    b = a;
-  }
+  printf("nww: %d\n", (a * b) / nwd(a, b));
+
   return 0;
 }
+
 ```
 
 
@@ -126,75 +112,144 @@ Opis ten implementuje algorytm zastosowany w poprzednim przykładzie.Za każdym 
 Przykładowy kod algorytmu wyszukiwania
 **Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych ciągów znaków.Aby przezwyciężyć wewnętrzne ograniczenia tabel w C,indeksy są przesunięte o jedną jednostkę,to znaczy,że w kodzie są równoważne z powyższym opisem.T[i]T[i+1].**
 
-PseudoKod Wyszukiwania 
+PseudoKod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 ```
-public
-static sort(liczby) {
-  if (liczby długość <= 1) {
-    return liczby;
-  }
+computeLPSArray(*pat, M, *lps);
 
-  for (i = 0; i < pierwszy długość; i++) {
-    pierwszy[i] = liczby[i];
-  }
-  for (i = 0; i < druga długość; i++) {
-    druga[i] = liczby[pierwszy długość + i];
-  }
-  return merge(sort(pierwszy), sort(druga));
-}
+KMPSearch(*pat, *txt) {
+  M = strlen(pat);
+  N = strlen(txt);
 
-private
-static merge(pierwszy, druga) {
+  *lps = (*)malloc(sizeof() * M);
+  j = 0;
 
-  for (index pierwszy = 0, index druga = 0, indexMerged = 0;
-       indexMerged < merged długość; indexMerged++) {
-    if (index pierwszy >= pierwszy długość) {
-      merged[indexMerged] = druga[index druga++];
-    } else if (index druga >= druga długość) {
-      merged[indexMerged] = pierwszy[index pierwszy++];
-    } else if (first[index pierwszy] <= druga[index druga]) {
-      merged[indexMerged] = pierwszy[index pierwszy++];
-    } else {
-      merged[indexMerged] = druga[index druga++];
+  computeLPSArray(pat, M, lps);
+
+  i = 0;
+  while (i < N) {
+    if (pat[j] == txt[i]) {
+      j++;
+      i++;
+    }
+
+    if (j == M) {
+      printf("Znaleziono wzór w index %d \n", i - j);
+      j = lps[j - 1];
+    }
+
+    else if (i < N && pat[j] != txt[i]) {
+
+      if (j != 0)
+        j = lps[j - 1];
+      else
+        i = i + 1;
     }
   }
-  return merged;
-}
-```
-Kod Wyszukiwania 
-```
-public
-static int[] sort(int[] liczby) {
-  if (liczby długość <= 1) {
-    return liczby;
-  }
-  int[] pierwszy = new int[liczby długość / 2];
-  int[] second = new int[liczby długość - pierwszy długość];
-  for (int i = 0; i < pierwszy długość; i++) {
-    pierwszy[i] = liczby[i];
-  }
-  for (int i = 0; i < druga długość; i++) {
-    druga[i] = liczby[pierwszy długość + i];
-  }
-  return merge(sort(pierwszy), sort(druga));
+  free(lps);
 }
 
-private
-static int[] merge(int[] pierwszy, int[] druga) {
-  int[] merged = new int[pierwszy długość + druga długość];
-  for (int index pierwszy = 0, index druga = 0, indexMerged = 0;
-       indexMerged < merged długość; indexMerged++) {
-    if (index pierwszy >= pierwszy długość) {
-      merged[indexMerged] = druga[index druga++];
-    } else if (index druga >= druga długość) {
-      merged[indexMerged] = pierwszy[index pierwszy++];
-    } else if (pierwszy[index pierwszy] <= druga[inde druga]) {
-      merged[indexMerged] = pierwszy[index pierwszy++];
+computeLPSArray(*pat, M, *lps) {
+  len = 0;
+  i;
+
+  lps[0] = 0;
+  i = 1;
+
+  while (i < M) {
+    if (pat[i] == pat[len]) {
+      len++;
+      lps[i] = len;
+      i++;
     } else {
-      merged[indexMerged] = druga[index druga++];
+      if (len != 0) {
+
+        len = lps[len - 1];
+
+      } else {
+        lps[i] = 0;
+        i++;
+      }
     }
   }
-  return merged;
+}
+
+int main() {
+  *txt = "ABABDABACDABABCABAB";
+  *pat = "ABABCABAB";
+  KMPSearch(pat, txt);
+  return 0;
+}
+```
+Kod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void computeLPSArray(char *pat, int M, int *lps);
+
+void KMPSearch(char *pat, char *txt) {
+  int M = strlen(pat);
+  int N = strlen(txt);
+
+  int *lps = (int *)malloc(sizeof(int) * M);
+  int j = 0;
+
+  computeLPSArray(pat, M, lps);
+
+  int i = 0;
+  while (i < N) {
+    if (pat[j] == txt[i]) {
+      j++;
+      i++;
+    }
+
+    if (j == M) {
+      printf("Znaleziono wzór w index %d \n", i - j);
+      j = lps[j - 1];
+    }
+
+    else if (i < N && pat[j] != txt[i]) {
+
+      if (j != 0)
+        j = lps[j - 1];
+      else
+        i = i + 1;
+    }
+  }
+  free(lps);
+}
+
+void computeLPSArray(char *pat, int M, int *lps) {
+  int len = 0;
+  int i;
+
+  lps[0] = 0;
+  i = 1;
+
+  while (i < M) {
+    if (pat[i] == pat[len]) {
+      len++;
+      lps[i] = len;
+      i++;
+    } else {
+      if (len != 0) {
+
+        len = lps[len - 1];
+
+      } else {
+        lps[i] = 0;
+        i++;
+      }
+    }
+  }
+}
+
+int main() {
+  char *txt = "ABABDABACDABABCABAB";
+  char *pat = "ABABCABAB";
+  KMPSearch(pat, txt);
+  return 0;
 }
 ```
 
