@@ -1,9 +1,3 @@
-#include <stdio.h>
-#include <time.h>
-#include <math.h>
-#include <stdlib.h>
-
-#define arr_size 100
 
 // Tomas Chmelevski. Student
     // Tablica
@@ -11,95 +5,114 @@
 
 
 
-int find(int item, int *arr);
+ #include <stdio.h>
 
-void insert(int item, int pos, int *arr);
+    int find(int item, int *arr, int arr_size);
 
+    void insert(int item, int pos, int *arr);
 
-void remove1(int pos, int *arr);
+    void removenew(int pos, int *arr, int arr_size);
 
-int size();
+    int size(int *arr);
 
-int findMax(int *arr);
+    int findMax(int *arr, int arr_size);
 
-int findMin(int *arr);
+    int findMin(int *arr, int arr_size);
 
-void printTable(int *arr);
+    void printTable(int *arr, int arr_size);
 
-void main(void) {
-  int arr[arr_size] ;
-  // realizacja
-
-  srand(time(NULL));
-    for(int i = 0; i < size(); i++){
-        arr[i] = rand() % 100;
-        printf("%d", arr[i]);
-    }
   
-  return;
-}
 
-// Funkcii
-int size() {
-    return arr_size;
- }
-
-
-int find(int item, int *arr){
-    printf("%d", size());
-    if(size(arr) > 0){
-  for(int i = 0; i < size(arr); i++){
-    printf("%d\n", arr[i]);
-    if(item == arr[i]){
-      return 1;
-    }
-    }
-  }
-  return 0;
-}
-
-void insert(int item, int pos, int *arr){
-  int tmp_arr[size() + 1];
-    int t=0;
-    for (int i = 0; i < size(); i++) {
-    if (i != pos) {
-      tmp_arr[i] = arr[t];
-      t++;
-    } else {
-
-      tmp_arr[i] = item;
+    int main(void) {
+        
+      int arr[] = {1, 2, 3, 4, 5, 6, -1};
+      int arr_size = sizeof(arr)/sizeof(int);
+      printf("Size of array: %d\n", arr_size);
+      int pozycja = find(9, arr, arr_size);
       
-    }
-  }
-  *arr = *tmp_arr; 
-}
 
-void remove2(float pos, float *arr);
+        if (pozycja == -1){
+          printf("Podanej wartosci niema w tablicy!\n");
+        }
+        else (printf("Podana wartosc znaleziono na pozycji %d\n", pozycja));
+     
+      insert(7, 5, arr);
 
+      printf("Wartosci w tablicy po insert: ");
+      for (int i = 0; i < arr_size; i++){
+        printf("%d, ", arr[i]);
+      }
+
+      removenew(3, arr, arr_size);
+
+      printf("\nWartosci w tablicy po removenew: ");
+      for (int i = 0; i < arr_size; i++){
+        printf("%d, ", arr[i]);
+      }
+      
+      int arr_max = findMax(arr, arr_size);
+
+      printf("\narr_max: %d\n", arr_max);
+
+      int arr_min = findMin(arr, arr_size);
+
+      printf("arr_min: %d\n", arr_min);
+
+
+      printTable(arr, arr_size);
   
-int findMax(int *arr){
-  int max = arr[0];
-  for(int i = 0; i < size(arr); i++){
-    if(max < arr[i]){
-      max = arr[i];
+    return 0;
     }
-  }
-  return max;
-}
 
-int findMin(int *arr){
-  int min = arr[0];
-  for(int i = 0; i < size(); i++){
-    if(min > arr[i]){
-      min = arr[i];
+      int find(int item, int *arr, int arr_size){
+      int soa = sizeof(&arr)/sizeof(int);
+    
+      for (int i = 0; i < arr_size; i++){
+        if (item == arr[i]){
+          return i;
+        }
+      }
+      return -1;
+    };
+
+    void insert (int item, int pos, int *arr){
+      arr[pos] = item;
     }
-  }
-  return min;
-}
 
-void printTable(int *arr){
-  for(int i = 0; i < size(); i++){
-    printf(" %d \n ", arr[i]);
-  }
+    void removenew(int pos, int *arr, int arr_size){
+      for (int i = pos; i < arr_size - 1; i++){
+        arr[i] = arr[i +1];
+      }
+      arr[arr_size - 1] = 0;
+    }
 
-}
+    int size(int *arr){
+      int soa = sizeof(&arr)/sizeof(int);
+      return soa;
+    }
+
+    int findMax(int *arr, int arr_size){
+      int max = arr[0];
+      for (int i = 0; i < arr_size; i++){
+        if(max < arr[i]){
+          max = arr[i];
+        }
+      }
+      return max;
+    }
+
+    int findMin(int *arr, int arr_size){
+      int min = arr[0];
+      for (int i = 0; i < arr_size; i++){
+        if (min > arr[i]){
+          min = arr[i];
+        }
+      }
+      return min;
+    }
+
+    void printTable(int *arr,int arr_size){
+      for (int i = 0; i < arr_size; i++){
+        printf("%d, ", arr[i]);
+      }
+    }
