@@ -252,7 +252,6 @@ int main() {
   return 0;
 }
 ```
-
 Wydajność algorytmu wyszukiwania
 
 **Zakładając wcześniejsze istnienie tablicy,faza„przeszukiwania”algorytmu Knutha-Morrisa-Pratta ma złożoność O,gdzie oznacza długość .Jeśli wykluczymy dodatkowe stałe przetwarzanie indukowane przez wejście i wyjście funkcji,całe przetwarzanie odbywa się w pętli głównej.Aby obliczyć limit liczby iteracji, konieczna jest pierwsza obserwacja dotycząca natury.Z definicji jest skonstruowany w taki sposób, że jeśli częściowe dopasowanie, które zaczyna się kończyć niepowodzeniem podczas porównywania i,następne potencjalne dopasowanie nie rozpoczyna się przed.W szczególności następne potencjalne dopasowanie musi znajdować się na pozycji większej niż,aby.T(l)lSTS[m]S[m+i]P[i]S[m +(i-T[i])]mT[i]<i**
