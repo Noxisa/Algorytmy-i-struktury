@@ -1,77 +1,96 @@
-#include <stdio.h>
-  #include <math.h>
-  #include <stdlib.h>
+
 // Tomas Chmelevski . Student
     // kolejka
     // 2022-11-08
 
-    struct Item {
-        float value;
-        struct Item *next;
-    };
-  struct Item *begin;
-    void insert( float It);
-    void remo();
-    void insertElement();
+    #include <stdio.h>
 
+struct Item {
+  float value;
+  struct Item *next;
+};
 
-    void main(void) {
-      float It;
-    
-      for (int i = 1; i<=7; i++){
+// void insert(int item, Item end)
 
-        printf("Podaj liczby %d:", i);
-        scanf("%f", &It);
-      insert(It);
-        }
-      remo();
-      insertElement();
-      } 
+// void remove(int pos, Item begin)
 
-void insert(float It){
-  struct Item *pointer = (struct Item *)malloc(sizeof(struct Item));
- if (pointer == NULL){
-   
- }
- else
- {
-   if (begin == NULL){
-     pointer -> value = It;
-     pointer -> next = NULL;
-     begin = pointer;
-   }
- }
+int printList(struct Item *head);
+
+void insert(float item, struct Item **end);
+
+void removeItem(int pos, struct Item **head);
+
+void main(void) {
+ 
+  // Item begin, end; // Koniec i poczantek
+
+  struct Item *begin = NULL;
+  struct Item *end = NULL;
+
+  begin = (struct Item *)malloc(sizeof(struct Item));
+  end = (struct Item *)malloc(sizeof(struct Item));
+
+  begin->value = 1;
+  begin->next = end;
+
+  end->value = 2;
+  end->next = NULL;
+
+  insert(3, &end);
+  insert(4, &end);
+  insert(5, &end);
+  insert(6, &end);
+
+  removeItem(0, &begin);
+
+  printList(begin);
+
+  return;
 }
-void remo(){
-  float It;
-  struct node *end;
 
-  if(begin == NULL){
-    
-  }
-  else
-  {
-    It = begin -> value;
-    end = begin;
-    begin = begin -> next;
-    free(end);
 
-    printf("Usuwanie liczba jest %.f\n",It);
+void insert(float item, struct Item **end) {
+
+  struct Item *new_node = (struct Item *)malloc(sizeof(struct Item));
+
+  struct Item *last = *end;
+
+  new_node->value = item;
+
+  new_node->next = NULL;
+
+  if (*end == NULL) {
+    *end = new_node;
+    return;
   }
+
+  while (last->next != NULL)
+    last = last->next;
+
+  last->next = new_node;
+  return;
 }
-void insertElement(){
-  struct Item *pointer;
-  
-  pointer = begin;
-  
-  if (pointer == NULL) {
+
+
+
+void removeItem(int pos, struct Item **head) {
+  struct Item *temp = *head, *prev;
+
+  if (temp != NULL && pos == 0) {
+    *head = temp->next;
+    free(temp);
+    return;
   }
-  else
-  {
-    while (pointer != NULL) {
-      
-      printf("%f\n", pointer->value);
-      pointer = pointer->next;
-    }
+
+  while (temp != NULL && pos--) {
+    prev = temp;
+    temp = temp->next;
   }
+
+  if (temp == NULL)
+    return;
+
+  prev->next = temp->next;
+
+  free(temp);
 }
