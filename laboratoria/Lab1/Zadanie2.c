@@ -23,7 +23,7 @@ int main(void){
   scanf("%lf",&hx);
     }
     while(x<=xn){
-      printf("%.1lf = %.1lf * %.1lf ^ %.1lf   \n",(a+x*x),a,x);
+       printf("%.1lf = %.1lf * %.1lf ^ 2 \n",(a*x*x), a, x);
       x = x+hx; 
     }
   
