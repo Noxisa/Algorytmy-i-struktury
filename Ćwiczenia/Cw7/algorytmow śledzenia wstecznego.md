@@ -1,5 +1,7 @@
 //Tomas Chmelevski. Student
+
 // Algorytmow śledzenia wstecznego
+
 // 2023.01.24
 
 
