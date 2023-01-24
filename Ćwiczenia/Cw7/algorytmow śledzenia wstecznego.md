@@ -29,8 +29,14 @@ if (n == 0) {
   return S;	
 }
 ```
+Efektywne rozwiązanie zadania minimalna liczba monet, które tworzą daną wartość. Po pierwsze trzeba znaleźć minimalnie możliwa ilość monet. 
 
-Algorytmy śledzenia wstecznego
+Wejście: coins[] = {25, 10, 5}, V = 30
+Wyjście: Wymagane są co najmniej 2 monety. Możemy użyć jednej monety o nominale 25 centów i jednej o nominale 5 centów
+
+Wejście: coins[] = {9, 6, 5, 1}, V = 11
+Wyjście: Wymagane minimum 2 monety Możemy użyć jednej monety o nominale 6 centów i 1 monety o nominale 5 centów
+
 
 Minimalną liczbę monet dla wartości V można obliczyć za pomocą poniższego wzoru rekurencyjnego.
 
