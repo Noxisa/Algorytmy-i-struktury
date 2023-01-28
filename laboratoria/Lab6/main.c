@@ -6,30 +6,42 @@ Tomas Chmelevski. Student
 2022-12-13
 */
 
+#include "sortowanie.h"
 #include <stdio.h>
-#include <errno.h>
-
-#include "Sortowanie bobelkowa.h"
-#include "Sortowanie swap.h"
-#include "Sortowanie scalenie.h"
-#include "Sortowanie prior.h"
-#include "Sortowanie wstawianie.h"
-#include "Sortowanie wymian.h"
-
-
+#include <stdlib.h>
+#include <time.h>
 
 int main(void) {
-  int tabl[] = {5, 2, 5, 4, 8, 7, 5, 6, 9, 5, 2, 1, 4, 6, 5, 4, 8, 5, 3, 6, 9};
-    int ilosc = sizeof(tabl) / sizeof(tabl[0]);
-  int i;
+  int n = 20;
+  int arr[n];
+  FILE *fptr;
+  clock_t start, end;
+  double execution_time;
+
   
-  for (i = 0; i < ilosc; i++) {
-    printf("%d", tab[i]);
+  fptr = fopen("random.dat", "l");
+  generate(fptr, n);
+  fclose(fptr);
+
+
+  fptr = fopen("random.dat", "r");
+
+  for (int i = 0; i < n; i++) {
+    fscanf(fptr, "%u", &arr[i]);
   }
-  mergeSort(tabl, 0, ilosc);
-  printf("\n");
-  for (i = 0; i < ilosc; i++) {
-    printf("%d", tabl[i]);
-  }
+
+  fclose(fptr);
+
+  int array_size = sizeof(arr) / sizeof(arr[0]);
+
+  start = clock();
+  selectionSort(arr, array_size);
+  end = clock();
+
+  execution_time = ((double)(end - start)) / CLOCKS_PER_SEC;
+
+  printf("Sorted array: \n");
+  printArray(arr, array_size);
+  printf("\nTime elapsed: %f\n", execution_time);
   return 0;
 }
