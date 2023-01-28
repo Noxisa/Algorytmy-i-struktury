@@ -11,71 +11,181 @@ Tomas Chmelevski. Student
 #include <stdio.h>
 #include <time.h>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <errno.h>
+
 #define Max_line_length 1000
 
-int binarySearch(int array[], int key, int length) {
-  int lowIndex = 0, highIndex = length;
-  while (lowIndex < highIndex) {
-    int midIndex = floor((highIndex - lowIndex) / 2);
-    if (array[midIndex] == key) {
-      return midIndex;
-    } else if (key > array[midIndex]) {
-      lowIndex = midIndex;
-    } else {
-      highIndex = midIndex;
-    }
+void binarySearchRecursion(int arr[], int lo, int hi, int key);
+void merge(int arr[], int l, int mid, int r);
+void mergeSort(int arr[], int l, int r);
+void binarySearch(int arr[], int f, int l, int n);
+int kroki = 0, kroki1 = 0;
+
+int main(void) {
+  FILE *fptr;
+  clock_t start, end;
+  double execution_time;
+
+  fptr = fopen("random.dat", "w");
+
+  int n = 0, i = 0;
+  srand((unsigned)time(NULL));
+
+  if (fptr != NULL) {
+    printf("File created successfully!\n");
+  } else {
+    printf("Failed to create the file.\n");
+    return -1;
   }
-  return -1;
+
+  do {
+    printf("Wprowadzenie n. Musi byc != 0 \n");
+    scanf("%d", &n);
+  } while (n <= 0);
+
+  start = clock();
+  
+  while (i < n) {
+    int j = 1 + rand() % Max_line_length;
+    fprintf(fptr, "%d\n", j);
+    i = i + 1;
+  }
+  
+  end = clock();
+  execution_time = ((double)(end - start)) / CLOCKS_PER_SEC;
+  printf("\nGenerowanie liczb  wypelnil %f sek. \n", execution_time);
+  
+  fclose(fptr);
+
+  fptr = fopen("random.dat", "r");
+
+  int arr[n];
+
+  for (i = 0; i < n; i++) {
+    fscanf(fptr, "%d", &arr[i]);
+  }
+
+  start = clock();
+
+  mergeSort(arr, 0, n - 1);
+
+  end = clock();
+
+  execution_time = ((double)(end - start)) / CLOCKS_PER_SEC;
+
+  printf("\nMerge sort wypelnil %2.f sek.\n", execution_time);
+
+  fptr = fopen("sorted.dat", "w");
+
+  for (int i = 0; i < n; i++) {
+    fprintf(fptr, "%d\n", arr[i]);
+  }
+  fclose(fptr);
+
+  int key = arr[3];
+
+  start = clock();
+  binarySearchRecursion(arr, 0, n, key);
+  end = clock();
+  execution_time = ((double)(end - start)) / CLOCKS_PER_SEC;
+  printf("\nBinary search recursion  wypelnil %2.f sekund\n", execution_time);
+
+  start = clock();
+  binarySearch(arr, 0, n, key);
+  end = clock();
+  execution_time = ((double)(end - start)) / CLOCKS_PER_SEC;
+  printf("\nBinary search wypelnil %2.f sekund\n", execution_time);
 }
 
-int binarySearchRecursion(int start, int end, int index, int array[], int key) {
-  if (start > end) {
-    index = 0;
-    } else{
-    int midIndex = floor((start + end)/2);
-    if (array[midIndex] < key){
-      binarySearchRecursion(array, midIndex +1, end, index, key);
-    }else if (key > array[midIndex]){
-      binarySearchRecursion(array, start, midIndex -1, index, key);
-    }else{
-      index = midIndex;
+void merge(int arr[], int l, int mid, int r) {
+  int i, j, k;
+  int size1 = mid - l + 1;
+  int size2 = r - mid;
+
+  int Left[size1], Right[size2];
+
+  for (i = 0; i < size1; i++)
+    Left[i] = arr[l + i];
+
+  for (j = 0; j < size2; j++)
+    Right[j] = arr[mid + 1 + j];
+
+  i = 0;
+  j = 0;
+  k = l;
+  while (i < size1 && j < size2) {
+    if (Left[i] <= Right[j]) {
+      arr[k] = Left[i];
+      i++;
+    } else {
+      arr[k] = Right[j];
+      j++;
     }
-    }
-  return -1;
+    k++;
   }
 
-int main(void){
-FILE *fptr;
-  int number, i = 0, arr[Max_line_length];
-  int n = 0, t;
-	srand(( unsigned )time(NULL));
-	
-  fptr = fopen("random.dat", "r");
-if (fptr != NULL) {
-            printf("File opened successfully!\n");
-	} else {
-            printf("Failed to read the file.\n");
-            return -1;
-	}
-  do {
-		printf("Wprowadzenie n. Musi byc != 0 \n");
-		scanf("%d", &n);
-	} while (n <= 0);
+  while (i < size1) {
+    arr[k] = Left[i];
+    i++;
+    k++;
+  }
 
-	t = clock();
+  while (j < size2) {
+    arr[k] = Right[j];
+    j++;
+    k++;
+  }
+}
 
+void mergeSort(int arr[], int l, int r) {
+  if (l < r) {
 
-	while ( fscanf(fptr, "%d", &number ) == 1 ) {
-		arr[i] = number;
-		
-	}
-  while (i < n) {
-		int j = 1 + rand() % 138573;
-		printf("%d \n", j);
-		fprintf(fptr, "%d\n", j);
-		i = i + 1;
-	}
+    int mid = l + (r - l) / 2;
 
-	fclose(fptr);
-	return 0;
+    mergeSort(arr, l, mid);
+    mergeSort(arr, mid + 1, r);
+
+    merge(arr, l, mid, r);
+  }
+}
+
+void binarySearchRecursion(int arr[], int lo, int hi, int key) {
+  int mid;
+  kroki++;
+
+  if (lo > hi) {
+    printf("|Key nie znajdziony|\n");
+    return;
+  }
+  mid = (lo + hi) / 2;
+  if (arr[mid] == key) {
+    printf("|Key znajdziony w %d krokach|\n", kroki);
+  } else if (arr[mid] > key) {
+   binarySearchRecursion(arr, lo, mid - 1, key);
+  } else if (arr[mid] < key) {
+   binarySearchRecursion(arr, mid + 1, hi, key);
+  }
+}
+
+void binarySearch(int arr[], int f, int l, int n) {
+  int mid;
+  kroki1++;
+  mid = (f + l) / 2;
+
+  while (f <= l) {
+    if (arr[mid] < n)
+      f = mid + 1;
+    else if (arr[mid] == n) {
+      printf("|%d znajdziony na pos %d w %d krokach.|\n", n, mid + 1, kroki1);
+      break;
+    } else
+      l = mid - 1;
+
+    mid = (f + l) / 2;
+  }
+  if (f > l)
+    printf("|%d nie znajdziony.|\n", n);
 }
