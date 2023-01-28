@@ -22,7 +22,7 @@ void binarySearchRecursion(int arr[], int lo, int hi, int key);
 void merge(int arr[], int l, int mid, int r);
 void mergeSort(int arr[], int l, int r);
 void binarySearch(int arr[], int f, int l, int n);
-int kroki = 0, kroki1 = 0;
+
 
 int main(void) {
   FILE *fptr;
