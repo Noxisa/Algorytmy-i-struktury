@@ -43,17 +43,12 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 
 **Oto algorytm Euklidesa zapisany w postaci planu działań.**
 
-**1. Wybieramy dwie liczby naturalne.**
-
-**2. Jeśli liczby są równe,to NWD jest np.pierwszą z nich i to oznacza koniec działań.**
-
-**3. Jeśli liczby nie są sobie równe,to trzeba:**
-
-**- zbadać,która jest większa;**
-
-**- odjąć od niej mniejszą i zastąpić większą przez otrzymaną różnicę;**
-
-**- wrócić do sprawdzenia warunku w punkcie 2(pętla).**
+1.**Wybieramy dwie liczby naturalne.**
+2.**Jeśli liczby są równe,to NWD jest np.pierwszą z nich i to oznacza koniec działań.**
+3.**Jeśli liczby nie są sobie równe,to trzeba:**
+-**zbadać,która jest większa;**
+-**odjąć od niej mniejszą i zastąpić większą przez otrzymaną różnicę;**
+-**wrócić do sprawdzenia warunku w punkcie 2(pętla).**
 
 **Pseudokod NWD**
 ```
