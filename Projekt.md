@@ -8,10 +8,10 @@ Autor
 Tomas Chmelevski Student 2 roku Informatyki
 
 Zawartość
-ALGORYTM EUKLIDESA
-Algorytm Knutha-Morrisa-Pratta 
-Wyszukiwania wzorca
-Algorytm dołączania nowego elementu do końca listy jednokierunkowej
+- ALGORYTM EUKLIDESA
+- Algorytm Knutha-Morrisa-Pratta Wyszukiwania wzorca
+- Algorytm dołączania nowego elementu do końca listy jednokierunkowej
+
 
 
 **ALGORYTM EUKLIDESA**
