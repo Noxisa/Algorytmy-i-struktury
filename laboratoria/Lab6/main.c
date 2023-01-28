@@ -6,7 +6,7 @@ Tomas Chmelevski. Student
 2022-12-13
 */
 
-#include "sortowanie.h"
+#include "Sortowanie.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
