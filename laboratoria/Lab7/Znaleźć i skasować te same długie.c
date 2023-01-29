@@ -5,12 +5,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#define STR_LEN 256
+#define MAX_WORDS 64
+#define WORD_LENGTH 64
 
 int main(void)
 {
 
-    char str[64];
-    char words[6][16];
+    char str[STR_LEN;
+    char words[MAX_WORDS][WORD_LENGTH];
 
     int i = 0;
     int j = 0;
