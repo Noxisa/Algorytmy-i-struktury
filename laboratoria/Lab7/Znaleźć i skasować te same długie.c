@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main()
+int main(void)
 {
 
     char str[64];
