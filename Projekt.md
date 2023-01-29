@@ -30,12 +30,12 @@ Przyjrzyj się temu sposobowi na przykładzie szukania.**
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
 
-**NWD liczb a i b wynosi więc 2 · 3 · 1 = 6.
+**NWD liczb a i b wynosi więc `` 2 · 3 · 1 = 6.``
 Lepszym i szybszym rozwiązaniem problemu szukania NWD dwóch liczb całkowitych jest algorytm Euklidesa.To
 jeden z najstarszych algorytmów,opisany przez Euklidesa ok.300 roku p.n.e.Opiera się na spostrzeżeniu:jeśli od
 większej liczby odejmiemy mniejszą,to mniejsza liczba i otrzymana różnica będą miały taki sam największy wspólny
 dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę takich samych liczb,to oznacza,
-że znaleźliśmy NWD.Popatrz,jak przebiega znajdowanie NWD dwóch liczb a = 42 i b = 24 według tego algorytmu.**
+że znaleźliśmy NWD.Popatrz,jak przebiega znajdowanie NWD dwóch liczb ``a = 42 i b = 24`` według tego algorytmu.**
 
 ![Screenshot 2022-11-29 112732](https://user-images.githubusercontent.com/115026224/204491197-d580ad5c-ed4e-4d98-a2e5-6b03ea332e2b.png)
 
@@ -102,7 +102,7 @@ int main(void) {
 
 **Zakłada istnienie tabeli podającej„częściowe dopasowania”(opisane poniżej),wskazującą,gdzie szukać potencjalnego początku następnego zdarzenia,w przypadku gdy weryfikacja obecnego potencjalnego wystąpienia się nie powiedzie.Na razie tę tablicę,oznaczoną przez,można traktować jako czarną skrzynkę z następującą właściwością:jeśli mamy częściowe dopasowanie do,ale nie powiedzie się podczas porównywania i,wtedy następne potencjalne wystąpienie zaczyna się od position .W szczególności istnieje i jest zdefiniowana w.Biorąc pod uwagę tę tabelę,algorytm jest stosunkowo prosty:``TS [m] S [m+i-1] S [m+w] LiczbaPi]m+i T[i-1] T [-1] -1.``**
 
-**Napraw.Załóżmy,że ma długość znaków oraz, znaków; ja = m = 0 PnieSja
+**Napraw.Załóżmy,że ma długość znaków oraz, znaków;`` ja = m = 0 PnieSja``
 Jeśli,a następnie zakończ przetwarzanie,nie znaleziono dopasowania.W przeciwnym razie porównaj i;`` m + ja = l Liczba Pi] S [m+w]``
 Jeśli są równe,napraw.Jeśli,dopasowanie jest zakończone.Zakończenie przetwarzania i zwrot jako pozycja rozpoczęcia korespondencji; ``ja = ja + 1 ja = nm``
 Jeśli są różne,napraw.Napraw,a jeśli napraw;``e = T [i-1] m = m + ie ja > 0 ja = e``
@@ -258,7 +258,7 @@ int main() {
 
 **Na podstawie tego faktu pokazujemy,że pętla jest wykonywana najczęściej.W każdej iteracji wykonuje jedną z dwóch gałęzi instrukcji if.l**
 
-**Pierwsza gałąź niezmiennie rośnie i nie zmienia się,więc indeks aktualnie sprawdzanego znaku w ciągu jest zwiększany.imm + iS
+**Pierwsza gałąź niezmiennie rośnie i nie zmienia się,więc indeks aktualnie sprawdzanego znaku w ciągu jest zwiększany.``imm + iS``
 Druga gałąź dodaje do.Jak widzieliśmy, zawsze jest pozytywne.W ten sposób zwiększa się pozycja początku bieżącego potencjalnego meczu.``i - T [i] mi - T [i] m``
 Pętla kończy się if,co oznacza, że biorąc pod uwagę konwencję C określającą,że znak NUL oznacza koniec łańcucha, to.W konsekwencji, każda gałąź instrukcji if może być przemierzona w większości przypadków,ponieważ odpowiednio wzrastają lub,a więc if,then i ponieważ wzrost w każdej iteracji wynosi co najmniej jedną jednostkę,z konieczności zostało to sprawdzone w przeszłości.``S [m+i]='\0'm + ja = llm + imm <= m + im =lm + i => lm + i = l``**
 
