@@ -1,4 +1,4 @@
-Algorytmy i struktury danych
+Projekt z przedmiotu "Algorytmy i struktury danych"
 
 Opis
  Algorytm Euklidesa.Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.Algorytm dołączania nowego elementu do końca listy jednokierunkowej
@@ -14,7 +14,7 @@ Zawartość
 
 
 
-**ALGORYTM EUKLIDESA**
+**#ALGORYTM EUKLIDESA#**
 
 **Algorytm opisuje sposób rozwiązania problemu krok po kroku.Opis ten powinien być dokładny i nie pozostawiać
 wątpliwości,co,jak i w jakiej kolejności trzeba zrobić.Z algorytmami masz często do czynienia na lekcjach matematyki.
@@ -94,7 +94,7 @@ int main(void) {
 
 **Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca**
 
-**Algorytm Knutha-Morrisa-Pratta(lub w krótszym sposób algorytm KMP )jest podciąg(znak)algorytm wyszukiwania,co pozwala na znalezienie wystąpienia ciągu znaków w tekście o liniowej złożoności w najgorszym przypadku.Jego specyfika polega na wstępnym przetwarzaniu ciągu,który dostarcza informacji wystarczających do określenia,gdzie kontynuować wyszukiwanie w przypadku niezgodności.W ten sposób algorytm nie sprawdza ponownie znaków,które były widziane wcześniej,a zatem ogranicza liczbę koniecznych porównań.PSO (|P| + |S|)**
+**Algorytm Knutha-Morrisa-Pratta(lub w krótszym sposób algorytm KMP )jest podciąg(znak)algorytm wyszukiwania,co pozwala na znalezienie wystąpienia ciągu znaków w tekście o liniowej złożoności w najgorszym przypadku.Jego specyfika polega na wstępnym przetwarzaniu ciągu,który dostarcza informacji wystarczających do określenia,gdzie kontynuować wyszukiwanie w przypadku niezgodności.W ten sposób algorytm nie sprawdza ponownie znaków,które były widziane wcześniej,a zatem ogranicza liczbę koniecznych porównań.``LatexPSO (|P| + |S|)``**
 
 **Algorytm został zaprojektowany w 1970 roku przez Knutha i Pratta(in)oraz w innym kontekście przez Morrisa(in)i wspólnie opublikowany w 1977 roku. Niezależnie Matiyasevich uzyskał już w 1969 r.podobny algorytm,zakodowany przez dwuwymiarową maszynę Turinga,badając problem rozpoznawania występowania strun.**
 
