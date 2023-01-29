@@ -3,7 +3,7 @@
 // 2023-01-23
 
 #include <stdio.h>
-int main()
+int main(void)
 {
     char s[1000];
     int c=0,j;
