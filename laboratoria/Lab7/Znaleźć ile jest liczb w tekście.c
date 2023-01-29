@@ -1,14 +1,14 @@
 // Tomas Chmelevski. Student
 // Znaleźć ile jest liczb w tekście
 // 2023-01-23
-
 #include <stdio.h>
+#define STR_MAX_LENGTH 1000
 int main(void)
 {
-    char s[1000];
+    char s[STR_MAX_LENGTH];
     int c=0,j;
     printf("Napisz slowo: ");
-    gets(s);
+     
     for(j = 0; s[j] != '\0'; j++)
     {
         if(s[j]=='0' || s[j]=='1'|| s[j]=='2'||
