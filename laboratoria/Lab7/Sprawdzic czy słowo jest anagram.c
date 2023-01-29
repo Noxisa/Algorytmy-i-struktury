@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#define MAX_WORD_LENGTH 50
 
 int is_anagram(char a[], char b[]) { 
  
@@ -29,8 +30,8 @@ int is_anagram(char a[], char b[]) {
   return 1;
 }
 
-int main() {
-  char a[50], b[50];
+int main(void) {
+  char a[MAX_WORD_LENGTH], b[MAX_WORD_LENGTH];
 
   printf("Wprowadź pierwszy ciąg : ");
   scanf("%s", a); 
