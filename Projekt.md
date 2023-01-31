@@ -4,10 +4,10 @@
  Algorytm Euklidesa.Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.Algorytm dołączania nowego elementu do końca listy jednokierunkowej
 
 
-Autor
+### Autor
 Tomas Chmelevski Student 2 roku Informatyki
 
-Zawartość
+### Zawartość
 - [ALGORYTM EUKLIDESA](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=ko%C5%84ca%20listy%20jednokierunkowej-,ALGORYTM%20EUKLIDESA)
 - [Algorytm Knutha-Morrisa-Pratta Wyszukiwania wzorca](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=Algorytm%20Knutha%2DMorrisa%2DPratta%20wyszukiwania%20wzorca,-Algorytm%20Knutha%2DMorrisa)
 -  [Algorytm dołączania nowego elementu do końca listy jednokierunkowej](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=Algorytm%20do%C5%82%C4%85czania%20nowego%20elementu%20do%20ko%C5%84ca%20listy%20jednokierunkowej.)
@@ -29,7 +29,7 @@ Przyjrzyj się temu sposobowi na przykładzie szukania.**
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
 
-**NWD liczb a i b wynosi więc `` 2 · 3 · 1 = 6.``
+**NWD liczb a i b wynosi więc  `` 2 · 3 · 1 = 6.``
 Lepszym i szybszym rozwiązaniem problemu szukania NWD dwóch liczb całkowitych jest algorytm Euklidesa.To
 jeden z najstarszych algorytmów,opisany przez Euklidesa ok.300 roku p.n.e.Opiera się na spostrzeżeniu:jeśli od
 większej liczby odejmiemy mniejszą,to mniejsza liczba i otrzymana różnica będą miały taki sam największy wspólny
@@ -63,7 +63,7 @@ nwd(a, b) {
 }
 
 ```
-**Kod NWD**
+### Kod NWD
 ```
 #include <stdio.h>
 
@@ -89,7 +89,7 @@ int main(void) {
 }
 
 ```
-
+-----------------------------------------------------------------
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 
@@ -263,7 +263,7 @@ Pętla kończy się if,co oznacza, że biorąc pod uwagę konwencję C określaj
 
 **W ten sposób pętla jest wykonywana w większości przypadków,ustanawiając w ten sposób złożoność algorytmiczną w.2l0(l)**
 
-
+-------------------------------------------------------------------------------------------------------------------
 ## Algorytm dołączania nowego elementu do końca listy jednokierunkowej.
 
 
@@ -286,8 +286,9 @@ Do usuwania ostatniego elementu z listy używamy operatora dekrementacji.Funkcja
 Stos-jest liniową strukturą danych dostępnych do zapisywania i odczytywania tylko jednego końca(tzw. wierzchołka)Nowe elementy są dokładane na wierzch stosu i zdejmowane z wierzchu.Ostatni element położony na stosie będzie pierwszym z niego zdjętym.Stos jest nazywany strukturą LIFO(last In first out)
 Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy stos jest pusty,full-czy stos jest zapełniony,push-umieszczenie elementu na stosie,pop-zdjęcie najwyższego elementu ze stosu.Ciąg operacji pusch i pop:**
 
-``[![](https://mermaid.ink/img/pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk?type=png)](https://mermaid.live/edit#pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk)
-``
+
+[![](https://mermaid.ink/img/pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk?type=png)](https://mermaid.live/edit#pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk)
+
 
 
 ### Kod list jedenkierunkowy 
