@@ -1,6 +1,6 @@
-Projekt z przedmiotu "Algorytmy i struktury danych"
+# Projekt z przedmiotu "Algorytmy i struktury danych"
 
-Opis
+### Opis
  Algorytm Euklidesa.Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.Algorytm dołączania nowego elementu do końca listy jednokierunkowej
 
 
@@ -13,7 +13,7 @@ Zawartość
 -  [Algorytm dołączania nowego elementu do końca listy jednokierunkowej](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=Algorytm%20do%C5%82%C4%85czania%20nowego%20elementu%20do%20ko%C5%84ca%20listy%20jednokierunkowej.)
 
 
-**ALGORYTM EUKLIDESA**
+## Algorytm Euklidesa
 
 **Algorytm opisuje sposób rozwiązania problemu krok po kroku.Opis ten powinien być dokładny i nie pozostawiać
 wątpliwości,co,jak i w jakiej kolejności trzeba zrobić.Z algorytmami masz często do czynienia na lekcjach matematyki.
@@ -49,7 +49,7 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 - **odjąć od niej mniejszą i zastąpić większą przez otrzymaną różnicę;**
 - **wrócić do sprawdzenia warunku w punkcie 2(pętla).**
 
-**Pseudokod NWD**
+## Pseudokod NWD
 ```
 
 nwd(a, b) {
@@ -91,7 +91,7 @@ int main(void) {
 ```
 
 
-**Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca**
+## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 
 **Algorytm Knutha-Morrisa-Pratta(lub w krótszym sposób algorytm KMP )jest podciąg(znak)algorytm wyszukiwania,co pozwala na znalezienie wystąpienia ciągu znaków w tekście o liniowej złożoności w najgorszym przypadku.Jego specyfika polega na wstępnym przetwarzaniu ciągu,który dostarcza informacji wystarczających do określenia,gdzie kontynuować wyszukiwanie w przypadku niezgodności.W ten sposób algorytm nie sprawdza ponownie znaków,które były widziane wcześniej,a zatem ogranicza liczbę koniecznych porównań.``PSO (|P| + |S|)``**
 
@@ -111,7 +111,7 @@ Opis ten implementuje algorytm zastosowany w poprzednim przykładzie.Za każdym 
 Przykładowy kod algorytmu wyszukiwania
 **Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych ciągów znaków.Aby przezwyciężyć wewnętrzne ograniczenia tabel w C,indeksy są przesunięte o jedną jednostkę,to znaczy,że w kodzie są równoważne z powyższym opisem.``T [i] T [i+1].``**
 
-**PseudoKod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca**
+### PseudoKod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 ```
 computeLPSArray(*pat, M, *lps);
 
@@ -286,7 +286,7 @@ Do usuwania ostatniego elementu z listy używamy operatora dekrementacji.Funkcja
 Stos-jest liniową strukturą danych dostępnych do zapisywania i odczytywania tylko jednego końca(tzw. wierzchołka)Nowe elementy są dokładane na wierzch stosu i zdejmowane z wierzchu.Ostatni element położony na stosie będzie pierwszym z niego zdjętym.Stos jest nazywany strukturą LIFO(last In first out)
 Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy stos jest pusty,full-czy stos jest zapełniony,push-umieszczenie elementu na stosie,pop-zdjęcie najwyższego elementu ze stosu.Ciąg operacji pusch i pop:**
 
-![Zrzut ekranu 2023-01-31 190955](https://user-images.githubusercontent.com/115026224/215832192-de0f034d-0d62-4db0-9b57-bf7c7ab5da16.png)
+[![](https://mermaid.ink/img/pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk?type=png)](https://mermaid.live/edit#pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk)
 
 
 Kod list jedenkierunkowy 
