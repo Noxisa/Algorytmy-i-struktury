@@ -49,7 +49,7 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 - **odjąć od niej mniejszą i zastąpić większą przez otrzymaną różnicę;**
 - **wrócić do sprawdzenia warunku w punkcie 2(pętla).**
 
-## Pseudokod NWD
+### Pseudokod NWD
 ```
 
 nwd(a, b) {
@@ -179,7 +179,7 @@ int main() {
   return 0;
 }
 ```
-**Kod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.**
+### Kod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.
 ```
 #include <stdio.h>
 #include <stdlib.h>
@@ -251,7 +251,7 @@ int main() {
   return 0;
 }
 ```
-**Wydajność algorytmu wyszukiwania.**
+### Wydajność algorytmu wyszukiwania.
 
 **Zakładając wcześniejsze istnienie tablicy,faza„przeszukiwania”algorytmu Knutha-Morrisa-Pratta ma złożoność O,gdzie oznacza długość .Jeśli wykluczymy dodatkowe stałe przetwarzanie indukowane przez wejście i wyjście funkcji,całe przetwarzanie odbywa się w pętli głównej.Aby obliczyć limit liczby iteracji, konieczna jest pierwsza obserwacja dotycząca natury.Z definicji jest skonstruowany w taki sposób, że jeśli częściowe dopasowanie, które zaczyna się kończyć niepowodzeniem podczas porównywania i,następne potencjalne dopasowanie nie rozpoczyna się przed.W szczególności następne potencjalne dopasowanie musi znajdować się na pozycji większej niż,aby.``T(l) lSTS [m] S [m+i] P [i] S [m + (i-T[i])] mT [i] <i``**
 
@@ -264,7 +264,7 @@ Pętla kończy się if,co oznacza, że biorąc pod uwagę konwencję C określaj
 **W ten sposób pętla jest wykonywana w większości przypadków,ustanawiając w ten sposób złożoność algorytmiczną w.2l0(l)**
 
 
-**Algorytm dołączania nowego elementu do końca listy jednokierunkowej.**
+## Algorytm dołączania nowego elementu do końca listy jednokierunkowej.
 
 
 ![Screenshot 2022-12-30 150627](https://user-images.githubusercontent.com/115026224/210073296-061e3a24-2648-4148-98df-7837dc49a05a.png)
@@ -286,10 +286,11 @@ Do usuwania ostatniego elementu z listy używamy operatora dekrementacji.Funkcja
 Stos-jest liniową strukturą danych dostępnych do zapisywania i odczytywania tylko jednego końca(tzw. wierzchołka)Nowe elementy są dokładane na wierzch stosu i zdejmowane z wierzchu.Ostatni element położony na stosie będzie pierwszym z niego zdjętym.Stos jest nazywany strukturą LIFO(last In first out)
 Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy stos jest pusty,full-czy stos jest zapełniony,push-umieszczenie elementu na stosie,pop-zdjęcie najwyższego elementu ze stosu.Ciąg operacji pusch i pop:**
 
-[![](https://mermaid.ink/img/pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk?type=png)](https://mermaid.live/edit#pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk)
+``[![](https://mermaid.ink/img/pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk?type=png)](https://mermaid.live/edit#pako:eNpljz0OgzAMRq8SeYYeIEOl8qcOFQMdCYNFTEEigGgitULcvSZ0iyd_z0-WvUE7awIJrxWXXjwqNQmuW30n1I2IL_FVJHVJHys0Wmz-YxEzT8-QnFYaWKm3soBnnucBzz0vAl54Xg7jESECQ6vBQfPR20EU2J4MKZDcaurQjVaBmnZW0dn5-Z1akHZ1FIFbeC9lA_K7BmSH45v2H3eoTRk)
+``
 
 
-Kod list jedenkierunkowy 
+### Kod list jedenkierunkowy 
 ````
 #include <stdio.h>
 #include <stdlib.h>
@@ -342,6 +343,6 @@ int main() {
 }
 ````
 
-Literatura
+### Literatura
 Algorytmy i struktury danych,L.Banachowski,K.Diks,W.Rytter,Euklides z Aleksandrii,Knutha-Morrisa-Pratta.
 
