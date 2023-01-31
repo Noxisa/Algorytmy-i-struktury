@@ -286,53 +286,7 @@ Do usuwania ostatniego elementu z listy używamy operatora dekrementacji.Funkcja
 Stos-jest liniową strukturą danych dostępnych do zapisywania i odczytywania tylko jednego końca(tzw. wierzchołka)Nowe elementy są dokładane na wierzch stosu i zdejmowane z wierzchu.Ostatni element położony na stosie będzie pierwszym z niego zdjętym.Stos jest nazywany strukturą LIFO(last In first out)
 Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy stos jest pusty,full-czy stos jest zapełniony,push-umieszczenie elementu na stosie,pop-zdjęcie najwyższego elementu ze stosu.Ciąg operacji pusch i pop:**
 
-Pseudokod list jedenkierunkowy
-````
-typedef struct node {
-  struct node *next;
-} node_t;
-
-void print_list(node_t *head) {
-  node_t *current = head;
-
-  while (current != NULL) {
-  }
-}
-pop(node_t **head) {
-  retval = -1;
-  node_t *next_node = NULL;
-
-  if (*head == NULL) {
-    return -1;
-  }
-
-  next_node = (*head)->next;
-  retval = (*head)->val;
-  free(*head);
-  *head = next_node;
-
-  return retval;
-}
-
-remove_by_value(node_t **head, int val){
-
-}
-
-{
-
-  node_t *test_list = (node_t *)malloc(sizeof(node_t));
-  test_list->val = 1;
-  test_list->next = (node_t *)malloc(sizeof(node_t));
-  test_list->next->val = 2;
-  test_list->next->next = (node_t *)malloc(sizeof(node_t));
-  test_list->next->next->val = 3;
-  test_list->next->next->next = (node_t *)malloc(sizeof(node_t));
-  test_list->next->next->next->val = 4;
-  test_list->next->next->next->next = NULL;
-
-  remove_by_value(&test_list, 3);
-}
-````
+![Zrzut ekranu 2023-01-31 190955](https://user-images.githubusercontent.com/115026224/215832192-de0f034d-0d62-4db0-9b57-bf7c7ab5da16.png)
 
 
 Kod list jedenkierunkowy 
