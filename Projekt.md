@@ -20,11 +20,11 @@ wątpliwości,co,jak i w jakiej kolejności trzeba zrobić.Z algorytmami masz cz
 Jednym z przykładów algorytmu jest sposób znajdowania największego wspólnego dzielnika dwóch liczb całkowitych
 (NWD).NWD jest potrzebny np.przy skracaniu ułamków.
 Algorytmem poznanym przez ciebie na lekcjach matematyki jest sprawdzanie podzielności dwóch liczb całkowitych
-przez kolejne liczby.Najpierw sprawdzamy podzielność przez 2,potem–przez 3 i tak dalej,aż do mniejszej z dwóch
+przez kolejne liczby.Najpierw sprawdzamy podzielność przez ``2``,potem–przez ``3``i tak dalej,aż do mniejszej z dwóch
 liczb.Największym wspólnym dzielnikiem dwóch liczb jest iloczyn ich wszystkich wspólnych dzielników pierwszych.
 Przyjrzyj się temu sposobowi na przykładzie szukania.**
 
-**NWD liczb:``a = 42 i b = 24.``**
+**NWD liczb:``a = 42`` i ``b = 24.``**
 
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
@@ -34,7 +34,7 @@ Lepszym i szybszym rozwiązaniem problemu szukania NWD dwóch liczb całkowitych
 jeden z najstarszych algorytmów,opisany przez Euklidesa ok.300 roku p.n.e.Opiera się na spostrzeżeniu:jeśli od
 większej liczby odejmiemy mniejszą,to mniejsza liczba i otrzymana różnica będą miały taki sam największy wspólny
 dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę takich samych liczb,to oznacza,
-że znaleźliśmy NWD.Popatrz,jak przebiega znajdowanie NWD dwóch liczb ``a = 42 i b = 24`` według tego algorytmu.**
+że znaleźliśmy NWD.Popatrz,jak przebiega znajdowanie NWD dwóch liczb ``a = 42`` i ``b = 24`` według tego algorytmu.**
 
 ![Screenshot 2022-11-29 112732](https://user-images.githubusercontent.com/115026224/204491197-d580ad5c-ed4e-4d98-a2e5-6b03ea332e2b.png)
 
@@ -111,7 +111,7 @@ int main(void) {
 Jeśli,a następnie zakończ przetwarzanie,nie znaleziono dopasowania.W przeciwnym razie porównaj i;`` m + ja = l Liczba Pi] S [m+w]``
 Jeśli są równe,napraw.Jeśli,dopasowanie jest zakończone.Zakończenie przetwarzania i zwrot jako pozycja rozpoczęcia korespondencji; ``ja = ja + 1 ja = nm``
 Jeśli są różne,napraw.Napraw,a jeśli napraw;``e = T [i-1] m = m + ie ja > 0 ja = e``
-Kontynuować kroku n°2.
+Kontynuować kroku ``n°2``.
 Opis ten implementuje algorytm zastosowany w poprzednim przykładzie.Za każdym razem,gdy sprawdzenie się nie powiedzie,tabela jest sprawdzana w celu znalezienia początku następnego potencjalnego wystąpienia,a liczniki są odpowiednio aktualizowane.Dlatego sprawdzanie znaków nigdy nie jest wykonywane wstecz.W szczególności każdy znak jest sprawdzany tylko raz (chociaż mógłby zostać odrzucony kilka razy w wyniku nieudanego dopasowania.Zobacz poniżej analizę skuteczności algorytmu.**
 
 Przykładowy kod algorytmu wyszukiwania
@@ -259,15 +259,15 @@ int main() {
 ```
 ### Wydajność algorytmu wyszukiwania.
 
-**Zakładając wcześniejsze istnienie tablicy,faza„przeszukiwania”algorytmu Knutha-Morrisa-Pratta ma złożoność O,gdzie oznacza długość .Jeśli wykluczymy dodatkowe stałe przetwarzanie indukowane przez wejście i wyjście funkcji,całe przetwarzanie odbywa się w pętli głównej.Aby obliczyć limit liczby iteracji, konieczna jest pierwsza obserwacja dotycząca natury.Z definicji jest skonstruowany w taki sposób, że jeśli częściowe dopasowanie, które zaczyna się kończyć niepowodzeniem podczas porównywania i,następne potencjalne dopasowanie nie rozpoczyna się przed.W szczególności następne potencjalne dopasowanie musi znajdować się na pozycji większej niż,aby.``T(l) lSTS [m] S [m+i] P [i] S [m + (i-T[i])] mT [i] <i``**
+**Wiadomo, że algorytm KMP (znany również jako Knuth-Morris-Pratt) przetwarza wstępnie wzorzec ``P`` i konstruuje funkcję niepowodzenia ``F`` (zwaną także `lps[]`) do przechowywania długości najdłuższego sufiksu pod-wzorca ``P[1.. l]``, który jest również przedrostkiem ``P``, dla ``l = 0`` do ``m-1``. Zauważ, że wzór podrzędny zaczyna się od indeksu ``1``, ponieważ przyrostek może być samym ciągiem znaków. Po wystąpieniu niedopasowania w indeksie ``P[j]`` aktualizujemy ``j`` do ``F[j-1]``.
 
-**Na podstawie tego faktu pokazujemy,że pętla jest wykonywana najczęściej.W każdej iteracji wykonuje jedną z dwóch gałęzi instrukcji if.l**
+Oryginalny algorytm KMP ma złożoność czasową ``O(M + N)`` i przestrzeń pomocniczą ``O(M)``, gdzie N to rozmiar tekstu wejściowego, a ``M`` to rozmiar wzorca. Etap przetwarzania wstępnego kosztuje ``O(M)`` czasu. Trudno jest osiągnąć lepszą złożoność środowiska uruchomieniowego, ale nadal jesteśmy w stanie wyeliminować niektóre nieefektywne zmiany.**
 
-**Pierwsza gałąź niezmiennie rośnie i nie zmienia się,więc indeks aktualnie sprawdzanego znaku w ciągu jest zwiększany.``imm + iS``
-Druga gałąź dodaje do.Jak widzieliśmy, zawsze jest pozytywne.W ten sposób zwiększa się pozycja początku bieżącego potencjalnego meczu.``i - T [i] mi - T [i] m``
-Pętla kończy się if,co oznacza, że biorąc pod uwagę konwencję C określającą,że znak NUL oznacza koniec łańcucha, to.W konsekwencji, każda gałąź instrukcji if może być przemierzona w większości przypadków,ponieważ odpowiednio wzrastają lub,a więc if,then i ponieważ wzrost w każdej iteracji wynosi co najmniej jedną jednostkę,z konieczności zostało to sprawdzone w przeszłości.``S [m+i]='\0'm + ja = llm + imm <= m + im =lm + i => lm + i = l``**
 
-**W ten sposób pętla jest wykonywana w większości przypadków,ustanawiając w ten sposób złożoność algorytmiczną w.2l0(l)**
+### Złożoność czasowa
+
+![image](https://user-images.githubusercontent.com/115026224/215877333-9e504ca7-94d9-4d26-8ace-51d102b51e20.png)
+
 
 -------------------------------------------------------------------------------------------------------------------
 ## Algorytm dołączania nowego elementu do końca listy jednokierunkowej.
@@ -302,51 +302,225 @@ Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node {
-  int val;
+void create();
+void display();
+void insert_begin();
+void insert_end();
+void insert_pos();
+void delete_begin();
+void delete_end();
+void delete_pos();
+
+struct node {
+  int info;
   struct node *next;
-} node_t;
-
-void print_list(node_t *head) {
-  node_t *current = head;
-
-  while (current != NULL) {
-    printf("%d\n", current->val);
-    current = current->next;
-  }
-}
-
-int pop(node_t **head) {
-  int retval = -1;
-  node_t *next_node = NULL;
-
-  if (*head == NULL) {
-    return -1;
-  }
-
-  next_node = (*head)->next;
-  retval = (*head)->val;
-  free(*head);
-  *head = next_node;
-
-  return retval;
-}
-
-int remove_by_value(node_t **head, int val) {}
-
+};
+struct node *start = NULL;
 int main() {
+  int wybór;
+  while (1) {
 
-  node_t *test_list = (node_t *)malloc(sizeof(node_t));
-  test_list->val = 1;
-  test_list->next = (node_t *)malloc(sizeof(node_t));
-  test_list->next->val = 2;
-  test_list->next->next = (node_t *)malloc(sizeof(node_t));
-  test_list->next->next->val = 3;
-  test_list->next->next->next = (node_t *)malloc(sizeof(node_t));
-  test_list->next->next->next->val = 4;
-  test_list->next->next->next->next = NULL;
+    printf("Wpisz swój wybór:");
+    scanf("%d", &wybór);
+    switch (wybór) {
+    case 1:
+      create();
+      break;
+    case 2:
+      display();
+      break;
+    case 3:
+      insert_begin();
+      break;
+    case 4:
+      insert_end();
+      break;
+    case 5:
+      insert_pos();
+      break;
+    case 6:
+      delete_begin();
+      break;
+    case 7:
+      delete_end();
+      break;
+    case 8:
+      delete_pos();
+      break;
 
-  remove_by_value(&test_list, 3);
+    case 9:
+      exit(0);
+      break;
+
+    default:
+      printf("\n zły wybór:");
+      break;
+    }
+  }
+  return 0;
+}
+void create() {
+  struct node *temp, *ptr;
+  temp = (struct node *)malloc(sizeof(struct node));
+  if (temp == NULL) {
+    printf("\nBrak miejsca w pamięci:");
+    exit(0);
+  }
+  printf("\nWprowadź wartość danych dla węzła:");
+  scanf("%d", &temp->info);
+  temp->next = NULL;
+  if (start == NULL) {
+    start = temp;
+  } else {
+    ptr = start;
+    while (ptr->next != NULL) {
+      ptr = ptr->next;
+    }
+    ptr->next = temp;
+  }
+}
+void display() {
+  struct node *ptr;
+  if (start == NULL) {
+    printf("\nLista jest pusty:");
+    return;
+  } else {
+    ptr = start;
+    printf("\nThe List elements are:");
+    while (ptr != NULL) {
+      printf("%dt", ptr->info);
+      ptr = ptr->next;
+    }
+  }
+}
+void insert_begin() {
+  struct node *temp;
+  temp = (struct node *)malloc(sizeof(struct node));
+  if (temp == NULL) {
+    printf("\nBrak miejsca w pamięci:");
+    return;
+  }
+  printf("\nWprowadź wartość danych dla węzła:");
+  scanf("%d", &temp->info);
+  temp->next = NULL;
+  if (start == NULL) {
+    start = temp;
+  } else {
+    temp->next = start;
+    start = temp;
+  }
+}
+void insert_end() {
+  struct node *temp, *ptr;
+  temp = (struct node *)malloc(sizeof(struct node));
+  if (temp == NULL) {
+    printf("\nBrak miejsca w pamięci:");
+    return;
+  }
+  printf("\nWprowadź wartość danych dla węzła:");
+  scanf("%d", &temp->info);
+  temp->next = NULL;
+  if (start == NULL) {
+    start = temp;
+  } else {
+    ptr = start;
+    while (ptr->next != NULL) {
+      ptr = ptr->next;
+    }
+    ptr->next = temp;
+  }
+}
+void insert_pos() {
+  struct node *ptr, *temp;
+  int i, pos;
+  temp = (struct node *)malloc(sizeof(struct node));
+  if (temp == NULL) {
+    printf("\nBrak miejsca w pamięci:");
+    return;
+  }
+  printf("\nWprowadź pozycję nowego węzła, który ma zostać wstawiony:");
+  scanf("%d", &pos);
+  printf("\nWprowadź wartość danych węzła:");
+  scanf("%d", &temp->info);
+
+  temp->next = NULL;
+  if (pos == 0) {
+    temp->next = start;
+    start = temp;
+  } else {
+    for (i = 0, ptr = start; i < pos - 1; i++) {
+      ptr = ptr->next;
+      if (ptr == NULL) {
+        printf("\nNie znaleziono pozycji:");
+        return;
+      }
+    }
+    temp->next = ptr->next;
+    ptr->next = temp;
+  }
+}
+void delete_begin() {
+  struct node *ptr;
+  if (ptr == NULL) {
+    printf("\nLista jest pusty:");
+    return;
+  } else {
+    ptr = start;
+    start = start->next;
+    printf("\nUsuniętym elementem jest :%d", ptr->info);
+    free(ptr);
+  }
+}
+void delete_end() {
+  struct node *temp, *ptr;
+  if (start == NULL) {
+    printf("\nLista jest pusty:");
+    exit(0);
+  } else if (start->next == NULL) {
+    ptr = start;
+    start = NULL;
+    printf("\nUsuniętym elementem jest:%d", ptr->info);
+    free(ptr);
+  } else {
+    ptr = start;
+    while (ptr->next != NULL) {
+      temp = ptr;
+      ptr = ptr->next;
+    }
+    temp->next = NULL;
+    printf("\nUsuniętym elementem jest:%d", ptr->info);
+    free(ptr);
+  }
+}
+void delete_pos() {
+  int i, pos;
+  struct node *temp, *ptr;
+  if (start == NULL) {
+    printf("\nLista jest pusty:");
+    exit(0);
+  } else {
+    printf("\nWprowadź pozycję węzła do usunięcia:");
+    scanf("%d", &pos);
+    if (pos == 0) {
+      ptr = start;
+      start = start->next;
+      printf("\nUsuniętym elementem jest:%d", ptr->info);
+      free(ptr);
+    } else {
+      ptr = start;
+      for (i = 0; i < pos; i++) {
+        temp = ptr;
+        ptr = ptr->next;
+        if (ptr == NULL) {
+          printf("\n Lista jest pusty:");
+          return;
+        }
+      }
+      temp->next = ptr->next;
+      printf("\nUsuniętym elementem jest:%d", ptr->info);
+      free(ptr);
+    }
+  }
 }
 ````
 
