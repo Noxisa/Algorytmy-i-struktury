@@ -12,7 +12,7 @@
 int main(void)
 {
 
-    char str[STR_LEN;
+    char str[STR_LEN];
     char words[MAX_WORDS][WORD_LENGTH];
 
     int i = 0;
