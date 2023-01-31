@@ -8,7 +8,7 @@ Autor
 Tomas Chmelevski Student 2 roku Informatyki
 
 Zawartość
-- ALGORYTM EUKLIDESA *[ALGORYTM EUKLIDESA](https://github.com/Noxisa/Algorytmy-i-struktury/edit/main/Projekt.md)
+-  *[ALGORYTM EUKLIDESA](https://github.com/Noxisa/Algorytmy-i-struktury/Projekt.md)
 - Algorytm Knutha-Morrisa-Pratta Wyszukiwania wzorca
 - Algorytm dołączania nowego elementu do końca listy jednokierunkowej
 
