@@ -50,7 +50,8 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 - **wrócić do sprawdzenia warunku w punkcie 2(pętla).**
 
 ### Złożoność czasowa
-![image](https://user-images.githubusercontent.com/115026224/215841159-f4e33179-58b6-4638-b097-c12e1475c6a5.png)
+![Zrzut ekranu 2023-01-31 195019](https://user-images.githubusercontent.com/115026224/215841408-d632d905-0540-4812-90a3-b122876c01f1.png)
+
 
 
 
