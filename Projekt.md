@@ -9,8 +9,7 @@ Tomas Chmelevski Student 2 roku Informatyki
 
 Zawartość
 - [ALGORYTM EUKLIDESA](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=ko%C5%84ca%20listy%20jednokierunkowej-,ALGORYTM%20EUKLIDESA)
-- [Algorytm Knutha-Morrisa-Pratta Wyszukiwania wzorca](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=Algorytm%20Knutha%2DMorrisa%2DPratta%20wyszukiwania%20wzorca,-Algorytm%20Knutha%2DMorrisa)
--  [Algorytm dołączania nowego elementu do końca listy jednokierunkowej](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=ko%C5%84ca%20listy%20jednokierunkowej-,ALGORYTM%20EUKLIDESA)
+- [Algorytm Knutha-Morrisa-Pratta Wyszukiwania wzorca](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=ko%C5%84ca%20listy%20jednokierunkowej-,ALGORYTM%20EUKLIDESAhttps://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=w.2l0(l)-,Algorytm%20do%C5%82%C4%85czania%20nowego%20elementu%20do%20ko%C5%84ca%20listy%20jednokierunkowej,-.)
 
 
 
