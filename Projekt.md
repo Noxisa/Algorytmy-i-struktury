@@ -49,6 +49,11 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 - **odjąć od niej mniejszą i zastąpić większą przez otrzymaną różnicę;**
 - **wrócić do sprawdzenia warunku w punkcie 2(pętla).**
 
+### Złożoność czasowa
+![image](https://user-images.githubusercontent.com/115026224/215841159-f4e33179-58b6-4638-b097-c12e1475c6a5.png)
+
+
+
 ### Pseudokod NWD
 ```
 
