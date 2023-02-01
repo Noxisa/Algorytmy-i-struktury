@@ -1,7 +1,7 @@
 # Projekt z przedmiotu "Algorytmy i struktury danych"
 
 ### Opis
- Algorytm Euklidesa.Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.Algorytm dołączania nowego elementu do końca listy jednokierunkowej
+ **Algorytm Euklidesa.Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.Algorytm dołączania nowego elementu do końca listy jednokierunkowej**
 
 
 ### Autor
