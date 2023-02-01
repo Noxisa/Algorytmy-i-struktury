@@ -292,7 +292,7 @@ Stos-jest liniową strukturą danych dostępnych do zapisywania i odczytywania t
 Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy stos jest pusty,full-czy stos jest zapełniony,push-umieszczenie elementu na stosie,pop-zdjęcie najwyższego elementu ze stosu.Ciąg operacji pusch i pop:**
 
 
-[![](https://mermaid.ink/img/pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4?type=png)](https://mermaid.live/edit#pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4)
+![](https://mermaid.ink/img/pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4?type=png)
 ![image](https://user-images.githubusercontent.com/115026224/215999197-37b3ca46-c5fd-48ce-b47f-6b61a1cac781.png)
 
 
