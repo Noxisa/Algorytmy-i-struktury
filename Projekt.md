@@ -263,7 +263,6 @@ int main() {
 
 Oryginalny algorytm KMP ma złożoność czasową ``O(M + N)`` i przestrzeń pomocniczą ``O(M)``, gdzie N to rozmiar tekstu wejściowego, a ``M`` to rozmiar wzorca. Etap przetwarzania wstępnego kosztuje ``O(M)`` czasu. Trudno jest osiągnąć lepszą złożoność środowiska uruchomieniowego, ale nadal jesteśmy w stanie wyeliminować niektóre nieefektywne zmiany.**
 
-
 ### Złożoność czasowa
 
 ![image](https://user-images.githubusercontent.com/115026224/215877333-9e504ca7-94d9-4d26-8ace-51d102b51e20.png)
