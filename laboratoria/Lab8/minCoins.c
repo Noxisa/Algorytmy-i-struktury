@@ -30,7 +30,7 @@ int minCoins(int coinList[], int n, int value) {
   return s[value];
 }
 
-int main() {
+int main(void) {
   int coinList[] = {1, 2, 5};
   int n = sizeof(coinList) / sizeof(coinList[0]);
   int value = 11;
