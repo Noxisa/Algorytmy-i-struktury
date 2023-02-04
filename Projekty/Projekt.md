@@ -69,32 +69,7 @@ nwd(a, b) {
 }
 
 ```
-### Kod NWD
-```
-#include <stdio.h>
-
-int nwd(int a, int b) {
-  int c;
-  while (b) {
-    c = a % b;
-    a = b;
-    b = c;
-  }
-  return a;
-}
-
-int main(void) {
-  int a, b;
-
-  printf("podaj liczby: ");
-  scanf("%d %d", &a, &b);
-
-  printf("nww: %d\n", (a * b) / nwd(a, b));
-
-  return 0;
-}
-
-```
+ [Code NWD]([https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=ko%C5%84ca%20listy%20jednokierunkowej-,ALGORYTM%20EUKLIDESA](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c))
 -----------------------------------------------------------------
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
