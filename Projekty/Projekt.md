@@ -200,7 +200,7 @@ Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy
 ![image](https://mermaid.ink/img/pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4?type=png)
 
 [Code list jedenkierunkowy ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/list%20jedenkierunkowy.c)
-
+----------------------------------------------------------------------------------------------------------
 ### Literatura
 Wikipedia
 Algorytmy i struktury danych,L.Banachowski,K.Diks,W.Rytter,Euklides z Aleksandrii,Knutha-Morrisa-Pratta.
