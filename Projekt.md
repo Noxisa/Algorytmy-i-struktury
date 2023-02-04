@@ -2,7 +2,7 @@
 
 ### Autor
 ### Praca wykonał  Tomas Chmelevski Student 2 roku Informatyki
-###Data: 2023.01.29
+### Data: 2023.01.29
 
 ### Opis
  **Algorytm Euklidesa.Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.Algorytm dołączania nowego elementu do końca listy jednokierunkowej**
