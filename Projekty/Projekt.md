@@ -94,70 +94,55 @@ Przykładowy kod algorytmu wyszukiwania
 
 ### PseudoKod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 ```
-computeLPSArray(*pat, M, *lps);
+void KMPSearch(char *pat, char *txt) {
+    M = strlen(pat); // długość wzoru
+     N = strlen(txt); // długość tekstu
 
-KMPSearch(*pat, *txt) {
-  M = strlen(pat);
-  N = strlen(txt);
+     *lps = (int *)malloc(sizeof(int) * M); // tworzenie tablicy lps
+    j = 0; // iterator dla wzoru
 
-  *lps = (*)malloc(sizeof() * M);
-  j = 0;
+    computeLPSArray(pat, M, lps); // obliczanie tablicy lps
 
-  computeLPSArray(pat, M, lps);
+    i = 0; // iterator dla tekstu
+    while (i < N) {
+        if (pat[j] == txt[i]) { // jeśli znak jest taki sam
+            j++;
+            i++;
+        }
 
-  i = 0;
-  while (i < N) {
-    if (pat[j] == txt[i]) {
-      j++;
-      i++;
+        if (j == M) { // znaleziono wzór
+            printf("Znaleziono wzór w index %d \n", i - j);
+            j = lps[j - 1];
+        } else if (i < N && pat[j] != txt[i]) {
+            if (j != 0)
+                j = lps[j - 1];
+            else
+                i = i + 1;
+        }
     }
-
-    if (j == M) {
-      printf("Znaleziono wzór w index %d \n", i - j);
-      j = lps[j - 1];
-    }
-
-    else if (i < N && pat[j] != txt[i]) {
-
-      if (j != 0)
-        j = lps[j - 1];
-      else
-        i = i + 1;
-    }
-  }
-  free(lps);
+    free(lps);
 }
 
-computeLPSArray(*pat, M, *lps) {
-  len = 0;
-  i;
+void computeLPSArray(char *pat, int M, int *lps) {
+     len = 0;
+     i = 1;
 
-  lps[0] = 0;
-  i = 1;
+    lps[0] = 0;
 
-  while (i < M) {
-    if (pat[i] == pat[len]) {
-      len++;
-      lps[i] = len;
-      i++;
-    } else {
-      if (len != 0) {
-
-        len = lps[len - 1];
-
-      } else {
-        lps[i] = 0;
-        i++;
-      }
+    while (i < M) {
+        if (pat[i] == pat[len]) {
+            len++;
+            lps[i] = len;
+            i++;
+        } else {
+            if (len != 0) {
+                len = lps[len - 1];
+            } else {
+                lps[i] = 0;
+                i++;
+            }
+        }
     }
-  }
-}
-
-int main() {
-  *txt = "ABABDABACDABABCABAB";
-  *pat = "ABABCABAB";
-  KMPSearch(pat, txt);
-  return 0;
 }
 ```
  ### [Code Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/Algorytm%20Knutha-Morrisa-Pratta%20wyszukiwania%20wzorca.c)
