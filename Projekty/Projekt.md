@@ -69,7 +69,7 @@ nwd(a, b) {
 }
 
 ```
- [Code NWD.c]([https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=ko%C5%84ca%20listy%20jednokierunkowej-,ALGORYTM%20EUKLIDESA](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c))
+ [Code NWD.c](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c)
 -----------------------------------------------------------------
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
