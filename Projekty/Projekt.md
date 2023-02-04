@@ -202,6 +202,6 @@ Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy
 ### [Code list jedenkierunkowy ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/list%20jedenkierunkowy.c)
 ----------------------------------------------------------------------------------------------------------
 ### Literatura
-Wikipedia
-Algorytmy i struktury danych,L.Banachowski,K.Diks,W.Rytter,Euklides z Aleksandrii,Knutha-Morrisa-Pratta.
+[Wikipedia
+Algorytmy i struktury danych](https://pl.wikipedia.org/wiki/Struktura_danych),[Euklides z Aleksandrii](https://pl.wikipedia.org/wiki/Euklides),[Knutha-Morrisa-Pratta](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm).
 
