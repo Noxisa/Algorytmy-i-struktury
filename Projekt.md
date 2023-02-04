@@ -1,11 +1,11 @@
 # Projekt z przedmiotu "Algorytmy i struktury danych"
 
+### Autor
+### Praca wykonał  Tomas Chmelevski Student 2 roku Informatyki
+###Data: 2023.01.29
+
 ### Opis
  **Algorytm Euklidesa.Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.Algorytm dołączania nowego elementu do końca listy jednokierunkowej**
-
-
-### Autor
-Tomas Chmelevski Student 2 roku Informatyki
 
 ### Zawartość
 - [ALGORYTM EUKLIDESA](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekt.md#:~:text=ko%C5%84ca%20listy%20jednokierunkowej-,ALGORYTM%20EUKLIDESA)
