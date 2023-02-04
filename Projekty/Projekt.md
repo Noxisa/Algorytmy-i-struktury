@@ -69,7 +69,7 @@ nwd(a, b) {
 }
 
 ```
- [Code NWD.c](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c)
+ [Code NWD](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c)
 -----------------------------------------------------------------
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
@@ -160,78 +160,8 @@ int main() {
   return 0;
 }
 ```
-### Kod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.
-```
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+ [Code Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/Algorytm%20Knutha-Morrisa-Pratta%20wyszukiwania%20wzorca.c)
 
-void computeLPSArray(char *pat, int M, int *lps);
-
-void KMPSearch(char *pat, char *txt) {
-  int M = strlen(pat);
-  int N = strlen(txt);
-
-  int *lps = (int *)malloc(sizeof(int) * M);
-  int j = 0;
-
-  computeLPSArray(pat, M, lps);
-
-  int i = 0;
-  while (i < N) {
-    if (pat[j] == txt[i]) {
-      j++;
-      i++;
-    }
-
-    if (j == M) {
-      printf("Znaleziono wzór w index %d \n", i - j);
-      j = lps[j - 1];
-    }
-
-    else if (i < N && pat[j] != txt[i]) {
-
-      if (j != 0)
-        j = lps[j - 1];
-      else
-        i = i + 1;
-    }
-  }
-  free(lps);
-}
-
-void computeLPSArray(char *pat, int M, int *lps) {
-  int len = 0;
-  int i;
-
-  lps[0] = 0;
-  i = 1;
-
-  while (i < M) {
-    if (pat[i] == pat[len]) {
-      len++;
-      lps[i] = len;
-      i++;
-    } else {
-      if (len != 0) {
-
-        len = lps[len - 1];
-
-      } else {
-        lps[i] = 0;
-        i++;
-      }
-    }
-  }
-}
-
-int main() {
-  char *txt = "ABABDABACDABABCABAB";
-  char *pat = "ABABCABAB";
-  KMPSearch(pat, txt);
-  return 0;
-}
-```
 ### Wydajność algorytmu wyszukiwania.
 
 **Wiadomo, że algorytm KMP (znany również jako Knuth-Morris-Pratt) przetwarza wstępnie wzorzec ``P`` i konstruuje funkcję niepowodzenia ``F`` (zwaną także `lps[]`) do przechowywania długości najdłuższego sufiksu pod-wzorca ``P[1.. l]``, który jest również przedrostkiem ``P``, dla ``l = 0`` do ``m-1``. Zauważ, że wzór podrzędny zaczyna się od indeksu ``1``, ponieważ przyrostek może być samym ciągiem znaków. Po wystąpieniu niedopasowania w indeksie ``P[j]`` aktualizujemy ``j`` do ``F[j-1]``.
