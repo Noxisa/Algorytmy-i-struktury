@@ -15,7 +15,7 @@
 
 ## Algorytm Euklidesa
 
-### Przyklad zastosowania Algorytmu Euklidesa
+### Przyklad zastosowania algorytmu euklidesa
 
 **Algorytm Euklidesa jest udowodniony jako poprawny przez matematyków od wieków. Został po raz pierwszy opisany przez greckiego matematyka Euclidesa w III wieku p.n.e. i od tego czas jest uważany za poprawny i niezawodny sposób na obliczanie największego wspólnego dzielnika (NWD) dwóch liczb.**
 
@@ -27,7 +27,7 @@
 
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
-### Udowodnienie ze poprawny Algorytm Euklidesa
+### Udowodnienie ze poprawny algorytm euklidesa
 
 **A lgorytm euklidesa może być wykorzystywany do wyznaczenia największego wspólnego dzielnika (NWD) dwóch liczb.
 Przykład:
@@ -41,7 +41,7 @@ W tym przypadku NWD liczb ``60`` i ``48`` wynosi ``12``.**
 
 
 
-**Oto algorytm Euklidesa zapisany w postaci planu działań.**
+**Oto algorytm euklidesa zapisany w postaci planu działań.**
 
 1. **Wybieramy dwie liczby naturalne.**
 2. **Jeśli liczby są równe,to NWD jest np.pierwszą z nich i to oznacza koniec działań.**
@@ -81,7 +81,7 @@ Zadeklaruj funkcję main()
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 
-### Przyklad zastosowania algorytmu Knutha-Morrisa-Pratta wyszukiwania wzorca.
+### Przyklad zastosowania algorytmu knutha-morrisa-pratta wyszukiwania wzorca.
 
 **Algorytm Knutha-Morrisa-Pratta może być użyty do wyszukiwania wzorca w długim tekście. Na przykład, jeśli mamy tekst "Ala ma kota, a kot ma Alę", a chcemy wyszukać w nim wzorzec "kot", możemy użyć tego algorytmu.**
 
@@ -108,7 +108,7 @@ Znak "t" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o 1. Wzor
 Krok 3: Zwracanie indeksu w tekście
 Indeks w tekście, gdzie został znaleziony wzorzec, to pozycja, na której z Zwracanie indeksu.**
 
-### Udowodnienie ze poprawny algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.
+### Udowodnienie ze poprawny algorytm knutha-morrisa-pratta wyszukiwania wzorca.
 
 **Algorytm Knutha-Morrisa-Pratta jest liniowy w czasie, ponieważ używa tablicy prefiksów, aby zoptymalizować proces wyszukiwania wzorca. Tablica prefiksów jest tworzona za pomocą preprocessingu, który jest wykonywany tylko raz przed wyszukiwaniem wzorca.
 Po uzyskaniu tablicy prefiksów, algorytm wyszukiwania wzorca jest realizowany poprzez porównywanie każdej litery tekstu z odpowiadającym mu fragmentem wzorca. Jeśli te litery są równe, proces jest kontynuowany, a jeśli nie, to jest przeskakiwanie do poprzedniej litery wzorca z użyciem informacji z tablicy prefiksów.
@@ -116,7 +116,7 @@ Ze względu na fakt, że każdy znak tekstu jest porównywany tylko raz z wzorce
 Wnioskując, algorytm Knutha-Morrisa-Pratta jest poprawny i liniowy w czasie, co oznacza, że jest to efektywny sposób na wyszukiwanie wzorca w tekście.**
 
 
-**PseudoKod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca**
+**PseudoKod algorytm knutha-morrisa-pratta wyszukiwania wzorca**
 ```
 void KMPSearch(char *pat, char *txt) {
     M = strlen(pat); // długość wzoru
