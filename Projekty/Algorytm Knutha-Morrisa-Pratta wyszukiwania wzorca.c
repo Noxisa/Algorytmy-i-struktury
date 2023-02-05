@@ -62,7 +62,7 @@ void computeLPSArray(char *pat, int M, int *lps) {
   }
 }
 
-int main() {
+int main(void) {
   char *txt = "ABABDABACDABABCABAB";
   char *pat = "ABABCABAB";
   KMPSearch(pat, txt);
