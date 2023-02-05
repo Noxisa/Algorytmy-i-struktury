@@ -1,4 +1,4 @@
-Kod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,7 +9,7 @@ void KMPSearch(char *pat, char *txt) {
   int M = strlen(pat);
   int N = strlen(txt);
 
-  int *lps = (int *)malloc(sizeof(int) * M);
+   *lps = (int *)malloc(sizeof(int) * M);
   int j = 0;
 
   computeLPSArray(pat, M, lps);
