@@ -87,14 +87,11 @@ Zadeklaruj funkcję main()
 
 **Krok 1: Tworzenie tablicy prefiksów dla wzorca "kot".
 Tablica prefiksów jest tablicą, która przechowuje informację o tym, ile części wzorca jest wspólne z poprzednimi prefiksami. Na przykład, w wzorcu "kot", prefiks "ko" jest wspólny z sufiksem "k".**
-
 **Tablica prefiksów dla wzorca "kot" wygląda tak:
 k o t
 0 0 0**
-
 **Krok 2: Przeszukiwanie tekstu
 Następnie, przeszukujemy tekst, porównując każdy znak wzorca z odpowiadającym mu znakiem w tekście. Jeśli znak się nie zgadza, przesuwamy wzorzec o wartość z tablicy prefiksów. W przeciwnym wypadku, dodajemy 1 do indeksu wzorca i tekstu i kontynuujemy porównywanie.**
-
 **Przykład:
 Ala ma kota, a kot ma Alę
 k o t
