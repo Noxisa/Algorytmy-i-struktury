@@ -15,7 +15,7 @@
 
 ## Algorytm Euklidesa
 
-**Przyklad zastosowania Algorytmu Euklidesa**
+### Przyklad zastosowania Algorytmu Euklidesa
 
 **Algorytm Euklidesa jest udowodniony jako poprawny przez matematyków od wieków. Został po raz pierwszy opisany przez greckiego matematyka Euclidesa w III wieku p.n.e. i od tego czas jest uważany za poprawny i niezawodny sposób na obliczanie największego wspólnego dzielnika (NWD) dwóch liczb.**
 
@@ -27,7 +27,7 @@
 
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
-**Udowodnienie ze poprawny Algorytm Euklidesa**
+### Udowodnienie ze poprawny Algorytm Euklidesa
 
 **A lgorytm euklidesa może być wykorzystywany do wyznaczenia największego wspólnego dzielnika (NWD) dwóch liczb.
 Przykład:
@@ -81,7 +81,7 @@ Zadeklaruj funkcję main()
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 
-**Przyklad zastosowania algorytmu Knutha-Morrisa-Pratta wyszukiwania wzorca.**
+### Przyklad zastosowania algorytmu Knutha-Morrisa-Pratta wyszukiwania wzorca.
 
 **Algorytm Knutha-Morrisa-Pratta może być użyty do wyszukiwania wzorca w długim tekście. Na przykład, jeśli mamy tekst "Ala ma kota, a kot ma Alę", a chcemy wyszukać w nim wzorzec "kot", możemy użyć tego algorytmu.**
 
@@ -108,7 +108,7 @@ Znak "t" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o 1. Wzor
 Krok 3: Zwracanie indeksu w tekście
 Indeks w tekście, gdzie został znaleziony wzorzec, to pozycja, na której z Zwracanie indeksu.**
 
-**Udowodnienie ze poprawny algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.**
+### Udowodnienie ze poprawny algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.
 
 **Algorytm Knutha-Morrisa-Pratta jest liniowy w czasie, ponieważ używa tablicy prefiksów, aby zoptymalizować proces wyszukiwania wzorca. Tablica prefiksów jest tworzona za pomocą preprocessingu, który jest wykonywany tylko raz przed wyszukiwaniem wzorca.
 Po uzyskaniu tablicy prefiksów, algorytm wyszukiwania wzorca jest realizowany poprzez porównywanie każdej litery tekstu z odpowiadającym mu fragmentem wzorca. Jeśli te litery są równe, proces jest kontynuowany, a jeśli nie, to jest przeskakiwanie do poprzedniej litery wzorca z użyciem informacji z tablicy prefiksów.
