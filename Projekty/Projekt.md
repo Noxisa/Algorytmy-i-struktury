@@ -173,9 +173,14 @@ void computeLPSArray(char *pat, int M, int *lps) {
 
 **Wydajność algorytmu wyszukiwania.**
 
-**Wiadomo, że algorytm KMP (znany również jako Knuth-Morris-Pratt) przetwarza wstępnie wzorzec ``P`` i konstruuje funkcję niepowodzenia ``F`` (zwaną także `lps[]`) do przechowywania długości najdłuższego sufiksu pod-wzorca ``P[1.. l]``, który jest również przedrostkiem ``P``, dla ``l = 0`` do ``m-1``. Zauważ, że wzór podrzędny zaczyna się od indeksu ``1``, ponieważ przyrostek może być samym ciągiem znaków. Po wystąpieniu niedopasowania w indeksie ``P[j]`` aktualizujemy ``j`` do ``F[j-1]``.
+**Wydajność algorytmu zależy od różnych czynników, takich jak rozmiar tekstu, długość wzorca, ilość powtórzeń wzorca w tekście i metoda wyszukiwania.**
 
-Oryginalny algorytm KMP ma złożoność czasową ``O(M + N)`` i przestrzeń pomocniczą ``O(M)``, gdzie N to rozmiar tekstu wejściowego, a ``M`` to rozmiar wzorca. Etap przetwarzania wstępnego kosztuje ``O(M)`` czasu. Trudno jest osiągnąć lepszą złożoność środowiska uruchomieniowego, ale nadal jesteśmy w stanie wyeliminować niektóre nieefektywne zmiany.**
+**Niektóre z popularnych algorytmów wyszukiwania tekstu to:
+Algorytm Knutha-Morrisa-Pratta (KMP)
+Algorytm Boyera-Moore'a
+Algorytm Rabin-Karpa**
+
+**Te algorytmy różnią się między sobą czasem i ilością pamięci, jakie potrzebują do wykonania operacji wyszukiwania, a także ich skutecznością w zależności od konkretnych potrzeb i właściwości tekstu.**
 
 **Złożoność czasowa**
 
@@ -184,10 +189,6 @@ Oryginalny algorytm KMP ma złożoność czasową ``O(M + N)`` i przestrzeń pom
 
 -------------------------------------------------------------------------------------------------------------------
 ## Algorytm dołączania nowego elementu do końca listy jednokierunkowej.
-
-
-![Screenshot 2022-12-30 150627](https://user-images.githubusercontent.com/115026224/210073296-061e3a24-2648-4148-98df-7837dc49a05a.png)
-
 
 **Lista jednokierunkowa-jest oszczędną pamięciowo strukturą danych pozwalającą grupować dowolną-ograniczoną tylko ilością dostępnej pamięci-liczbę elementów: liczb,znaków,rekordów.Do budowy listy jednokierunkowej używane są dwa typy komórek pamięci.Pierwszy typ jest zwykłym rekordem natury informacyjnej zawierającym dwa wskaźniki do początku i do końca listy.Drugi typ komórek jest również rekordem lecz ma już on charakter roboczy.Zawiera bowiem pole wartości i wskaźnik na następny element listy.Pola głowa ogon i następny są wskaźnikami,natomiast wartość może być czymkolwiek:liczbą,znakiem,rekordem.
 Jeżeli lista jest pusta to struktura informacyjna zawiera dwa wskaźniki null.Null nie równa się zero jest to pewien adres,na który żadna zmienna nie wskazuje.Pierwszy element listy jest złożony z jego własnej wartości oraz ze wskaźnika na drugi el.listy.Drugi zawiera własne pole informacyjne i wskaźnik na trzeci element listy.Miejsce zakończenia listy zaznaczamy przez wartość null.**
@@ -205,8 +206,11 @@ Do usuwania ostatniego elementu z listy używamy operatora dekrementacji.Funkcja
 Stos-jest liniową strukturą danych dostępnych do zapisywania i odczytywania tylko jednego końca(tzw. wierzchołka)Nowe elementy są dokładane na wierzch stosu i zdejmowane z wierzchu.Ostatni element położony na stosie będzie pierwszym z niego zdjętym.Stos jest nazywany strukturą LIFO(last In first out)
 Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy stos jest pusty,full-czy stos jest zapełniony,push-umieszczenie elementu na stosie,pop-zdjęcie najwyższego elementu ze stosu.Ciąg operacji pusch i pop:**
 
-
+1).**Albo będziemy traktować listę jak„worek”do gromadzenia danych nieuporządkowanych.**
  ![image](https://mermaid.ink/img/pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4?type=png)
+ 
+ 2).**Nowe elementy dokładane będą w liście we właściwym porządku.**
+ [![image](https://mermaid.ink/img/pako:eNplj8EOgjAMhl9l6UkT8AF2MBFG4kE96JFxaFiVBTbIHImG8O6OkXihp_b726TfBHWvCDi8HA4Nu9ylZaFO5ZlQVSxNjyzb3ejjmUCP-zXNIs_LP69WnkcuNlyw9BCCYhMU8cDqbhkhAUPOoFbhnWkhEnxDhiTw0Cp0rQRp57CHo-8fX1sD926kBMZBoSehMVgY4E_s3oGS0r5319Uvas4_OylIEQ?type=png)
 
 [Code list jedenkierunkowy ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/list%20jedenkierunkowy.c)
 ----------------------------------------------------------------------------------------------------------
