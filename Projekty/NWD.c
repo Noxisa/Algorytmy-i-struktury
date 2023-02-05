@@ -1,5 +1,4 @@
-### Kod NWD
-```
+
 #include <stdio.h>
 
 int NWD(int a, int b) {
@@ -19,4 +18,4 @@ int main(void) {
 
   return 0;
 }
-```
+
