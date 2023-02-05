@@ -215,7 +215,7 @@ Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy
  ![image](https://mermaid.ink/img/pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4?type=png)
  
  2).**Nowe elementy dokładane będą w liście we właściwym porządku.**
- [![image](https://mermaid.ink/img/pako:eNplj8EOgjAMhl9l6UkT8AF2MBFG4kE96JFxaFiVBTbIHImG8O6OkXihp_b726TfBHWvCDi8HA4Nu9ylZaFO5ZlQVSxNjyzb3ejjmUCP-zXNIs_LP69WnkcuNlyw9BCCYhMU8cDqbhkhAUPOoFbhnWkhEnxDhiTw0Cp0rQRp57CHo-8fX1sD926kBMZBoSehMVgY4E_s3oGS0r5319Uvas4_OylIEQ?type=png)
+ ![image](https://mermaid.ink/img/pako:eNplj8EOgjAMhl9l6UkT8AF2MBFG4kE96JFxaFiVBTbIHImG8O6OkXihp_b726TfBHWvCDi8HA4Nu9ylZaFO5ZlQVSxNjyzb3ejjmUCP-zXNIs_LP69WnkcuNlyw9BCCYhMU8cDqbhkhAUPOoFbhnWkhEnxDhiTw0Cp0rQRp57CHo-8fX1sD926kBMZBoSehMVgY4E_s3oGS0r5319Uvas4_OylIEQ?type=png)
 
 [Code list jedenkierunkowy ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/list%20jedenkierunkowy.c)
 ----------------------------------------------------------------------------------------------------------
