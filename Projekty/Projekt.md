@@ -186,6 +186,7 @@ Algorytm Rabin-Karpa**
 
 **Jest to algorytm preprocesowania, co oznacza, że wstępnie oblicza się tablicę przejść, która jest używana podczas procesu wyszukiwania.
 Złożoność czasowa algorytmu Knutha-Morrisa-Pratta wynosi ``O(n + m)``, gdzie n jest długością tekstu, a m jest długością wzorca. Oznacza to, że w czasie stałym jest możliwe przeskanowanie każdego znaku tekstu i porównanie go z każdym znakiem wzorca. Dzięki temu algorytm jest bardzo szybki i skuteczny w porównaniu do innych algorytmów wyszukiwania wzorca. Przykłady zastosowania algorytmu Knutha-Morrisa-Pratta to wyszukiwanie danych w dużych bazach danych, wyszukiwanie wzorców w genomie i w tekście, a także wyszukiwanie plików z danymi w systemie plików.**
+![running-time-analysis-step-3-4-5](https://user-images.githubusercontent.com/115026224/216827182-94c2d649-74a9-4dbe-9c18-e6f5c4fd6374.png)
 
 
 -------------------------------------------------------------------------------------------------------------------
