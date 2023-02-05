@@ -2,25 +2,21 @@
 ```
 #include <stdio.h>
 
-int nwd(int a, int b) {
-  int c;
-  while (b) {
-    c = a % b;
-    a = b;
-    b = c;
-  }
-  return a;
+int NWD(int a, int b) {
+  if (b == 0)
+    return a;
+  else
+    return NWD(b, a % b);
 }
 
 int main(void) {
   int a, b;
 
-  printf("podaj liczby: ");
-  scanf("%d %d", &a, &b);
+  printf("Wpisz dwie liczby całkowite: ");
+  scanf("%d%d", &a, &b);
 
-  printf("nww: %d\n", (a * b) / nwd(a, b));
+  printf("NWD %d i %d to %d.\n", a, b, NWD(a, b));
 
   return 0;
 }
-
 ```
