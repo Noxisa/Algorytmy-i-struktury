@@ -1,6 +1,7 @@
 # Projekt z przedmiotu "Algorytmy i struktury danych"
 
 ### Autor
+------------------
 ### Praca wykonał  Tomas Chmelevski Student 2 roku Informatyki
 ### Data: 2023.01.29
 
