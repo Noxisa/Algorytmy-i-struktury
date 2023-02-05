@@ -75,14 +75,14 @@ nwd(a, b) {
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 
-**Algorytm Knutha-Morrisa-Pratta(lub w krótszym sposób algorytm KMP )jest podciąg(znak)algorytm wyszukiwania,co pozwala na znalezienie wystąpienia ciągu znaków w tekście o liniowej złożoności w najgorszym przypadku.Jego specyfika polega na wstępnym przetwarzaniu ciągu,który dostarcza informacji wystarczających do określenia,gdzie kontynuować wyszukiwanie w przypadku niezgodności.W ten sposób algorytm nie sprawdza ponownie znaków,które były widziane wcześniej,a zatem ogranicza liczbę koniecznych porównań.``PSO (|P| + |S|)``**
+**Algorytm Knutha-Morrisa-Pratta(lub w krótszym sposób algorytm KMP )jest podciąg(znak)algorytm wyszukiwania,co pozwala na znalezienie wystąpienia ciągu znaków w tekście o liniowej złożoności w najgorszym przypadku.Jego specyfika polega na wstępnym przetwarzaniu ciągu,który dostarcza informacji wystarczających do określenia,gdzie kontynuować wyszukiwanie w przypadku niezgodności.W ten sposób algorytm nie sprawdza ponownie znaków,które były widziane wcześniej,a zatem ogranicza liczbę koniecznych porównań.PSO ``(|P| + |S|)``**
 
 **Algorytm został zaprojektowany w 1970 roku przez Knutha i Pratta(in)oraz w innym kontekście przez Morrisa(in)i wspólnie opublikowany w 1977 roku. Niezależnie Matiyasevich uzyskał już w 1969 r.podobny algorytm,zakodowany przez dwuwymiarową maszynę Turinga,badając problem rozpoznawania występowania strun.**
 
-**Zakłada istnienie tabeli podającej„częściowe dopasowania”(opisane poniżej),wskazującą,gdzie szukać potencjalnego początku następnego zdarzenia,w przypadku gdy weryfikacja obecnego potencjalnego wystąpienia się nie powiedzie.Na razie tę tablicę,oznaczoną przez,można traktować jako czarną skrzynkę z następującą właściwością:jeśli mamy częściowe dopasowanie do,ale nie powiedzie się podczas porównywania i,wtedy następne potencjalne wystąpienie zaczyna się od position .W szczególności istnieje i jest zdefiniowana w.Biorąc pod uwagę tę tabelę,algorytm jest stosunkowo prosty:``TS [m] S [m+i-1] S [m+w] LiczbaPi]m+i T[i-1] T [-1] -1.``**
+**Zakłada istnienie tabeli podającej„częściowe dopasowania”(opisane poniżej),wskazującą,gdzie szukać potencjalnego początku następnego zdarzenia,w przypadku gdy weryfikacja obecnego potencjalnego wystąpienia się nie powiedzie.Na razie tę tablicę,oznaczoną przez,można traktować jako czarną skrzynkę z następującą właściwością:jeśli mamy częściowe dopasowanie do,ale nie powiedzie się podczas porównywania i,wtedy następne potencjalne wystąpienie zaczyna się od position .W szczególności istnieje i jest zdefiniowana w.Biorąc pod uwagę tę tabelę,algorytm jest stosunkowo prosty:``TS [m] S [m+i-1] S [m+w]`` LiczbaPi]``m+i T[i-1] T [-1] -1.``**
 
-**Napraw.Załóżmy,że ma długość znaków oraz, znaków;`` ja = m = 0 PnieSja``
-Jeśli,a następnie zakończ przetwarzanie,nie znaleziono dopasowania.W przeciwnym razie porównaj i;`` m + ja = l Liczba Pi] S [m+w]``
+**Napraw.Załóżmy,że ma długość znaków oraz, znaków;`` ja = m = 0 ``PnieSja
+Jeśli,a następnie zakończ przetwarzanie,nie znaleziono dopasowania.W przeciwnym razie porównaj i;`` m + ja = l`` Liczba Pi] ``S [m+w]``
 Jeśli są równe,napraw.Jeśli,dopasowanie jest zakończone.Zakończenie przetwarzania i zwrot jako pozycja rozpoczęcia korespondencji; ``ja = ja + 1 ja = nm``
 Jeśli są różne,napraw.Napraw,a jeśli napraw;``e = T [i-1] m = m + ie ja > 0 ja = e``
 Kontynuować kroku ``n°2``.
