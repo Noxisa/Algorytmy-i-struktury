@@ -1,5 +1,5 @@
 
-````
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -40,4 +40,4 @@ push(&head, 5);
 printList(head);
 return 0;
 }
-````
+
