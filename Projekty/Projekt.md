@@ -17,11 +17,11 @@
 
 **Przyklad zastosowania Algorytmu Euklidesa**
 
-**Algorytm Euklidesa jest udowodniony jako poprawny przez matematyków od wieków. Został po raz pierwszy opisany przez greckiego matematyka Euclidesa w III wieku p.n.e. i od tego czas jest uważany za poprawny i niezawodny sposób na obliczanie największego wspólnego dzielnika (NWD) dwóch liczb.
+**Algorytm Euklidesa jest udowodniony jako poprawny przez matematyków od wieków. Został po raz pierwszy opisany przez greckiego matematyka Euclidesa w III wieku p.n.e. i od tego czas jest uważany za poprawny i niezawodny sposób na obliczanie największego wspólnego dzielnika (NWD) dwóch liczb.**
 
-Głównym założeniem algorytmu Euklidesa jest to, że NWD dwóch liczb jest taki sam jak NWD ich reszty z dzielenia. Ten proces jest powtarzany, aż do uzyskania reszty równej 0. Wówczas NWD jest równy ostatniej niezerowej reszcie.
+**Głównym założeniem algorytmu Euklidesa jest to, że NWD dwóch liczb jest taki sam jak NWD ich reszty z dzielenia. Ten proces jest powtarzany, aż do uzyskania reszty równej 0. Wówczas NWD jest równy ostatniej niezerowej reszcie.**
 
-Dowodem poprawności algorytmu Euklidesa jest fakt, że jego wynik zawsze jest poprawny i jest największym wspólnym dzielnikiem dwóch liczb. Ponadto, algorytm jest bardzo efektywny i złożoność obliczeniowa jest stosunkowo niska, co czyni go praktycznie użytecznym w wielu dziedzinach, takich jak kryptografia i teoria liczb.**
+**Dowodem poprawności algorytmu Euklidesa jest fakt, że jego wynik zawsze jest poprawny i jest największym wspólnym dzielnikiem dwóch liczb. Ponadto, algorytm jest bardzo efektywny i złożoność obliczeniowa jest stosunkowo niska, co czyni go praktycznie użytecznym w wielu dziedzinach, takich jak kryptografia i teoria liczb.**
 
 **NWD liczb: a = ``42`` i b = ``24.``**
 
