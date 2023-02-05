@@ -50,6 +50,7 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 - **wrócić do sprawdzenia warunku w punkcie 2(pętla).**
 
 **Złożoność czasowa**
+
 ![Zrzut ekranu 2023-01-31 195019](https://user-images.githubusercontent.com/115026224/215841408-d632d905-0540-4812-90a3-b122876c01f1.png)
 
 
@@ -69,7 +70,7 @@ nwd(a, b) {
 }
 
 ```
- **[Code NWD](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c)**
+ [Code NWD](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c)
 -----------------------------------------------------------------
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
@@ -145,7 +146,7 @@ void computeLPSArray(char *pat, int M, int *lps) {
     }
 }
 ```
- **[Code Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/Algorytm%20Knutha-Morrisa-Pratta%20wyszukiwania%20wzorca.c)**
+ [Code Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/Algorytm%20Knutha-Morrisa-Pratta%20wyszukiwania%20wzorca.c)
 
 **Wydajność algorytmu wyszukiwania.**
 
@@ -182,9 +183,9 @@ Stos-jest liniową strukturą danych dostępnych do zapisywania i odczytywania t
 Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy stos jest pusty,full-czy stos jest zapełniony,push-umieszczenie elementu na stosie,pop-zdjęcie najwyższego elementu ze stosu.Ciąg operacji pusch i pop:**
 
 
-** ![image](https://mermaid.ink/img/pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4?type=png)**
+ ![image](https://mermaid.ink/img/pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4?type=png)
 
-** [Code list jedenkierunkowy ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/list%20jedenkierunkowy.c)**
+[Code list jedenkierunkowy ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/list%20jedenkierunkowy.c)
 ----------------------------------------------------------------------------------------------------------
 ### Literatura
 [Wikipedia
