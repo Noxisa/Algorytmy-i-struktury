@@ -15,6 +15,8 @@
 
 ## Algorytm Euklidesa
 
+**Przyklad zastosowania Algorytmu Euklidesa**
+
 **Algorytm Euklidesa jest udowodniony jako poprawny przez matematyków od wieków. Został po raz pierwszy opisany przez greckiego matematyka Euclidesa w III wieku p.n.e. i od tego czas jest uważany za poprawny i niezawodny sposób na obliczanie największego wspólnego dzielnika (NWD) dwóch liczb.
 
 Głównym założeniem algorytmu Euklidesa jest to, że NWD dwóch liczb jest taki sam jak NWD ich reszty z dzielenia. Ten proces jest powtarzany, aż do uzyskania reszty równej 0. Wówczas NWD jest równy ostatniej niezerowej reszcie.
@@ -25,6 +27,7 @@ Dowodem poprawności algorytmu Euklidesa jest fakt, że jego wynik zawsze jest p
 
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
+**Udowodnienie ze poprawny Algorytm Euklidesa**
 
 **A lgorytm euklidesa może być wykorzystywany do wyznaczenia największego wspólnego dzielnika (NWD) dwóch liczb.
 Przykład:
@@ -80,20 +83,19 @@ Zadeklaruj funkcję main()
 
 **Przyklad zastosowania algorytmu Knutha-Morrisa-Pratta wyszukiwania wzorca.**
 
-**Algorytm Knutha-Morrisa-Pratta może być użyty do wyszukiwania wzorca w długim tekście. Na przykład, jeśli mamy tekst "Ala ma kota, a kot ma Alę", a chcemy wyszukać w nim wzorzec "kot", możemy użyć tego algorytmu.
+**Algorytm Knutha-Morrisa-Pratta może być użyty do wyszukiwania wzorca w długim tekście. Na przykład, jeśli mamy tekst "Ala ma kota, a kot ma Alę", a chcemy wyszukać w nim wzorzec "kot", możemy użyć tego algorytmu.**
 
-Krok 1: Tworzenie tablicy prefiksów dla wzorca "kot".
+**Krok 1: Tworzenie tablicy prefiksów dla wzorca "kot".
+Tablica prefiksów jest tablicą, która przechowuje informację o tym, ile części wzorca jest wspólne z poprzednimi prefiksami. Na przykład, w wzorcu "kot", prefiks "ko" jest wspólny z sufiksem "k".**
 
-Tablica prefiksów jest tablicą, która przechowuje informację o tym, ile części wzorca jest wspólne z poprzednimi prefiksami. Na przykład, w wzorcu "kot", prefiks "ko" jest wspólny z sufiksem "k".
-
-Tablica prefiksów dla wzorca "kot" wygląda tak:
+**Tablica prefiksów dla wzorca "kot" wygląda tak:
 k o t
-0 0 0
+0 0 0**
 
-Krok 2: Przeszukiwanie tekstu
-Następnie, przeszukujemy tekst, porównując każdy znak wzorca z odpowiadającym mu znakiem w tekście. Jeśli znak się nie zgadza, przesuwamy wzorzec o wartość z tablicy prefiksów. W przeciwnym wypadku, dodajemy 1 do indeksu wzorca i tekstu i kontynuujemy porównywanie.
+**Krok 2: Przeszukiwanie tekstu
+Następnie, przeszukujemy tekst, porównując każdy znak wzorca z odpowiadającym mu znakiem w tekście. Jeśli znak się nie zgadza, przesuwamy wzorzec o wartość z tablicy prefiksów. W przeciwnym wypadku, dodajemy 1 do indeksu wzorca i tekstu i kontynuujemy porównywanie.**
 
-Przykład:
+**Przykład:
 Ala ma kota, a kot ma Alę
 k o t
 Znak "k" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o 1.
