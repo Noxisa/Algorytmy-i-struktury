@@ -86,22 +86,27 @@ Zadeklaruj funkcję main()
 **Algorytm Knutha-Morrisa-Pratta może być użyty do wyszukiwania wzorca w długim tekście. Na przykład, jeśli mamy tekst "Ala ma kota, a kot ma Alę", a chcemy wyszukać w nim wzorzec "kot", możemy użyć tego algorytmu.**
 
 **Krok 1: Tworzenie tablicy prefiksów dla wzorca "kot".
+
 Tablica prefiksów jest tablicą, która przechowuje informację o tym, ile części wzorca jest wspólne z poprzednimi prefiksami. Na przykład, w wzorcu "kot", prefiks "ko" jest wspólny z sufiksem "k".**
+
 **Tablica prefiksów dla wzorca "kot" wygląda tak:
 k o t
 0 0 0**
+
 **Krok 2: Przeszukiwanie tekstu
-Następnie, przeszukujemy tekst, porównując każdy znak wzorca z odpowiadającym mu znakiem w tekście. Jeśli znak się nie zgadza, przesuwamy wzorzec o wartość z tablicy prefiksów. W przeciwnym wypadku, dodajemy 1 do indeksu wzorca i tekstu i kontynuujemy porównywanie.**
+Następnie, przeszukujemy tekst, porównując każdy znak wzorca z odpowiadającym mu znakiem w tekście. Jeśli znak się nie zgadza, przesuwamy wzorzec o wartość z tablicy prefiksów. W przeciwnym wypadku, dodajemy ``1`` do indeksu wzorca i tekstu i kontynuujemy porównywanie.**
+
 **Przykład:
 Ala ma kota, a kot ma Alę
 k o t
-Znak "k" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o 1.
+Znak "k" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o ``1``.
 Ala ma kota, a kot ma Alę
 k o t
-Znak "o" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o 1.
+Znak "o" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o ``1``.
 Ala ma kota, a kot ma Alę
 o t
-Znak "t" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o 1. Wzorzec jest teraz zakończony i możemy stwierdzić, że wzorzec "kot" został znaleziony w tekście.
+Znak "t" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o ``1``. Wzorzec jest teraz zakończony i możemy stwierdzić, że wzorzec "kot" został znaleziony w tekście.
+
 Krok 3: Zwracanie indeksu w tekście
 Indeks w tekście, gdzie został znaleziony wzorzec, to pozycja, na której z Zwracanie indeksu.**
 
@@ -195,10 +200,7 @@ Jeżeli lista jest pusta to struktura informacyjna zawiera dwa wskaźniki null.N
 
 **Dołączanie elementów do listy jednokierunkowej-podczas dokładania nowego elementu możliwe są dwa podejścia: 1).Albo będziemy traktować listę jak„worek”do gromadzenia danych nieuporządkowanych albo 2).Nowe elementy dokładane będą w liście we właściwym porządku.Działanie funkcji dorzuć: w przypadku listy pustej oba pola struktury informacyjnej są inicjowane wskaźnikiem na nowo powstały element.W przeciwnym wypadku nowy element zostaje podpięty do końca stając się ogonem listy.Możliwe jest dokładanie nowego rekordu przez pierwszy element listy stawałby się on wówczas automatycznie głową listy i musiałby zostać zapamiętany przez program.
 Bardziej złożona jest funkcja dołączająca nowy element w takie miejsce aby całość lity była posortowana
-Nowy element może zostać wstawiony na początek,koniec,lub w środku listy.Trzeba znaleźć miejsce wstawienia tzn.zapamiętać dwa wskaźniki:element,przed którym mama wstawić nową komórkę i element,za którym mama to zrobić.Do zapamiętania tych informacji wybieramy dwie zmienne np.przed i po.Następnie,gdy dowiemy się gdzie jesteśmy możemy dokonać wstawienia nowego elementu do listy.Sposób zależy od miejsca wstawienia i od tego czy lista przypadkiem nie jest jeszcze pusta.Skomplikowanie funkcji,która dokładaelement do listy wynika z połączenia w niej rozszukiwania miejsca wstawienia z samym dołączeniem elementu.Można te czynności rozbić na dwie osobne funkcje.Istnieją trzy przypadki„współrzędnych”współrzędnych nowego elementu** 
-a)**przed = NULL** 
-b)**Po = NULL** 
-c)przed po = NULL**
+Nowy element może zostać wstawiony na początek,koniec,lub w środku listy.Trzeba znaleźć miejsce wstawienia tzn.zapamiętać dwa wskaźniki:element,przed którym mama wstawić nową komórkę i element,za którym mama to zrobić.Do zapamiętania tych informacji wybieramy dwie zmienne np.przed i po.Następnie,gdy dowiemy się gdzie jesteśmy możemy dokonać wstawienia nowego elementu do listy.
 
 **W zależności od ich wystąpienia zmieni się sposób dołączenia elementu do listy.
 Do usuwania ostatniego elementu z listy używamy operatora dekrementacji.Funkcja, która się za nim ukrywa jest relatywnie prosta:jeśli na liście jest tylko jeden element to modyfikacji ulega zarówno pole głowa jaki ogon struktury informacyjnej oba te pola po uprzednim usunięciu jedynego elementu listy zostano zainicjowane wartością NULL.Trudniejszy jest przypadek gdy lista zawiera więcej niż jeden element.Należy wówczas odszukać przedostatni jej element aby móc odpowiednio zmodyfikować wskaźnik ogon struktury informacyjnej.Znajomość przedostatniego elementu listy umożliwia nam łatwe usunięcie ostatniego elementu listy.
