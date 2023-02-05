@@ -1,4 +1,4 @@
-### Kod list jedenkierunkowy 
+
 ````
 #include<stdio.h>
 #include<stdlib.h>
