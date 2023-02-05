@@ -15,26 +15,24 @@
 
 ## Algorytm Euklidesa
 
-**Algorytm opisuje sposób rozwiązania problemu krok po kroku.Opis ten powinien być dokładny i nie pozostawiać
-wątpliwości,co,jak i w jakiej kolejności trzeba zrobić.Z algorytmami masz często do czynienia na lekcjach matematyki.
-Jednym z przykładów algorytmu jest sposób znajdowania największego wspólnego dzielnika dwóch liczb całkowitych
-(NWD).NWD jest potrzebny np.przy skracaniu ułamków.
-Algorytmem poznanym przez ciebie na lekcjach matematyki jest sprawdzanie podzielności dwóch liczb całkowitych
-przez kolejne liczby.Najpierw sprawdzamy podzielność przez ``2``,potem–przez ``3``i tak dalej,aż do mniejszej z dwóch
-liczb.Największym wspólnym dzielnikiem dwóch liczb jest iloczyn ich wszystkich wspólnych dzielników pierwszych.
-Przyjrzyj się temu sposobowi na przykładzie szukania.**
+**Algorytm Euklidesa jest udowodniony jako poprawny przez matematyków od wieków. Został po raz pierwszy opisany przez greckiego matematyka Euclidesa w III wieku p.n.e. i od tego czas jest uważany za poprawny i niezawodny sposób na obliczanie największego wspólnego dzielnika (NWD) dwóch liczb.
+
+Głównym założeniem algorytmu Euklidesa jest to, że NWD dwóch liczb jest taki sam jak NWD ich reszty z dzielenia. Ten proces jest powtarzany, aż do uzyskania reszty równej 0. Wówczas NWD jest równy ostatniej niezerowej reszcie.
+
+Dowodem poprawności algorytmu Euklidesa jest fakt, że jego wynik zawsze jest poprawny i jest największym wspólnym dzielnikiem dwóch liczb. Ponadto, algorytm jest bardzo efektywny i złożoność obliczeniowa jest stosunkowo niska, co czyni go praktycznie użytecznym w wielu dziedzinach, takich jak kryptografia i teoria liczb.**
 
 **NWD liczb: a = ``42`` i b = ``24.``**
 
 ![Screenshot 2022-11-29 112719](https://user-images.githubusercontent.com/115026224/204491136-b1d18c73-e9ed-45b4-a5fc-0fc6815b2fbe.png)
 
 
-**NWD liczb a i b wynosi więc  `` 2 · 3 · 1 = 6.``
-Lepszym i szybszym rozwiązaniem problemu szukania NWD dwóch liczb całkowitych jest algorytm Euklidesa.To
-jeden z najstarszych algorytmów,opisany przez Euklidesa ok.300 roku p.n.e.Opiera się na spostrzeżeniu:jeśli od
-większej liczby odejmiemy mniejszą,to mniejsza liczba i otrzymana różnica będą miały taki sam największy wspólny
-dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę takich samych liczb,to oznacza,
-że znaleźliśmy NWD.Popatrz,jak przebiega znajdowanie NWD dwóch liczb a = ``42`` i b = ``24`` według tego algorytmu.**
+**A lgorytm euklidesa może być wykorzystywany do wyznaczenia największego wspólnego dzielnika (NWD) dwóch liczb.
+Przykład:
+Chcemy wyznaczyć NWD liczb ``60`` i ``48``.
+Dzielimy większą liczbę ``(60)`` przez mniejszą ``(48)`` i zapisujemy resztę: ``60 / 48 = 1`` reszta ``12``
+Teraz dzielimy mniejszą liczbę ``(48)`` przez resztę ``(12)`` i zapisujemy resztę: ``48 / 12 = 4`` reszta ``0``
+Jeżeli reszta jest równa ``0``, to NWD jest równy dzielnikowi ``(12)``.
+W tym przypadku NWD liczb ``60`` i ``48`` wynosi ``12``.**
 
 ![Screenshot 2022-11-29 112732](https://user-images.githubusercontent.com/115026224/204491197-d580ad5c-ed4e-4d98-a2e5-6b03ea332e2b.png)
 
@@ -58,16 +56,21 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 
 **Pseudokod NWD**
 ```
+Zadeklaruj funkcję NWD(a, b)
+  Jeśli b jest równe 0,
+    Zwróć a
+  W przeciwnym razie
+    Zwróć NWD(b, a modulo b)
 
-nwd(a, b) {
+Zadeklaruj funkcję main()
+  Zadeklaruj zmienne a i b jako liczby całkowite
   
-  while (b) {
-    c = a % b;
-    a = b;
-    b = c;
-  }
-  return a;
-}
+  Wyświetl na ekranie "Wpisz dwie liczby całkowite: "
+  Wczytaj a i b
+  
+  Wyświetl na ekranie "NWD %d i %d to %d.\n", wstawiając a, b i NWD(a, b) jako argumenty
+  
+  Zwróć 0
 
 ```
  [Code NWD](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c)
@@ -75,21 +78,41 @@ nwd(a, b) {
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
 
-**Algorytm Knutha-Morrisa-Pratta(lub w krótszym sposób algorytm KMP )jest podciąg(znak)algorytm wyszukiwania,co pozwala na znalezienie wystąpienia ciągu znaków w tekście o liniowej złożoności w najgorszym przypadku.Jego specyfika polega na wstępnym przetwarzaniu ciągu,który dostarcza informacji wystarczających do określenia,gdzie kontynuować wyszukiwanie w przypadku niezgodności.W ten sposób algorytm nie sprawdza ponownie znaków,które były widziane wcześniej,a zatem ogranicza liczbę koniecznych porównań.PSO ``(|P| + |S|)``**
+**Przyklad zastosowania algorytmu Knutha-Morrisa-Pratta wyszukiwania wzorca.**
 
-**Algorytm został zaprojektowany w 1970 roku przez Knutha i Pratta(in)oraz w innym kontekście przez Morrisa(in)i wspólnie opublikowany w 1977 roku. Niezależnie Matiyasevich uzyskał już w 1969 r.podobny algorytm,zakodowany przez dwuwymiarową maszynę Turinga,badając problem rozpoznawania występowania strun.**
+**Algorytm Knutha-Morrisa-Pratta może być użyty do wyszukiwania wzorca w długim tekście. Na przykład, jeśli mamy tekst "Ala ma kota, a kot ma Alę", a chcemy wyszukać w nim wzorzec "kot", możemy użyć tego algorytmu.
 
-**Zakłada istnienie tabeli podającej„częściowe dopasowania”(opisane poniżej),wskazującą,gdzie szukać potencjalnego początku następnego zdarzenia,w przypadku gdy weryfikacja obecnego potencjalnego wystąpienia się nie powiedzie.Na razie tę tablicę,oznaczoną przez,można traktować jako czarną skrzynkę z następującą właściwością:jeśli mamy częściowe dopasowanie do,ale nie powiedzie się podczas porównywania i,wtedy następne potencjalne wystąpienie zaczyna się od position .W szczególności istnieje i jest zdefiniowana w.Biorąc pod uwagę tę tabelę,algorytm jest stosunkowo prosty:``TS [m] S [m+i-1] S [m+w]`` [LiczbaPi]``m+i T[i-1] T [-1] -1.``**
+Krok 1: Tworzenie tablicy prefiksów dla wzorca "kot".
 
-**Napraw.Załóżmy,że ma długość znaków oraz, znaków;`` ja = m = 0 ``PnieSja
-Jeśli,a następnie zakończ przetwarzanie,nie znaleziono dopasowania.W przeciwnym razie porównaj i;`` m + ja = l`` Liczba Pi] ``S [m+w]``
-Jeśli są równe,napraw.Jeśli,dopasowanie jest zakończone.Zakończenie przetwarzania i zwrot jako pozycja rozpoczęcia korespondencji; ``ja = ja + 1 ja = nm``
-Jeśli są różne,napraw.Napraw,a jeśli napraw;``e = T [i-1] m = m + ie ja > 0 ja = e``
-Kontynuować kroku ``n°2``.
-Opis ten implementuje algorytm zastosowany w poprzednim przykładzie.Za każdym razem,gdy sprawdzenie się nie powiedzie,tabela jest sprawdzana w celu znalezienia początku następnego potencjalnego wystąpienia,a liczniki są odpowiednio aktualizowane.Dlatego sprawdzanie znaków nigdy nie jest wykonywane wstecz.W szczególności każdy znak jest sprawdzany tylko raz (chociaż mógłby zostać odrzucony kilka razy w wyniku nieudanego dopasowania.Zobacz poniżej analizę skuteczności algorytmu.**
+Tablica prefiksów jest tablicą, która przechowuje informację o tym, ile części wzorca jest wspólne z poprzednimi prefiksami. Na przykład, w wzorcu "kot", prefiks "ko" jest wspólny z sufiksem "k".
 
-Przykładowy kod algorytmu wyszukiwania
-**Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych ciągów znaków.Aby przezwyciężyć wewnętrzne ograniczenia tabel w C,indeksy są przesunięte o jedną jednostkę,to znaczy,że w kodzie są równoważne z powyższym opisem.``T [i] T [i+1].``**
+Tablica prefiksów dla wzorca "kot" wygląda tak:
+k o t
+0 0 0
+
+Krok 2: Przeszukiwanie tekstu
+Następnie, przeszukujemy tekst, porównując każdy znak wzorca z odpowiadającym mu znakiem w tekście. Jeśli znak się nie zgadza, przesuwamy wzorzec o wartość z tablicy prefiksów. W przeciwnym wypadku, dodajemy 1 do indeksu wzorca i tekstu i kontynuujemy porównywanie.
+
+Przykład:
+Ala ma kota, a kot ma Alę
+k o t
+Znak "k" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o 1.
+Ala ma kota, a kot ma Alę
+k o t
+Znak "o" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o 1.
+Ala ma kota, a kot ma Alę
+o t
+Znak "t" w tekście i wzorcu się zgadza, więc przesuwamy indeksy obu o 1. Wzorzec jest teraz zakończony i możemy stwierdzić, że wzorzec "kot" został znaleziony w tekście.
+Krok 3: Zwracanie indeksu w tekście
+Indeks w tekście, gdzie został znaleziony wzorzec, to pozycja, na której z Zwracanie indeksu.**
+
+**Udowodnienie ze poprawny algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca.**
+
+**Algorytm Knutha-Morrisa-Pratta jest liniowy w czasie, ponieważ używa tablicy prefiksów, aby zoptymalizować proces wyszukiwania wzorca. Tablica prefiksów jest tworzona za pomocą preprocessingu, który jest wykonywany tylko raz przed wyszukiwaniem wzorca.
+Po uzyskaniu tablicy prefiksów, algorytm wyszukiwania wzorca jest realizowany poprzez porównywanie każdej litery tekstu z odpowiadającym mu fragmentem wzorca. Jeśli te litery są równe, proces jest kontynuowany, a jeśli nie, to jest przeskakiwanie do poprzedniej litery wzorca z użyciem informacji z tablicy prefiksów.
+Ze względu na fakt, że każdy znak tekstu jest porównywany tylko raz z wzorcem, czas działania algorytmu jest liniowy względem długości tekstu. W rzeczywistości, długość tablicy prefiksów jest znacznie mniejsza niż długość wzorca, co oznacza, że czas działania algorytmu jest jeszcze bardziej zoptymalizowany.
+Wnioskując, algorytm Knutha-Morrisa-Pratta jest poprawny i liniowy w czasie, co oznacza, że jest to efektywny sposób na wyszukiwanie wzorca w tekście.**
+
 
 **PseudoKod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca**
 ```
