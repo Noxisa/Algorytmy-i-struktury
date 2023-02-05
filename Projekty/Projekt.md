@@ -49,13 +49,13 @@ dzielnik jak pierwotne liczby.Gdy w wyniku kolejnego odejmowania otrzymamy parę
 - **odjąć od niej mniejszą i zastąpić większą przez otrzymaną różnicę;**
 - **wrócić do sprawdzenia warunku w punkcie 2(pętla).**
 
-### Złożoność czasowa
+**Złożoność czasowa**
 ![Zrzut ekranu 2023-01-31 195019](https://user-images.githubusercontent.com/115026224/215841408-d632d905-0540-4812-90a3-b122876c01f1.png)
 
 
 
 
-### Pseudokod NWD
+**Pseudokod NWD**
 ```
 
 nwd(a, b) {
@@ -69,7 +69,7 @@ nwd(a, b) {
 }
 
 ```
- ### [Code NWD](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c)
+ **[Code NWD](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/NWD.c)**
 -----------------------------------------------------------------
 
 ## Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
@@ -92,7 +92,7 @@ Opis ten implementuje algorytm zastosowany w poprzednim przykładzie.Za każdym 
 Przykładowy kod algorytmu wyszukiwania
 **Poniższy fragment kodu C jest implementacją tego algorytmu dla 8-bitowych ciągów znaków.Aby przezwyciężyć wewnętrzne ograniczenia tabel w C,indeksy są przesunięte o jedną jednostkę,to znaczy,że w kodzie są równoważne z powyższym opisem.``T [i] T [i+1].``**
 
-### PseudoKod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca
+**PseudoKod Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca**
 ```
 void KMPSearch(char *pat, char *txt) {
     M = strlen(pat); // długość wzoru
@@ -145,15 +145,15 @@ void computeLPSArray(char *pat, int M, int *lps) {
     }
 }
 ```
- ### [Code Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/Algorytm%20Knutha-Morrisa-Pratta%20wyszukiwania%20wzorca.c)
+ **[Code Algorytm Knutha-Morrisa-Pratta wyszukiwania wzorca ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/Algorytm%20Knutha-Morrisa-Pratta%20wyszukiwania%20wzorca.c)**
 
-### Wydajność algorytmu wyszukiwania.
+**Wydajność algorytmu wyszukiwania.**
 
 **Wiadomo, że algorytm KMP (znany również jako Knuth-Morris-Pratt) przetwarza wstępnie wzorzec ``P`` i konstruuje funkcję niepowodzenia ``F`` (zwaną także `lps[]`) do przechowywania długości najdłuższego sufiksu pod-wzorca ``P[1.. l]``, który jest również przedrostkiem ``P``, dla ``l = 0`` do ``m-1``. Zauważ, że wzór podrzędny zaczyna się od indeksu ``1``, ponieważ przyrostek może być samym ciągiem znaków. Po wystąpieniu niedopasowania w indeksie ``P[j]`` aktualizujemy ``j`` do ``F[j-1]``.
 
 Oryginalny algorytm KMP ma złożoność czasową ``O(M + N)`` i przestrzeń pomocniczą ``O(M)``, gdzie N to rozmiar tekstu wejściowego, a ``M`` to rozmiar wzorca. Etap przetwarzania wstępnego kosztuje ``O(M)`` czasu. Trudno jest osiągnąć lepszą złożoność środowiska uruchomieniowego, ale nadal jesteśmy w stanie wyeliminować niektóre nieefektywne zmiany.**
 
-### Złożoność czasowa
+**Złożoność czasowa**
 
 ![image](https://user-images.githubusercontent.com/115026224/215877333-9e504ca7-94d9-4d26-8ace-51d102b51e20.png)
 
@@ -182,9 +182,9 @@ Stos-jest liniową strukturą danych dostępnych do zapisywania i odczytywania t
 Operacja na stosie-initialize-powoduje opróżnienie stosu,empty-sprawdzenie czy stos jest pusty,full-czy stos jest zapełniony,push-umieszczenie elementu na stosie,pop-zdjęcie najwyższego elementu ze stosu.Ciąg operacji pusch i pop:**
 
 
-# ![image](https://mermaid.ink/img/pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4?type=png)
+** ![image](https://mermaid.ink/img/pako:eNplz78KgzAQBvBXCTebPoBDof6jQ3Gwo3E4zLUKRkUSaBHfvWfSLZny_e4j5HboF02QwnvDdRCPRs2Cz629E-pOyIu8iqyt6WOFRovdfywkex5CFlp51Mp9q4i88F5GXnqvIq-81-N0RkjA0GZw1Pzp_RQFdiBDClK-anqhm6wCNR9cRWeX53fuIbWbowTcyu9SMSKvawIePyswTM4?type=png)**
 
-### [Code list jedenkierunkowy ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/list%20jedenkierunkowy.c)
+** [Code list jedenkierunkowy ](https://github.com/Noxisa/Algorytmy-i-struktury/blob/main/Projekty/list%20jedenkierunkowy.c)**
 ----------------------------------------------------------------------------------------------------------
 ### Literatura
 [Wikipedia
