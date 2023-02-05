@@ -30,7 +30,7 @@ node = node->next;
 }
 }
 
-int main() {
+int main(void) {
 struct node* head = NULL;
 push(&head, 1);
 push(&head, 2);
