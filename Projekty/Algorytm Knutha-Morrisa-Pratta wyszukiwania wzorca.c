@@ -6,8 +6,8 @@
 void computeLPSArray(char *pat, int M, int *lps);
 
 void KMPSearch(char *pat, char *txt) {
-  int M = strlen(pat);
-  int N = strlen(txt);
+  int M = (int) strlen(pat);
+  int N = (int)strlen(txt);
 
    *lps = (int *)malloc(sizeof(int) * M);
   int j = 0;
