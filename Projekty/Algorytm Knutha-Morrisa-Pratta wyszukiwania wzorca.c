@@ -9,7 +9,7 @@ void KMPSearch(char *pat, char *txt) {
   int M = (int) strlen(pat);
   int N = (int)strlen(txt);
 
-   int  = strlen(M);
+   int  = pat(M);
   int j = 0;
 
   computeLPSArray(pat, M, lps);
